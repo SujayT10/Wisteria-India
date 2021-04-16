@@ -22,8 +22,8 @@ constructor(private httpClient : HttpClient) { }
       }));
   }
 
-  public userregistration(name: string,email: string,pwd: string) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, pwd })
+  public userregistration(name: string, lastname: string, email: string, pwd: string, contactno: number) {
+    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, lastname, email, pwd, contactno })
     .pipe(map(Users => {
     return Users;
     }));
