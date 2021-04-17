@@ -59,52 +59,41 @@
                  class="form-control input-sm"
                  placeholder="Contact Number">
                 <div *ngIf="contactno.touched && contactno.invalid" class="text-danger">
-                <small *ngIf="contactno.errors.required">Mobile Number is required.</small>
-                <small *ngIf="contactno.errors.pattern">Please, Enter 10 digit Mobile Number.</small>
-
-      </div>
+                  <small *ngIf="contactno.errors.required">Mobile Number is required.</small>
+                  <small *ngIf="contactno.errors.pattern">Please, Enter 10 digit Mobile Number.</small>
+                </div>
         </div>
 
-
-            <!-- Password -->
-            <!-- <div class="form-group">
-
-              <input type="password"
-                    name="Password"
-                    formControlName="password"
-                    autocomplete="off"
-                    class="form-control input-sm"
-                    placeholder="Password">
-
-            </div> -->
 
         <!--  Password -->
       <div class="form-group">
         <!-- <label for="name">Password</label> -->
         <input type="password"
-               name="Password"
-               formcontrolname="password"
+               name="password"
+               formControlName="password"
                autocomplete="off"
                class="form-control input-sm"
                placeholder="Password">
-        <!-- <div *ngif="password.touched && password.invalid" class="text-danger">
-          <small *ngif="password.errors.required">Password is required</small>
-        </div> -->
+              <div *ngIf="password.touched && password.invalid" class="text-danger">
+                <small *ngIf="password.errors.required">Password is required.</small>
+                <small *ngIf="password.errors.minlength">Password should be minimum {{password.errors.minlength.requiredLength}} characters.</small>
+              </div>
+
       </div>
 
       <!-- Confirm Password -->
       <div class="form-group">
-        <!-- <label for="name">Confirm Password</label> -->
+      <!-- <label for="name">Confirm Password</label> -->
         <input type="password"
                name="confirmpassword"
-               formcontrolname="confirmpassword"
+               formControlName="confirmpassword"
                autocomplete="off"
                class="form-control input-sm"
-               placeholder="Password">
-        <!-- <div *ngif="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
-          <small *ngif="confirmpassword.errors.required">Confirm Password is required</small>
-          <small *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
-        </div> -->
+               placeholder="Confirm Password">
+              <div *ngIf="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
+                <small *ngIf="confirmpassword.errors.required">Password is required.</small>
+                <small *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
+              </div>
       </div>
 
 
