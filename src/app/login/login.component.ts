@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     }
 
     postdata(angForm1: any){
-        this.dataService.userlogin(angForm1.value.email,angForm1.value.password)
+        this.dataService.userlogin(angForm1.value.email, angForm1.value.password)
         .pipe(first())
         .subscribe(
                   data => {
