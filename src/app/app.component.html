@@ -5,15 +5,19 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExample">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" *ngIf="loginbtn" routerLink="home" routerLinkActive="active">Home</a>
+          <a class="nav-link"  routerLink="home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="home" routerLinkActive="active">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
         </li>
         <li class="nav-item">
-          <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
+          <!-- <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button> -->
+          <a class="nav-link" *ngIf="logoutbtn" (click)="logout()" routerLink="login" >logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
