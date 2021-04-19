@@ -1,10 +1,13 @@
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" routerLink="home" routerLinkActive="active">Wisteria India</a>
+<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" *ngIf="loginbtn">
+  <!-- <a class="navbar-brand" routerLink="home" routerLinkActive="active">Wisteria India</a> -->
+  <a routerLink="home">
+    <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand" style="width: 25%;  left: 10px; margin: 0 15%;">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExample">
+  <div class="collapse navbar-collapse" id="navbarsExample" >
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link"  routerLink="home" routerLinkActive="active">Home</a>
@@ -15,10 +18,10 @@
         <li class="nav-item">
           <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
         </li>
-        <li class="nav-item">
-          <!-- <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button> -->
+        <!-- <li class="nav-item">
+          <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
           <a class="nav-link" *ngIf="logoutbtn" (click)="logout()" routerLink="login" >logout</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
         </li>
