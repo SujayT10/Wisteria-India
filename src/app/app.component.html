@@ -1,4 +1,4 @@
-<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" *ngIf="loginbtn">
+<nav class="navbar navbar-header navbar-expand-md" style="background-color: #3188f9;"  *ngIf="loginbtn">
   <!-- <a class="navbar-brand" routerLink="home" routerLinkActive="active">Wisteria India</a> -->
   <a routerLink="home">
     <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand" style="width: 25%;  left: 10px; margin: 0 15%;">
@@ -8,23 +8,39 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsExample" >
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="home" routerLinkActive="active">Home</a>
+      <ul class="navbar-nav ml-auto ">
+
+        <li class="nav-item ">
+          <button type="button" class="btn btn-primary" routerLink="home" routerLinkActive="active">Home</button>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link"  routerLink="home" routerLinkActive="active">About Us</a>
+          <button type="button" class="btn btn-primary" routerLink="home" routerLinkActive="active">About Us</button>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</a>
-        </li>
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" *ngIf="loginbtn" routerLink="login" >Login</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" *ngIf="loginbtn" routerLink="registration">Registration</a>
+              <!-- <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a> -->
+            </div>
+        </div>
+
         <!-- <li class="nav-item">
-          <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()">logout</button>
-          <a class="nav-link" *ngIf="logoutbtn" (click)="logout()" routerLink="login" >logout</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
+          <button type="button" class="btn btn-primary"*ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</button>
         </li>
+
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary"*ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</button>
+        </li> -->
+
         <li class="nav-item">
           <a class="nav-link" *ngIf="logoutbtn" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
         </li>
