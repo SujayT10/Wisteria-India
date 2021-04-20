@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { ApiService } from '../api.service';
-import { confirmedValidator } from '../confirmed.validator';
+import { ApiService } from '../../api.service';
+import { confirmedValidator } from '../../confirmed.validator';
 
 @Component({
           selector: 'app-register',
