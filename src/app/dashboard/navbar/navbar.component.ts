@@ -34,6 +34,7 @@ export class NavbarComponent implements OnInit {
       {
       this.dataService.deleteToken();
       window.location.href = window.location.href;
+      console.log("loggedOff");
       }
 
   ngOnInit(): void {

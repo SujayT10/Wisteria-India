@@ -18,6 +18,8 @@ import { RecentMemberComponent } from './dashboard/recent-member/recent-member.c
 import { TopupMemberComponent } from './dashboard/topup-member/topup-member.component';
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+import { FooterComponent } from './dashboard/footer/footer.component';
+import { AdminProfileComponent } from './profile/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
     RecentMemberComponent,
     TopupMemberComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    FooterComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,
