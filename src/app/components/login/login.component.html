@@ -1,5 +1,6 @@
 
 <div class="wrapper" style="background: url(../assets/img/bg-abstract2.png);">
+  <div class="container-fluid">
   <div class="row" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
     <div class="col-md-4 ml-auto mr-auto">
       <a routerLink="/home" class="logo" style="height: 100px;">
@@ -46,11 +47,34 @@
                 </div>
 
                 <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Login</button>
+                <!-- <input  type="link" class="btn bt  n-primary" routerLink="/registration" routerLinkActive="active">Registration -->
+
+                <!-- Register buttons -->
+            <div class="text-center" style="padding-top: 10px;">
+              <p>Not a member? <a routerLink="/registration"> Register</a></p>
+              <!--<p>or sign up with:</p>
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button> -->
+            </div>
             </form>
         </div>
     </div>
     <div class="col-md-5">
     </div>
+</div>
 </div>
 </div>
 

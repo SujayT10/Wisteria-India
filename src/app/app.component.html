@@ -1,11 +1,11 @@
-<nav class="navbar navbar-header navbar-expand-md" style="background-color: #3188f9;"  *ngIf="loginbtn">
-  <!-- <a class="navbar-brand" routerLink="home" routerLinkActive="active">Wisteria India</a> -->
+<!-- <nav class="navbar navbar-header navbar-expand-sm" style="background-color: #3188f9;"  *ngIf="loginbtn">
+
   <a routerLink="home">
     <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand" style="width: 25%;  left: 10px; margin: 0 15%;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
   <div class="collapse navbar-collapse" id="navbarsExample" >
       <ul class="navbar-nav ml-auto ">
@@ -17,21 +17,12 @@
         <li class="nav-item">
           <button type="button" class="btn btn-primary" routerLink="home" routerLinkActive="active">About Us</button>
         </li>
-
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Profile
-          </button>
-
-          <div class="dropdown-menu">
-            <a class="dropdown-item" *ngIf="loginbtn" routerLink="login" >Login</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" *ngIf="loginbtn" routerLink="registration">Registration</a>
-              <!-- <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a> -->
-            </div>
-        </div>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" routerLink="login" routerLinkActive="active">Login</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" routerLink="registration" routerLinkActive="active">Registration</button>
+        </li>
 
         <!-- <li class="nav-item">
           <button type="button" class="btn btn-primary"*ngIf="loginbtn" routerLink="login" routerLinkActive="active">Login</button>
@@ -46,5 +37,5 @@
         </li>
       </ul>
   </div>
-  </nav>
+  <!-- </nav> -->
   <router-outlet></router-outlet>

@@ -12,6 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ManageMemberComponent } from './dashboard/manage-member/manage-member.component';
+import { FindMemberComponent } from './dashboard/find-member/find-member.component';
+import { BlackListComponent } from './dashboard/black-list/black-list.component';
+import { RecentMemberComponent } from './dashboard/recent-member/recent-member.component';
+import { TopupMemberComponent } from './dashboard/topup-member/topup-member.component';
+import { NavbarComponent } from './dashboard/navbar/navbar.component';
+import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { ManageMemberComponent } from './dashboard/manage-member/manage-member.c
     DashboardComponent,
     PageNotFoundComponent,
     LogoComponent,
-    ManageMemberComponent
+    ManageMemberComponent,
+    FindMemberComponent,
+    BlackListComponent,
+    RecentMemberComponent,
+    TopupMemberComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
