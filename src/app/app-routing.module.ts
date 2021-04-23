@@ -1,5 +1,5 @@
 
-import { TopupMemberComponent } from './dashboard/topup-member/topup-member.component';
+import { TopupMemberComponent } from './dashboard/customer/topup-member/topup-member.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -8,10 +8,10 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardGuard } from './authguard.guard';
-import { ManageMemberComponent } from './dashboard/manage-member/manage-member.component';
-import { FindMemberComponent } from './dashboard/find-member/find-member.component';
-import { BlackListComponent } from './dashboard/black-list/black-list.component';
-import { RecentMemberComponent } from './dashboard/recent-member/recent-member.component';
+import { ManageMemberComponent } from './dashboard/customer/manage-member/manage-member.component';
+import { FindMemberComponent } from './dashboard/customer/find-member/find-member.component';
+import { BlackListComponent } from './dashboard/customer/black-list/black-list.component';
+import { RecentMemberComponent } from './dashboard/customer/recent-member/recent-member.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },

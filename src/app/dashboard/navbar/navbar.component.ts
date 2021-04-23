@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
       logout()
       {
       this.dataService.deleteToken();
-      window.location.href = window.location.href;
+      window.location.replace(origin + '/login');
       console.log("loggedOff");
       }
 
