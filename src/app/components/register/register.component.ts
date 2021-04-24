@@ -17,8 +17,8 @@ export class RegisterComponent implements OnInit {
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      lastname: ['', [Validators.required, Validators.minLength(2)]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
       contactno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(8)] ],
       confirmpassword: ['',[Validators.required]]

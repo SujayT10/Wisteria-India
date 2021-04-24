@@ -17,6 +17,9 @@
 
         <div class="jumbotron">
           <h2 class="text-center">Login</h2>
+          <!-- <div class="alert alert-danger" role="alert">
+            {{ error }}
+          </div> -->
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
                 <!-- Email -->
@@ -28,8 +31,8 @@
                          class="form-control input-sm"
                          placeholder="Email">
                          <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
-                          <small *ngIf="email.errors?.required" >Email is required</small>
-                          <small *ngIf="email.errors?.pattern" >Please provide a valid email address</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Email is required</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Please provide a valid email address</small>
                         </div>
                 </div>
 
@@ -42,7 +45,7 @@
                          class="form-control input-sm"
                          placeholder="Password">
                          <div *ngIf="password.touched && password.invalid" class="text-danger">
-                          <small *ngIf="password.errors.required">Password is required.</small>
+                          <small class="alert alert-danger" *ngIf="password.errors.required">Password is required.</small>
                         </div>
                 </div>
 
@@ -69,6 +72,7 @@
                 <i class="fab fa-github"></i>
               </button> -->
             </div>
+
             </form>
         </div>
     </div>

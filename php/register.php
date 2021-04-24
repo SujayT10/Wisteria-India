@@ -6,7 +6,7 @@ if(isset($postdata) && !empty($postdata)){
 
     $name = trim($request->name);
     $lastname = trim($request->lastname);
-    $pwd = mysqli_real_escape_string($mysqli, trim($request->pwd));
+    $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = $request->contactno;
 
