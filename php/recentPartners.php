@@ -1,7 +1,7 @@
 <?php
 include_once("database.php");
 $partners = [];
-$sql = "SELECT * FROM partners";
+$sql = "SELECT * FROM partners ORDER BY datetime DESC";
 
 
 if($result = mysqli_query($mysqli, $sql)){

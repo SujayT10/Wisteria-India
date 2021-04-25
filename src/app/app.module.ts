@@ -33,6 +33,7 @@ import { FindEmployeeComponent } from './dashboard/employee/find-employee/find-e
 import { BlackedListedEmployeeComponent } from './dashboard/employee/blacked-listed-employee/blacked-listed-employee.component';
 import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/recent-employee.component';
 import { TopupEmployeeComponent } from './dashboard/employee/topup-employee/topup-employee.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { TopupEmployeeComponent } from './dashboard/employee/topup-employee/topu
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

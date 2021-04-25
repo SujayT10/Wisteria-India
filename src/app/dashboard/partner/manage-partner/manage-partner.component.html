@@ -47,22 +47,29 @@
                         <th>Last Name</th>
                         <th>Contact Number</th>
                         <th>Email</th>
+                        <th>Role</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let part of partner">
-                        <td> {{part.id}} </td>
+                      <tr *ngFor="let part of partner | paginate: { itemsPerPage: 5,
+                                                                    currentPage: page,
+                                                                    totalItems: totalLength }">
+                        <td> WI-0{{part.id}} </td>
                         <td> {{part.firstname}} </td>
                         <td> {{part.lastname}} </td>
                         <td> {{part.contactno}} </td>
                         <td> {{part.email}} </td>
+                        <td> {{part.role}} </td>
                         <td> <button class="btn btn-success">Edit</button> </td>
-                        <td> <button class="btn btn-danger">Delete</button> </td>
+                        <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
                       </tr>
                     </tbody>
                   </table>
+                  <div>
+                    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+                  </div>
                 </div>
               </div>
             </div>

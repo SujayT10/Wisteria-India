@@ -20,7 +20,9 @@
         </div>
       </div>
       <div class="page-inner mt--5">
-        <div class="row mt--2">
+
+        <!-- Overall status/Total income spend -->
+        <!-- <div class="row mt--2">
           <div class="col-md-6">
             <div class="card full-height">
               <div class="card-body">
@@ -67,8 +69,10 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
+        </div> -->
+
+        <!-- user status/daily sale -->
+        <!-- <div class="row">
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
@@ -124,9 +128,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- Top product/ active user -->
+        <!-- <div class="row">
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
@@ -193,24 +198,29 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+
 
         <div class="row">
+        <!-- Partner blog -->
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
                 <div class="card-title fw-mediumbold">New Partners</div>
                 <div class="card-list">
-                  <div class="item-list">
+                  <div class="item-list" *ngFor="let part of partner | paginate: { itemsPerPage: 6,
+                                                                        currentPage: page,
+                                                                        totalItems: totalLength }">
                     <div class="avatar">
-                      <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                      <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
                     </div>
                     <div class="info-user ml-3">
-                      <div class="username">Jimmy Denis</div>
-                      <div class="status">Graphic Designer</div>
+                      <div class="username">{{ part.firstname }} {{ part.lastname }}</div>
+                      <!-- <div class="status">{{part.contactno}}</div> -->
+                      <div class="status">{{part.role}}</div>
                     </div>
                   </div>
-                  <div class="item-list">
+                  <!-- <div class="item-list" >
                     <div class="avatar">
                       <img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
                     </div>
@@ -254,11 +264,13 @@
                       <div class="username">Jimmy Denis</div>
                       <div class="status">Graphic Designer</div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
           </div>
+
+        <!-- New employee -->
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
@@ -322,6 +334,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Customer -->
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
