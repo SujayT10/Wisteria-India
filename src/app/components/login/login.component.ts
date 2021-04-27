@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
     }
 
+    error = "User name or password is incorrect";
     postdata(angForm1: any){
         this.dataService.userlogin(angForm1.value.email, angForm1.value.password)
         .pipe(first())
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([redirect]);
                   },
                   error => {
-                    alert("User name or password is incorrect")
+                    alert("User name or password is incorrect");
+
                   }
                   );
     }

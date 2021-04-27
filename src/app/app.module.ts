@@ -34,6 +34,7 @@ import { BlackedListedEmployeeComponent } from './dashboard/employee/blacked-lis
 import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/recent-employee.component';
 import { TopupEmployeeComponent } from './dashboard/employee/topup-employee/topup-employee.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FindEmployeeComponent,
     BlackedListedEmployeeComponent,
     RecentEmployeeComponent,
-    TopupEmployeeComponent
+    TopupEmployeeComponent,
+    PartnerDashboardComponent
 
   ],
   imports: [

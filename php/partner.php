@@ -1,8 +1,8 @@
 <?php
 include_once("database.php");
 $partners = [];
-$sql = "SELECT * FROM partners";
 
+$sql = "SELECT * FROM partners";
 
 if($result = mysqli_query($mysqli, $sql)){
   $cr = 0;
