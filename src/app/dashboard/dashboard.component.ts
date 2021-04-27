@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   partner: Partner[];
   totalLength: any;
   page: number = 1;
+  userDisplayName: any;
 
   constructor(private partnerService: PartnerService) { }
 
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
       this.partner= data;
       console.log(this.partner);
       this.totalLength= data.length;
+      this.userDisplayName = sessionStorage.getItem('loggedUser');
       // console.log("Partners Data");
     });
   }
