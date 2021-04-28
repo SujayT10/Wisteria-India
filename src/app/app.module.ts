@@ -37,6 +37,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
 import { AddComponent } from './dashboard/partner/add/add.component';
+import { HomeFooterComponent } from './components/home-footer/home-footer.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AddComponent } from './dashboard/partner/add/add.component';
     TopupEmployeeComponent,
     PartnerDashboardComponent,
     AdminProfileComponent,
-    AddComponent
+    AddComponent,
+    HomeFooterComponent
 
   ],
   imports: [
