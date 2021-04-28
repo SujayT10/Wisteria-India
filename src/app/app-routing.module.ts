@@ -1,3 +1,6 @@
+import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
+import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
+import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
 import { TopupPartnerComponent } from './dashboard/partner/topup-partner/topup-partner.component';
 import { RecentPartnerComponent } from './dashboard/partner/recent-partner/recent-partner.component';
 import { FindPartnerComponent } from './dashboard/partner/find-partner/find-partner.component';
@@ -24,6 +27,8 @@ import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/re
 import { BlackListedPartnerComponent } from './dashboard/partner/black-listed-partner/black-listed-partner.component';
 import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
 import { AddComponent } from './dashboard/partner/add/add.component';
+import { PrivacyPolicyComponent } from './components/policy/privacy-policy/privacy-policy.component';
+import { TermAndConditionComponent } from './components/policy/term-and-condition/term-and-condition.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -31,6 +36,13 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent, pathMatch: 'full' },
 { path: 'aboutUs', component: HomeComponent, pathMatch: 'full' },
 { path: 'registration', component: RegisterComponent, pathMatch: 'full' },
+
+{ path: 'privacy-policy', component: PrivacyPolicyComponent, pathMatch: 'full' },
+{ path: 'term-condition', component: TermAndConditionComponent, pathMatch: 'full' },
+{ path: 'interest-based-ads', component: InterestBasedAdsComponent, pathMatch: 'full' },
+{ path: 'conditions-of-use', component: ConditionsOfUseComponent, pathMatch: 'full' },
+{ path: 'cancellation-refund-policy', component: CancellationRefundPolicyComponent, pathMatch: 'full' },
+
 { path: 'dashboard', component: DashboardComponent,canActivate: [AuthguardGuard] },
 
 { path: 'dashboard/customer/manage-member', component: ManageMemberComponent, canActivate: [AuthguardGuard] },

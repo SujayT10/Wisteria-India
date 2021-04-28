@@ -38,6 +38,11 @@ import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard
 import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
 import { AddComponent } from './dashboard/partner/add/add.component';
 import { HomeFooterComponent } from './components/home-footer/home-footer.component';
+import { PrivacyPolicyComponent } from './components/policy/privacy-policy/privacy-policy.component';
+import { TermAndConditionComponent } from './components/policy/term-and-condition/term-and-condition.component';
+import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
+import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
+import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { HomeFooterComponent } from './components/home-footer/home-footer.compon
     PartnerDashboardComponent,
     AdminProfileComponent,
     AddComponent,
-    HomeFooterComponent
+    HomeFooterComponent,
+    PrivacyPolicyComponent,
+    TermAndConditionComponent,
+    InterestBasedAdsComponent,
+    ConditionsOfUseComponent,
+    CancellationRefundPolicyComponent,
 
   ],
   imports: [
