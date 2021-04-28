@@ -23,6 +23,7 @@ import { RecentMemberComponent } from './dashboard/customer/recent-member/recent
 import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/recent-employee.component';
 import { BlackListedPartnerComponent } from './dashboard/partner/black-listed-partner/black-listed-partner.component';
 import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
+import { AddComponent } from './dashboard/partner/add/add.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -49,7 +50,7 @@ const routes: Routes = [
 { path: 'dashboard/partner/black-listed', component: BlackListedPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/recent-member', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/topup-member', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
-
+{ path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
 

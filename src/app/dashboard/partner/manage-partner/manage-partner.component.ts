@@ -18,7 +18,7 @@ export class ManagePartnerComponent implements OnInit {
   ngOnInit(): void {
     this.partnerService.getPartner().subscribe((data: Partner[]) =>{
       this.partner= data;
-      console.log(this.partner);
+      // console.log(this.partner);
       this.totalLength= data.length;
 
       // console.log("Partners Data");

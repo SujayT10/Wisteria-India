@@ -1,0 +1,162 @@
+<!-- Navbar Header -->
+<app-navbar></app-navbar>
+<!-- End Navbar -->
+ <!-- Sidebar -->
+ <app-sidebar></app-sidebar>
+ <!-- End Sidebar -->
+
+   <!-- Main Container -->
+   <div class="main-panel">
+    <div class="content">
+
+
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="jumbotron">
+            <h4 class="text-center">Add Partner</h4>
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+
+              <!-- First Name -->
+              <div class="form-group ">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="firstname"
+                       formControlName="firstname"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="First Name">
+                  <div *ngIf="firstname.touched && firstname.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="firstname.errors.required">Name is required.</small>
+                    <small class="alert alert-danger" *ngIf="firstname.errors.minlength">Name should be minimum {{firstname.errors.minlength.requiredLength}} characters.</small>
+                    <small class="alert alert-danger" *ngIf="firstname.errors.maxlength">Name should be maximum {{firstname.errors.maxlength.requiredLength}} characters.</small>
+                  </div>
+              </div>
+
+              <!-- last name -->
+              <div class="form-group ">
+                <!-- <label for="last name">Last Name</label> -->
+                <input type="text" name="lastname"
+                       formControlName="lastname"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Last Name">
+                       <div *ngIf="lastname.touched && lastname.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="lastname.errors.required">Lastname is required.</small>
+                        <small class="alert alert-danger" *ngIf="lastname.errors.minlength">Last Name should be minimum {{lastname.errors.minlength.requiredLength}} characters.</small>
+                        <small class="alert alert-danger" *ngIf="lastname.errors.maxlength">Last Name should be maximum {{lastname.errors.maxlength.requiredLength}} characters.</small>
+                      </div>
+              </div>
+
+
+
+                <!-- Email -->
+                <div class="form-group ">
+                  <!-- <label for="email">Email</label> -->
+                  <input type="email"
+                        name="email"
+                        formControlName="email"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Email">
+                        <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Email is required</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Please provide a valid email address</small>
+                        </div>
+                </div>
+
+                <!-- Role -->
+              <div class="form-group ">
+                <!-- <label for="last name">Last Name</label> -->
+                <input type="text" name="Role"
+                       formControlName="role"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Role">
+                       <div *ngIf="role.touched && role.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="role.errors.required">Role is required.</small>
+
+                      </div>
+              </div>
+
+              <!-- Date -->
+              <div class="form-group ">
+                <!-- <label for="last name">Last Name</label> -->
+                <input type="datetime-local" name="datetime"
+                       formControlName="datetime"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Date-Time">
+                       <div *ngIf="datetime.touched && datetime.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="datetime.errors.required">Date and Time is required.</small>
+
+                      </div>
+              </div>
+
+                <!-- Contact Number -->
+                <div class="form-group ">
+                  <!-- <label for="email">Contact Number</label> -->
+                  <input type="text"
+                        name="contactno"
+                        formControlName="contactno"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Contact Number">
+                        <div *ngIf="contactno.touched && contactno.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="contactno.errors.required">Mobile Number is required.</small>
+                          <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Please, Enter 10 digit Mobile Number.</small>
+                        </div>
+                </div>
+
+
+                <div class="row">
+                <!--  Password -->
+              <div class="form-group col-6">
+                <!-- <label for="name">Password</label> -->
+                <input type="password"
+                      name="password"
+                      formControlName="password"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Password">
+                      <div *ngIf="password.touched && password.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="password.errors.required">Password is required.</small>
+                        <small class="alert alert-danger" *ngIf="password.errors.minlength">Password should be minimum {{password.errors.minlength.requiredLength}} characters.</small>
+                      </div>
+
+              </div>
+
+
+              <!-- Confirm Password -->
+              <div class="form-group col-6">
+              <!-- <label for="name">Confirm Password</label> -->
+                <input type="password"
+                      name="confirmpassword"
+                      formControlName="confirmpassword"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Confirm Password">
+                      <div *ngIf="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.required">Password is required.</small>
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
+                      </div>
+              </div>
+
+              </div>
+
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Add</button>
+
+
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+
+
+    <!-- End Main Container -->
+ <!-- Footer -->
+ <app-footer></app-footer>
+ </div>
+ </div>

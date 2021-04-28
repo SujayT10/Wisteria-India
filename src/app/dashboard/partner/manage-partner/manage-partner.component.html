@@ -35,7 +35,11 @@
       <div>
         <div class="card">
               <div class="card-header">
-                <div class="card-title">All Patterns</div>
+                <div class="card-title">All Partners
+                 <a routerLink="/dashboard/partner/add">
+                   <button class="btn btn-success float-right" >Add</button>
+                 </a>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -48,7 +52,7 @@
                         <th>Contact Number</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Edit</th>
+                        <!-- <th>Edit</th> -->
                         <!-- <th>Delete</th> -->
                       </tr>
                     </thead>
@@ -62,7 +66,7 @@
                         <td> {{part.contactno}} </td>
                         <td> {{part.email}} </td>
                         <td> {{part.role}} </td>
-                        <td> <button class="btn btn-success">Edit</button> </td>
+                        <!-- <td> <button class="btn btn-success">Edit</button> </td> -->
                         <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
                       </tr>
                     </tbody>

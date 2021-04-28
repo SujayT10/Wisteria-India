@@ -1,26 +1,32 @@
 import { Partner } from '../classes/partner';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartnerService {
+  baseUrl:string = "http://localhost/wisteria-india/php";
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient : HttpClient) { }
 
   getPartner(){
-    const url = 'http://localhost/wisteria-india/php/partner.php';
-    return this.http.get<Partner[]>(url);
+    return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
   }
 
   deletePartner(id: number){
-    const url = 'http://localhost/wisteria-india/php/delete.php?id=';
-    return this.http.delete<Partner[]>(url+ id);
+    return this.httpClient.delete<Partner[]>(this.baseUrl + '/delete.php?id='+ id);
   }
 
   recentPartner(){
-    const url = 'http://localhost/wisteria-india/php/recentPartners.php';
-    return this.http.get<Partner[]>(url);
+    return this.httpClient.get<Partner[]>(this.baseUrl + '/recentPartners.php');
+  }
+
+  public partnerRegistration(firstname: string, lastname: string, email: string, role:string, datetime: number,pwd: string, contactno: number) {
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/addPartner.php', { firstname, lastname, email, role, datetime, pwd, contactno })
+    .pipe(map(partner => {
+    return partner;
+    }));
   }
 }

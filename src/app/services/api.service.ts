@@ -10,29 +10,19 @@ providedIn: 'root'
 export class ApiService {
 redirectUrl: any;
 baseUrl:string = "http://localhost/wisteria-india/php";
+
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }
 
   public userlogin(username: string , password: string ) {
 
-      if(username == "s@gmail.com" && password == "sujaytank"){
           return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
           .pipe(map(Users => {
               this.setToken(Users[0].name);
               this.getLoggedInName.emit(true);
               return Users;
           }));
-      }
-      else{
-        alert("Partner")
-        return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
-          .pipe(map(Users => {
-              this.setToken(Users[0].name);
-              this.getLoggedInName.emit(true);
-              return Users;
-          }));
 
-      }
   }
 
   public userregistration(name: string, lastname: string, email: string, pwd: string, contactno: number) {
