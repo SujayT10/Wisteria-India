@@ -35,6 +35,7 @@ import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/re
 import { TopupEmployeeComponent } from './dashboard/employee/topup-employee/topup-employee.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
+import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard
     BlackedListedEmployeeComponent,
     RecentEmployeeComponent,
     TopupEmployeeComponent,
-    PartnerDashboardComponent
+    PartnerDashboardComponent,
+    AdminProfileComponent
 
   ],
   imports: [

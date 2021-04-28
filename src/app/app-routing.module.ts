@@ -22,6 +22,7 @@ import { BlackListComponent } from './dashboard/customer/black-list/black-list.c
 import { RecentMemberComponent } from './dashboard/customer/recent-member/recent-member.component';
 import { RecentEmployeeComponent } from './dashboard/employee/recent-employee/recent-employee.component';
 import { BlackListedPartnerComponent } from './dashboard/partner/black-listed-partner/black-listed-partner.component';
+import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -29,26 +30,30 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent, pathMatch: 'full' },
 { path: 'aboutUs', component: HomeComponent, pathMatch: 'full' },
 { path: 'registration', component: RegisterComponent, pathMatch: 'full' },
-{ path: 'dashboard', component: DashboardComponent,canActivate: [AuthguardGuard], },
+{ path: 'dashboard', component: DashboardComponent,canActivate: [AuthguardGuard] },
 
-{ path: 'dashboard/customer/manage-member', component: ManageMemberComponent },
-{ path: 'dashboard/customer/find-member', component: FindMemberComponent },
-{ path: 'dashboard/customer/black-listed', component: BlackListComponent },
-{ path: 'dashboard/customer/recent-member', component: RecentMemberComponent },
-{ path: 'dashboard/customer/topup-member', component: TopupMemberComponent },
+{ path: 'dashboard/customer/manage-member', component: ManageMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/find-member', component: FindMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/black-listed', component: BlackListComponent, canActivate: [AuthguardGuard]  },
+{ path: 'dashboard/customer/recent-member', component: RecentMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/topup-member', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
 
-{ path: 'dashboard/employee/manage-member', component: ManageEmployeeComponent },
-{ path: 'dashboard/employee/find-member', component: FindEmployeeComponent },
-{ path: 'dashboard/employee/black-listed', component: BlackedListedEmployeeComponent },
-{ path: 'dashboard/employee/recent-member', component: RecentEmployeeComponent },
-{ path: 'dashboard/employee/topup-member', component: TopupEmployeeComponent },
+{ path: 'dashboard/employee/manage-member', component: ManageEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/find-member', component: FindEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/black-listed', component: BlackedListedEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/recent-member', component: RecentEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/topup-member', component: TopupEmployeeComponent, canActivate: [AuthguardGuard] },
 
-{ path: 'dashboard/partner/manage-member', component: ManagePartnerComponent },
-{ path: 'dashboard/partner/find-member', component: FindPartnerComponent },
-{ path: 'dashboard/partner/black-listed', component: BlackListedPartnerComponent },
-{ path: 'dashboard/partner/recent-member', component: RecentPartnerComponent },
-{ path: 'dashboard/partner/topup-member', component: TopupPartnerComponent },
-// { path: '**', component: PageNotFoundComponent },
+{ path: 'dashboard/partner/manage-member', component: ManagePartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/find-member', component: FindPartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/black-listed', component: BlackListedPartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/recent-member', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/topup-member', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
+
+{ path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
+
+
+{ path: '**', component: PageNotFoundComponent },
 
 ]
 
