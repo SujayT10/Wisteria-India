@@ -40,8 +40,8 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                    console.log("Hellooooo");
-                  this.router.navigate(['login']);
+                  console.log("Hellooooo");
+                  this.router.navigate(['/login']);
                   },
 
                   error => {

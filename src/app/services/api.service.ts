@@ -16,13 +16,12 @@ baseUrl:string = "http://localhost/wisteria-india/php";
 constructor(private httpClient : HttpClient) { }
 
   public userlogin(username: string , password: string ) {
-
-          return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
-          .pipe(map(Users => {
-              this.setToken(Users[0].name);
-              this.getLoggedInName.emit(true);
-              return Users;
-          }));
+    return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
+    .pipe(map(Users => {
+        this.setToken(Users[0].name);
+        this.getLoggedInName.emit(true);
+        return Users;
+    }));
 
   }
 

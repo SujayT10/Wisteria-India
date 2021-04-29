@@ -8,6 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class PartnerService {
   baseUrl:string = "http://localhost/wisteria-india/php";
+  // baseUrl:string = "https://wisteriaindia.com/php";
+
 
   constructor(private httpClient : HttpClient) { }
 

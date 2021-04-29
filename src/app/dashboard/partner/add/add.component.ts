@@ -44,12 +44,12 @@ export class AddComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  this.router.navigate(['/dashboard']);
+                  this.router.navigate(['#/dashboard']);
                   },
 
                   error => {
                     console.log(angForm1.value);
-                    console.log("error ala re...")
+                    console.log("Error from  Add-Partner")
                   }
                 );
 

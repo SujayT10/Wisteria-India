@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit {
   constructor(private dataService: ApiService) {
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.dataService.isLoggedIn()) {
-        console.log("loggedin");
+        // console.log("loggedin");
         this.loginbtn=false;
         this.logoutbtn=true
     }
@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
       logout(){
         this.dataService.deleteToken();
         window.location.replace(origin + '/login');
-        console.log("loggedOff");
+        // console.log("loggedOff");
       }
 
   ngOnInit(): void {
