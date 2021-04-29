@@ -6,11 +6,12 @@ if(isset($postdata) && !empty($postdata)){
 
     $name = trim($request->name);
     $lastname = trim($request->lastname);
-    $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
+    // $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
+    $pwd = mysqli_real_escape_string($mysqli, trim($request->pwd));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = $request->contactno;
 
-    
+
 
     $sql = "INSERT INTO users(name,lastname,password,email,contactno)
                              VALUES ('$name','$lastname','$pwd','$email','$contactno')";
