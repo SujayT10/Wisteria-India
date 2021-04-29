@@ -9,6 +9,12 @@
   $db_username = 'root';
   $db_password = '';
   $db_name = 'wisteriaindia';
+
+  // $db_host = 'localhost';
+  // $db_username = 'u422115588_root';
+  // $db_password = 'WisteriaIndia@10';
+  // $db_name = 'u422115588_wisteriaindia';
+
   $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
 
   if ($mysqli->connect_error) {

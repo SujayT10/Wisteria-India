@@ -10,6 +10,7 @@ providedIn: 'root'
 export class ApiService {
 redirectUrl: any;
 baseUrl:string = "http://localhost/wisteria-india/php";
+// baseUrl:string = "https://wisteriaindia.com/php";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }
@@ -30,7 +31,7 @@ constructor(private httpClient : HttpClient) { }
     .pipe(map(Users => {
     return Users;
     }));
-  }
+   }
 
 //token
   setToken(token: string) {

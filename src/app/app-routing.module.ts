@@ -32,16 +32,16 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
-{ path: 'login', component: LoginComponent, pathMatch: 'full' },
-{ path: 'home', component: HomeComponent, pathMatch: 'full' },
-{ path: 'aboutUs', component: HomeComponent, pathMatch: 'full' },
-{ path: 'registration', component: RegisterComponent, pathMatch: 'full' },
+{ path: 'login', component: LoginComponent },
+{ path: 'home', component: HomeComponent },
+{ path: 'aboutUs', component: HomeComponent },
+{ path: 'registration', component: RegisterComponent },
 
-{ path: 'privacy-policy', component: PrivacyPolicyComponent, pathMatch: 'full' },
-{ path: 'term-condition', component: TermAndConditionComponent, pathMatch: 'full' },
-{ path: 'interest-based-ads', component: InterestBasedAdsComponent, pathMatch: 'full' },
-{ path: 'conditions-of-use', component: ConditionsOfUseComponent, pathMatch: 'full' },
-{ path: 'cancellation-refund-policy', component: CancellationRefundPolicyComponent, pathMatch: 'full' },
+{ path: 'privacy-policy', component: PrivacyPolicyComponent },
+{ path: 'term-condition', component: TermAndConditionComponent },
+{ path: 'interest-based-ads', component: InterestBasedAdsComponent },
+{ path: 'conditions-of-use', component: ConditionsOfUseComponent, },
+{ path: 'cancellation-refund-policy', component: CancellationRefundPolicyComponent },
 
 { path: 'dashboard', component: DashboardComponent,canActivate: [AuthguardGuard] },
 
