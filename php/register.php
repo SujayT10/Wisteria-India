@@ -1,6 +1,6 @@
 <?php
 include_once("database.php");
-// $postdata = file_get_contents("php://input");
+$postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
 
@@ -9,6 +9,8 @@ if(isset($postdata) && !empty($postdata)){
     $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = $request->contactno;
+
+    
 
     $sql = "INSERT INTO users(name,lastname,password,email,contactno)
                              VALUES ('$name','$lastname','$pwd','$email','$contactno')";
@@ -24,6 +26,9 @@ if(isset($postdata) && !empty($postdata)){
                    ];
 
          echo json_encode($authdata);
+    }
+    else{
+
     }
 }
 
