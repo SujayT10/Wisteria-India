@@ -25,8 +25,8 @@ export class PartnerService {
     return this.httpClient.get<Partner[]>(this.baseUrl + '/recentPartners.php');
   }
 
-  public partnerRegistration(firstname: string, lastname: string, email: string, role:string, datetime: number,pwd: string, contactno: number) {
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/addPartner.php', { firstname, lastname, email, role, datetime, pwd, contactno })
+  public partnerRegistration(firstname: string, lastname: string, contactno: number, email: string, password: string, datetime: number, referalId: string,	address: string) {
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/addPartner.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
     .pipe(map(partner => {
     return partner;
     }));

@@ -18,8 +18,10 @@
             <h4 class="text-center">Add Partner</h4>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
+
+              <div class="row">
               <!-- First Name -->
-              <div class="form-group ">
+              <div class="form-group col-sm-4">
                 <!-- <label for="name">First Name</label> -->
                 <input type="text" name="firstname"
                        formControlName="firstname"
@@ -34,7 +36,7 @@
               </div>
 
               <!-- last name -->
-              <div class="form-group ">
+              <div class="form-group col-sm-4">
                 <!-- <label for="last name">Last Name</label> -->
                 <input type="text" name="lastname"
                        formControlName="lastname"
@@ -49,9 +51,52 @@
               </div>
 
 
+               <!-- Referal ID -->
+               <div class="form-group col-sm-4">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="referalId"
+                       formControlName="referalId"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Referal Id">
+                  <div *ngIf="referalId.touched && referalId.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="referalId.errors.required">Name is required.</small>
+                  </div>
+              </div>
 
+              </div>
+
+              <div class="row">
+                <!-- Date -->
+                <div class="form-group col-6">
+                  <!-- <label for="last name">Last Name</label> -->
+                  <input type="datetime-local" name="datetime"
+                        formControlName="datetime"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Date and Time">
+                        <div *ngIf="datetime.touched && datetime.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="datetime.errors.required">Lastname is required.</small>
+                        </div>
+                </div>
+
+                <!-- Address -->
+                <div class="form-group col-6">
+                  <!-- <label for="last name">Last Name</label> -->
+                  <input type="text" name="address"
+                         formControlName="address"
+                         autocomplete="off"
+                         class="form-control input-sm"
+                         placeholder="Address">
+                         <div *ngIf="address.touched && address.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="address.errors.required">Lastname is required.</small>
+                        </div>
+                </div>
+                </div>
+
+              <div class="row">
                 <!-- Email -->
-                <div class="form-group ">
+                <div class="form-group col-6">
                   <!-- <label for="email">Email</label> -->
                   <input type="email"
                         name="email"
@@ -65,36 +110,8 @@
                         </div>
                 </div>
 
-                <!-- Role -->
-              <div class="form-group ">
-                <!-- <label for="last name">Last Name</label> -->
-                <input type="text" name="Role"
-                       formControlName="role"
-                       autocomplete="off"
-                       class="form-control input-sm"
-                       placeholder="Role">
-                       <div *ngIf="role.touched && role.invalid" class="text-danger">
-                        <small class="alert alert-danger" *ngIf="role.errors.required">Role is required.</small>
-
-                      </div>
-              </div>
-
-              <!-- Date -->
-              <div class="form-group ">
-                <!-- <label for="last name">Last Name</label> -->
-                <input type="datetime-local" name="datetime"
-                       formControlName="datetime"
-                       autocomplete="off"
-                       class="form-control input-sm"
-                       placeholder="Date-Time">
-                       <div *ngIf="datetime.touched && datetime.invalid" class="text-danger">
-                        <small class="alert alert-danger" *ngIf="datetime.errors.required">Date and Time is required.</small>
-
-                      </div>
-              </div>
-
                 <!-- Contact Number -->
-                <div class="form-group ">
+                <div class="form-group col-6">
                   <!-- <label for="email">Contact Number</label> -->
                   <input type="text"
                         name="contactno"
@@ -107,9 +124,9 @@
                           <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Please, Enter 10 digit Mobile Number.</small>
                         </div>
                 </div>
+              </div>
 
-
-                <div class="row">
+              <div class="row">
                 <!--  Password -->
               <div class="form-group col-6">
                 <!-- <label for="name">Password</label> -->
@@ -126,7 +143,6 @@
 
               </div>
 
-
               <!-- Confirm Password -->
               <div class="form-group col-6">
               <!-- <label for="name">Confirm Password</label> -->
@@ -141,12 +157,31 @@
                         <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
                       </div>
               </div>
-
               </div>
 
-            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Add</button>
 
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
 
+            <!-- Register buttons -->
+        <div class="text-center" style="padding-top: 10px;">
+          <p>Do you have an account?  <a routerLink="/login"> Login Here</a></p>
+          <!--<p>or sign up with:</p>
+           <button type="button" class="btn btn-primary btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-floating mx-1">
+            <i class="fab fa-google"></i>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-floating mx-1">
+            <i class="fab fa-github"></i>
+          </button> -->
+        </div>
             </form>
           </div>
         </div>

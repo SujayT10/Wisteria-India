@@ -19,22 +19,22 @@
 
         <div class="row">
         <!-- First Name -->
-        <div class="form-group col-6">
+        <div class="form-group col-sm-4">
           <!-- <label for="name">First Name</label> -->
-          <input type="text" name="name"
-                 formControlName="name"
+          <input type="text" name="firstname"
+                 formControlName="firstname"
                  autocomplete="off"
                  class="form-control input-sm"
                  placeholder="First Name">
-            <div *ngIf="name.touched && name.invalid" class="text-danger" >
-              <small class="alert alert-danger" *ngIf="name.errors.required">Name is required.</small>
-              <small class="alert alert-danger" *ngIf="name.errors.minlength">Name should be minimum {{name.errors.minlength.requiredLength}} characters.</small>
-              <small class="alert alert-danger" *ngIf="name.errors.maxlength">Name should be maximum {{name.errors.maxlength.requiredLength}} characters.</small>
+            <div *ngIf="firstname.touched && firstname.invalid" class="text-danger" >
+              <small class="alert alert-danger" *ngIf="firstname.errors.required">Name is required.</small>
+              <small class="alert alert-danger" *ngIf="firstname.errors.minlength">Name should be minimum {{firstname.errors.minlength.requiredLength}} characters.</small>
+              <small class="alert alert-danger" *ngIf="firstname.errors.maxlength">Name should be maximum {{firstname.errors.maxlength.requiredLength}} characters.</small>
             </div>
         </div>
 
         <!-- last name -->
-        <div class="form-group col-6">
+        <div class="form-group col-sm-4">
           <!-- <label for="last name">Last Name</label> -->
           <input type="text" name="lastname"
                  formControlName="lastname"
@@ -47,7 +47,50 @@
                   <small class="alert alert-danger" *ngIf="lastname.errors.maxlength">Last Name should be maximum {{lastname.errors.maxlength.requiredLength}} characters.</small>
                 </div>
         </div>
+
+
+         <!-- Referal ID -->
+         <div class="form-group col-sm-4">
+          <!-- <label for="name">First Name</label> -->
+          <input type="text" name="referalId"
+                 formControlName="referalId"
+                 autocomplete="off"
+                 class="form-control input-sm"
+                 placeholder="Referal Id">
+            <div *ngIf="referalId.touched && referalId.invalid" class="text-danger" >
+              <small class="alert alert-danger" *ngIf="referalId.errors.required">Name is required.</small>
+            </div>
         </div>
+
+        </div>
+
+        <div class="row">
+          <!-- Date -->
+          <div class="form-group col-6">
+            <!-- <label for="last name">Last Name</label> -->
+            <input type="datetime-local" name="datetime"
+                  formControlName="datetime"
+                  autocomplete="off"
+                  class="form-control input-sm"
+                  placeholder="Date and Time">
+                  <div *ngIf="datetime.touched && datetime.invalid" class="text-danger">
+                    <small class="alert alert-danger" *ngIf="datetime.errors.required">Lastname is required.</small>
+                  </div>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group col-6">
+            <!-- <label for="last name">Last Name</label> -->
+            <input type="text" name="address"
+                   formControlName="address"
+                   autocomplete="off"
+                   class="form-control input-sm"
+                   placeholder="Address">
+                   <div *ngIf="address.touched && address.invalid" class="text-danger">
+                    <small class="alert alert-danger" *ngIf="address.errors.required">Lastname is required.</small>
+                  </div>
+          </div>
+          </div>
 
         <div class="row">
           <!-- Email -->
@@ -140,8 +183,8 @@
       </form>
     </div>
   </div>
-  <div class="col-md-3">
-  </div>
+  <!-- <div class="col-md-3">
+  </div> -->
 </div>
 </div>
 </div>

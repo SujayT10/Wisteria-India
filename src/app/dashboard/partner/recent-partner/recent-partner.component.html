@@ -49,7 +49,7 @@
                         <th>Contact Number</th>
                         <th>Email</th>
                         <!-- <th>Role</th> -->
-                        <th>Enroled</th>
+                        <th>Refered ID  </th>
                         <th>Edit</th>
                         <!-- <th>Delete</th> -->
                       </tr>
@@ -58,13 +58,13 @@
                       <tr *ngFor="let part of partner | paginate: { itemsPerPage: 5,
                                                                     currentPage: page,
                                                                     totalItems: totalLength }">
-                        <td> WI-0{{part.id}} </td>
+                        <td> {{part.partner_id}} </td>
                         <td> {{part.firstname}} </td>
                         <td> {{part.lastname}} </td>
                         <td> {{part.contactno}} </td>
                         <td> {{part.email}} </td>
                         <!-- <td> {{part.role}} </td> -->
-                        <td> {{part.datetime}} </td>
+                        <td> {{part.referalId}} </td>
                         <td> <button class="btn btn-success">Edit</button> </td>
                         <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
                       </tr>

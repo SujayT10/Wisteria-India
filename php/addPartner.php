@@ -6,25 +6,37 @@ if(isset($postdata) && !empty($postdata)){
 
     $firstname = trim($request->firstname);
     $lastname = trim($request->lastname);
-    $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
+    // $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
+    $password = mysqli_real_escape_string($mysqli, trim($request->password));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = trim($request->contactno);
-    $role = trim($request->role);
     $datetime = trim($request->datetime);
+    $referalId = trim($request->referalId);
+    $address = trim($request->address);
 
-    $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,role,datetime)
-                             VALUES ('$firstname','$lastname','$contactno','$email','$pwd', '$role', '$datetime')";
+    $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,address)
+                             VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId', '$address')";
+
+      $res = mysqli_query($mysqli, $sql);
+      $last_id = mysqli_insert_id($mysqli);
+
+      if($last_id){
+        $partner_id = "WIP-".$firstname.$last_id;
+        $sql1 = "UPDATE partners SET partner_id = '$partner_id' WHERE id = '$last_id' ";
+        $res1 = mysqli_query($mysqli, $sql1);
+      }
 
     if ($mysqli->query($sql) === TRUE) {
         $authdata = [
                     'firstname' => $firstname,
                     'lastname' => $lastname,
-                    'pwd' => '',
+                    'password' => '',
                     'email' => $email,
                     'contactno' => $contactno,
                     'Id' => mysqli_insert_id($mysqli),
-                    'role' => $role,
-                    'datetime' => $datetime
+                    'datetime' => $datetime,
+                    'referalId' => $referalId,
+                    'address'=> $address
                    ];
 
          echo json_encode($authdata);
