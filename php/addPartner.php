@@ -26,7 +26,7 @@ if(isset($postdata) && !empty($postdata)){
         $res1 = mysqli_query($mysqli, $sql1);
       }
 
-    if ($mysqli->query($sql) === TRUE) {
+    if ($mysqli->query($sql1) === TRUE) {
         $authdata = [
                     'firstname' => $firstname,
                     'lastname' => $lastname,

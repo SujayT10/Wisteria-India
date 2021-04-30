@@ -44,6 +44,7 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
 import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { CancellationRefundPolicyComponent } from './components/policy/cancellat
     InterestBasedAdsComponent,
     ConditionsOfUseComponent,
     CancellationRefundPolicyComponent,
+    AdminRegisterComponent,
 
   ],
   imports: [

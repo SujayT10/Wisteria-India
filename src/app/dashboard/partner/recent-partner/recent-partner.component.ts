@@ -18,7 +18,7 @@ export class RecentPartnerComponent implements OnInit {
   ngOnInit(): void {
     this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
       this.partner= data;
-      console.log(this.partner);
+      // console.log(this.partner);
       this.totalLength= data.length;
     });
   }

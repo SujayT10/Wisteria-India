@@ -1,3 +1,4 @@
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
 import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
 import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },
+{ path: 'admin-registration', component: AdminRegisterComponent },
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },
