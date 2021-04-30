@@ -40,12 +40,12 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  console.log("Hellooooo");
+                  // console.log("Hellooooo");
                   this.router.navigate(['/login']);
                   },
 
                   error => {
-                    console.log("error ala re...")
+                    console.log("Error from RegisterPage")
                   }
                 );
 
