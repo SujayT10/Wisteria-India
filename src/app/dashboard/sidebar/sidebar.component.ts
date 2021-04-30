@@ -31,7 +31,7 @@ export class SidebarComponent implements OnInit {
 
       logout(){
         this.dataService.deleteToken();
-        window.location.replace(origin + '/login');
+        window.location.replace(origin + '#/login');
         // console.log("loggedOff");
       }
 

@@ -11,25 +11,34 @@ if(isset($postdata) && !empty($postdata)){
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = $request->contactno;
 
-
-
     $sql = "INSERT INTO users(name,lastname,password,email,contactno)
                              VALUES ('$name','$lastname','$pwd','$email','$contactno')";
 
-    if ($mysqli->query($sql) === TRUE) {
+      $res = mysqli_query($mysqli, $sql);
+      $last_id = mysqli_insert_id($mysqli);
+
+      if($last_id){
+        $admin_id = "WIA-".$name."-".$last_id;
+        $sql1 = "UPDATE users SET admin_id = '$admin_id' WHERE id = '$last_id' ";
+        $res1 = mysqli_query($mysqli, $sql1);
+      }
+
+    if ($mysqli->query($sql1) === TRUE) {
         $authdata = [
                     'name' => $name,
                     'lastname' => $lastname,
                     'pwd' => '',
                     'email' => $email,
                     'contactno' => $contactno,
-                    'Id' => mysqli_insert_id($mysqli)
+                    'Id' => mysqli_insert_id($mysqli),
+                    'Admin_ID' => $admin_id
+
                    ];
 
          echo json_encode($authdata);
     }
     else{
-
+          http_response_code(404);
     }
 }
 
