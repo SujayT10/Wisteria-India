@@ -44,7 +44,8 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
 import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
     ConditionsOfUseComponent,
     CancellationRefundPolicyComponent,
     AdminRegisterComponent,
+    AdminLoginComponent,
 
   ],
   imports: [
@@ -97,7 +99,7 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

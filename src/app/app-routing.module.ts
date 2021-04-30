@@ -1,4 +1,5 @@
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
 import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/conditions-of-use.component';
 import { InterestBasedAdsComponent } from './components/policy/interest-based-ads/interest-based-ads.component';
@@ -34,6 +35,7 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
+{ path: 'admin-login', component: AdminLoginComponent },
 { path: 'home', component: HomeComponent },
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },

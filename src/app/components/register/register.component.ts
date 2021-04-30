@@ -14,6 +14,7 @@ import { PartnerService } from 'src/app/services/partner.service';
 
 export class RegisterComponent implements OnInit {
   angForm: FormGroup;
+  data="Registration"
 
   constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router) {
     this.angForm = this.fb.group({

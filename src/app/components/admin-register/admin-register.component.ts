@@ -4,8 +4,8 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 import { PartnerService } from 'src/app/services/partner.service';
-import { confirmedValidator } from '../confirmed.validator';
-import { ApiService } from '../services/api.service';
+import { confirmedValidator } from '../../confirmed.validator';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-admin-register',
