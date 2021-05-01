@@ -1,3 +1,7 @@
+import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
+import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
+import { FindPpartnerComponent } from './partner-dashboard/pPartner/find-ppartner/find-ppartner.component';
+import { ManagePpartnerComponent } from './partner-dashboard/pPartner/manage-ppartner/manage-ppartner.component';
 import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
@@ -71,6 +75,12 @@ const routes: Routes = [
 { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: 'partner-dashboard', component: PartnerDashboardComponent,canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/manage-member', component: ManagePpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/find-member', component: FindPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
+// { path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
+// { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 

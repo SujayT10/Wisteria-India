@@ -21,7 +21,7 @@
             <ul class="nav">
               <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/dashboard/partner/profile" >My Profile</a>
+                <!-- <a class="dropdown-item" routerLink="/dashboard/partner/profile" >My Profile</a> -->
 
                 <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/login" >logout</a>
               </li>
@@ -32,7 +32,7 @@
 
       <ul class="nav nav-primary">
         <li class="nav-item active">
-          <a routerLink="/dashboard" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+          <a routerLink="/partner-dashboard" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
             <i class="fas fa-home"></i>
             <p>Dashboard</p>
           </a>
@@ -50,23 +50,23 @@
           <div class="collapse" id="partner">
             <ul class="nav nav-collapse">
               <li>
-                <a routerLink="/dashboard/partner/manage-member">
+                <a routerLink="/partner-dashboard/partner/manage-member">
                   <span class="sub-item">View Partner</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/dashboard/partner/find-member">
+                <a routerLink="/partner-dashboard/partner/find-member">
                   <span class="sub-item">Find Partner</span>
                 </a>
               </li>
 
               <li>
-                <a routerLink="/dashboard/partner/recent-member">
+                <a routerLink="/partner-dashboard/partner/recent-member">
                   <span class="sub-item">Recent Partner</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/dashboard/partner/topup-member">
+                <a routerLink="/partner-dashboard/partner/topup-member">
                   <span class="sub-item">TopUp Partner</span>
                 </a>
               </li>
