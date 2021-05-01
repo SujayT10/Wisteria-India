@@ -46,6 +46,7 @@ import { ConditionsOfUseComponent } from './components/policy/conditions-of-use/
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { PsidebarComponent } from './partner-dashboard/psidebar/psidebar.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     CancellationRefundPolicyComponent,
     AdminRegisterComponent,
     AdminLoginComponent,
+    PsidebarComponent,
 
   ],
   imports: [

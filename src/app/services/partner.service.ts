@@ -1,17 +1,28 @@
 import { Partner } from '../classes/partner';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartnerService {
+  redirectUrl: any;
   baseUrl:string = "http://localhost/wisteria-india/php";
   // baseUrl:string = "https://wisteriaindia.com/php";
 
-
+  @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
+
+  public partnerlogin(username: string , password: string ) {
+    return this.httpClient.post<any>(this.baseUrl + '/partnerLogin.php', { username, password })
+    .pipe(map(Users => {
+        this.setToken(Users[0].name);
+        this.getLoggedInName.emit(true);
+        return Users;
+    }));
+
+  }
 
   getPartner(){
     return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
@@ -31,4 +42,22 @@ export class PartnerService {
     return partner;
     }));
   }
+
+  //token
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+    }
+    getToken() {
+    return localStorage.getItem('token');
+    }
+    deleteToken() {
+    localStorage.removeItem('token');
+    }
+    isLoggedIn() {
+    const usertoken = this.getToken();
+    if (usertoken != null) {
+    return true
+    }
+    return false;
+    }
 }

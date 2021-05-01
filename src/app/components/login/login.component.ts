@@ -3,6 +3,7 @@
   import { first } from 'rxjs/operators';
   import { Router } from '@angular/router';
   import { ApiService } from '../../services/api.service';
+import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
           selector: 'app-login',
@@ -13,7 +14,7 @@
 export class LoginComponent implements OnInit {
     angForm: FormGroup;
 
-    constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+    constructor(private fb: FormBuilder,private partnerService: PartnerService,private router:Router) {
         this.angForm = this.fb.group({
           email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
           password: ['', Validators.required]
@@ -25,11 +26,11 @@ export class LoginComponent implements OnInit {
 
     error = "User name or password is incorrect";
     postdata(angForm1: any){
-        this.dataService.userlogin(angForm1.value.email, angForm1.value.password)
+        this.partnerService.partnerlogin(angForm1.value.email, angForm1.value.password)
         .pipe(first())
         .subscribe(
                   data => {
-                    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
+                    const redirect = this.partnerService.redirectUrl ? this.partnerService.redirectUrl : '/partner-dashboard';
                     // sessionStorage.setItem('loggedUser', data.Username);
                     this.router.navigate([redirect]);
                   },

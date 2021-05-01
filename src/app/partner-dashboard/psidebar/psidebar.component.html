@@ -1,0 +1,129 @@
+<div class="sidebar sidebar-style-2">
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+
+
+      <div class="user">
+        <div class="avatar-sm float-left mr-2">
+          <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
+        </div>
+        <div class="info">
+          <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+            <span>
+              Partner
+              <span class="user-level">Admin</span>
+              <span class="caret"></span>
+            </span>
+          </a>
+          <div class="clearfix"></div>
+
+          <div class="collapse in" id="collapseExample">
+            <ul class="nav">
+              <li>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/dashboard/partner/profile" >My Profile</a>
+
+                <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/login" >logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav nav-primary">
+        <li class="nav-item active">
+          <a routerLink="/dashboard" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+            <i class="fas fa-home"></i>
+            <p>Dashboard</p>
+          </a>
+
+        </li>
+
+
+        <!-- Partner -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#partner">
+            <i class="fas fa-handshake"></i>
+            <p>Manage Partner</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="partner">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/dashboard/partner/manage-member">
+                  <span class="sub-item">View Partner</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/partner/find-member">
+                  <span class="sub-item">Find Partner</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/dashboard/partner/recent-member">
+                  <span class="sub-item">Recent Partner</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/partner/topup-member">
+                  <span class="sub-item">TopUp Partner</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Employee -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#employee">
+            <i class="fas fa-users"></i>
+            <p>Manage Employees</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="employee">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/dashboard/employee/manage-member">
+                  <span class="sub-item">View Employee</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/employee/find-member">
+                  <span class="sub-item">Find Employee</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/dashboard/employee/recent-member">
+                  <span class="sub-item">Recent Employee</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/employee/topup-member">
+                  <span class="sub-item">TopUp Employee</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a data-toggle="collapse" class="collapsed" aria-expanded="false">
+            <i class="fas fa-tree"></i>
+            <p>User Tree View</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a data-toggle="collapse" *ngIf="logoutbtn" (click)="logout()"
+                      routerLink="/login" class="collapsed" aria-expanded="false">
+            <i class="fas fa-sign-out-alt"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

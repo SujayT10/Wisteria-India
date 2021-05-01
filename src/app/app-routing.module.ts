@@ -1,3 +1,4 @@
+import { PartnerDashboardComponent } from './partner-dashboard/partner-dashboard.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { CancellationRefundPolicyComponent } from './components/policy/cancellation-refund-policy/cancellation-refund-policy.component';
@@ -69,6 +70,7 @@ const routes: Routes = [
 { path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
+{ path: 'partner-dashboard', component: PartnerDashboardComponent,canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 
