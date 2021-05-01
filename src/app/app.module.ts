@@ -48,6 +48,10 @@ import { AdminRegisterComponent } from './components/admin-register/admin-regist
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { PsidebarComponent } from './partner-dashboard/psidebar/psidebar.component';
 import { PnavbarComponent } from './partner-dashboard/pnavbar/pnavbar.component';
+import { ManagePpartnerComponent } from './partner-dashboard/pPartner/manage-ppartner/manage-ppartner.component';
+import { FindPpartnerComponent } from './partner-dashboard/pPartner/find-ppartner/find-ppartner.component';
+import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
+import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +93,10 @@ import { PnavbarComponent } from './partner-dashboard/pnavbar/pnavbar.component'
     AdminLoginComponent,
     PsidebarComponent,
     PnavbarComponent,
+    ManagePpartnerComponent,
+    FindPpartnerComponent,
+    RecentPpartnerComponent,
+    TopupPpartnerComponent,
 
   ],
   imports: [
