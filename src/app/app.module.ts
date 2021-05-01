@@ -47,6 +47,7 @@ import { CancellationRefundPolicyComponent } from './components/policy/cancellat
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { PsidebarComponent } from './partner-dashboard/psidebar/psidebar.component';
+import { PnavbarComponent } from './partner-dashboard/pnavbar/pnavbar.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { PsidebarComponent } from './partner-dashboard/psidebar/psidebar.compone
     AdminRegisterComponent,
     AdminLoginComponent,
     PsidebarComponent,
+    PnavbarComponent,
 
   ],
   imports: [
