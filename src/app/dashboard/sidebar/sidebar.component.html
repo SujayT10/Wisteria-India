@@ -23,7 +23,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" routerLink="/dashboard/partner/profile" >My Profile</a>
 
-                <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/login" >logout</a>
+                <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/admin-login" >logout</a>
               </li>
             </ul>
           </div>
@@ -117,7 +117,7 @@
 
         <li class="nav-item">
           <a data-toggle="collapse" *ngIf="logoutbtn" (click)="logout()"
-                      routerLink="/login" class="collapsed" aria-expanded="false">
+                      routerLink="/admin-login" class="collapsed" aria-expanded="false">
             <i class="fas fa-sign-out-alt"></i>
             <p>Logout</p>
           </a>
