@@ -51,7 +51,7 @@
                         <th>Last Name</th>
                         <th>Contact Number</th>
                         <th>Email</th>
-                        <th>Role</th>
+                        <th>Referal Id</th>
                         <!-- <th>Edit</th> -->
                         <!-- <th>Delete</th> -->
                       </tr>
@@ -60,7 +60,7 @@
                       <tr *ngFor="let part of partner | paginate: { itemsPerPage: 5,
                                                                     currentPage: page,
                                                                     totalItems: totalLength }">
-                        <td> WI-0{{part.id}} </td>
+                        <td> {{part.partner_id}} </td>
                         <td> {{part.firstname}} </td>
                         <td> {{part.lastname}} </td>
                         <td> {{part.contactno}} </td>
@@ -84,7 +84,7 @@
   <!-- End Main Container -->
 
  <!-- Footer -->
- <app-footer></app-footer>
+ <app-home-footer></app-home-footer>
 </div>
 </div>
  <!-- Footer End -->

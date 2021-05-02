@@ -18,7 +18,7 @@ if(isset($postdata) && !empty($postdata)){
       $last_id = mysqli_insert_id($mysqli);
 
       if($last_id){
-        $admin_id = "WIA-".$name."-".$last_id;
+        $admin_id = "WIA-".$name.$last_id;
         $sql1 = "UPDATE users SET admin_id = '$admin_id' WHERE id = '$last_id' ";
         $res1 = mysqli_query($mysqli, $sql1);
       }
