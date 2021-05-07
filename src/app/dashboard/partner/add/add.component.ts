@@ -47,6 +47,7 @@ export class AddComponent implements OnInit {
       .subscribe(
                   data => {
                   this.router.navigate(['/dashboard/partner/manage-member']);
+                  // alert("Added successfully");
                   },
 
                   error => {

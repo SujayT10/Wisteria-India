@@ -10,6 +10,7 @@ export class PsidebarComponent implements OnInit {
 
   loginbtn:boolean;
   logoutbtn:boolean;
+  partner_id: string;
 
   constructor(private partnerService: PartnerService) {
     partnerService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -36,7 +37,7 @@ export class PsidebarComponent implements OnInit {
       }
 
   ngOnInit(): void {
-
+    this.partner_id = this.partnerService.getToken();
   }
 
 }

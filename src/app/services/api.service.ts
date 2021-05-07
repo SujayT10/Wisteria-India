@@ -32,6 +32,10 @@ constructor(private httpClient : HttpClient) { }
     }));
    }
 
+   getPartner(){
+    return this.httpClient.get<Users[]>(this.baseUrl + '/getAdmin.php');
+  }
+
 //token
   setToken(token: string) {
   localStorage.setItem('token', token);
