@@ -18,7 +18,7 @@ constructor(private httpClient : HttpClient) { }
   public userlogin(username: string , password: string ) {
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
     .pipe(map(Users => {
-        this.setToken(Users[0].name);
+        this.setToken(Users[0].admin_id);
         this.getLoggedInName.emit(true);
         return Users;
     }));
