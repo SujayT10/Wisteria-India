@@ -10,7 +10,7 @@ export class SidebarComponent implements OnInit {
 
   loginbtn:boolean;
   logoutbtn:boolean;
-  username: string;
+  admin_id: string;
 
   constructor(private dataService: ApiService) {
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
       }
 
   ngOnInit(): void {
-     this.username = this.dataService.getToken();
+    this.admin_id = this.dataService.getToken();
   }
 
 }

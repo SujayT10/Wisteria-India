@@ -38,6 +38,7 @@ export class PsidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.partner_id = this.partnerService.getToken();
+
   }
 
 }
