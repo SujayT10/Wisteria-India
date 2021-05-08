@@ -15,17 +15,19 @@ export class DashboardComponent implements OnInit {
   totalLength: any;
   page: number = 1;
   userDisplayName: any;
+  admin_id:string;
 
-  constructor(private partnerService: PartnerService) { }
+  constructor(private partnerService: PartnerService, private dataservice: ApiService) { }
 
   ngOnInit(): void {
     this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
       this.partner= data;
       // console.log(this.partner);
       this.totalLength= data.length;
-      this.userDisplayName = sessionStorage.getItem('loggedUser');
-      // console.log("Partners Data");
+
     });
+
+    this.admin_id = this.dataservice.getToken();
   }
 
 

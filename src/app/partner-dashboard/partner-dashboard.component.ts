@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
+import { PartnerService } from '../services/partner.service';
 
 @Component({
   selector: 'app-partner-dashboard',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartnerDashboardComponent implements OnInit {
 
-  constructor() { }
+  partner_id : string;
+
+  constructor(private partnerService: PartnerService) { }
 
   ngOnInit(): void {
+    this.partner_id  = this.partnerService.getToken();
   }
 
 }

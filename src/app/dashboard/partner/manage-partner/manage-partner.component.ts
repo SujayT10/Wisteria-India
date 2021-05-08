@@ -1,6 +1,7 @@
 import { PartnerService } from '../../../services/partner.service';
 import { Component, OnInit } from '@angular/core';
 import { Partner } from 'src/app/classes/partner';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-manage-partner',
@@ -12,8 +13,9 @@ export class ManagePartnerComponent implements OnInit {
   partner: Partner[];
   totalLength: any;
   page: number = 1;
+  admin_id: string;
 
-  constructor(private partnerService: PartnerService) { }
+  constructor(private partnerService: PartnerService, private dataservice: ApiService) { }
 
   ngOnInit(): void {
     this.partnerService.getPartner().subscribe((data: Partner[]) =>{
@@ -23,6 +25,8 @@ export class ManagePartnerComponent implements OnInit {
 
       // console.log("Partners Data");
     });
+
+    this.admin_id = this.dataservice.getToken();
   }
 
   delete(partner: Partner): void{
