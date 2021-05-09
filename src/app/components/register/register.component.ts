@@ -69,6 +69,6 @@ export class RegisterComponent implements OnInit {
   get contactno() { return this.angForm.get('contactno'); }
   get referalId() { return this.angForm.get('referalId'); }
   get address() { return this.angForm.get('address'); }
-  get datetime() { return this.angForm.get('address'); }
+  get datetime() { return this.angForm.get('datetime'); }
 
 }
