@@ -28,7 +28,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <div class="card-title fw-mediumbold">New Partners</div>
+                <div class="card-title fw-mediumbold">Mission Partner</div>
                 <div class="card-list">
                   <div class="item-list" *ngFor="let part of partner | paginate: { itemsPerPage: 6,
                                                                         currentPage: page,
@@ -37,9 +37,9 @@
                       <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
                     </div>
                     <div class="info-user ml-3">
-                      <div class="username">{{ part.firstname }} {{ part.lastname }}</div>
+                      <div class="username"><h6><b>{{ part.firstname }} {{ part.lastname }}</b></h6></div>
                       <!-- <div class="status">{{part.contactno}}</div> -->
-                      <div class="status">{{part.referalId}}</div>
+                      <div class="status"><h6>{{part.referalId}}</h6></div>
                     </div>
                   </div>
 
@@ -52,7 +52,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <div class="card-title fw-mediumbold">New Employees</div>
+                <div class="card-title fw-mediumbold">Earning</div>
                 <!-- <div class="card-list">
                   <div class="item-list">
                     <div class="avatar">
@@ -117,7 +117,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
-                <div class="card-title fw-mediumbold">New Customers</div>
+                <div class="card-title fw-mediumbold">My Account</div>
                 <!-- <div class="card-list">
                   <div class="item-list">
                     <div class="avatar">

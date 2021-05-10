@@ -6,6 +6,7 @@ import { ApiService } from '../../services/api.service';
 import { confirmedValidator } from '../../confirmed.validator';
 import { PartnerService } from 'src/app/services/partner.service';
 
+
 @Component({
           selector: 'app-register',
           templateUrl: './register.component.html',
