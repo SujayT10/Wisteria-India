@@ -4,19 +4,19 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
-import { ApiService } from 'src/app/services/api.service';
 
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  selector: 'app-p-add',
+  templateUrl: './p-add.component.html',
+  styleUrls: ['./p-add.component.css']
 })
-export class AddComponent implements OnInit {
-  angForm: FormGroup;
-  admin_id: string;
+export class PAddComponent implements OnInit {
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private dataservice: ApiService) {
+  angForm: FormGroup;
+  partner_id:string;
+
+  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -33,7 +33,7 @@ export class AddComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.admin_id = this.dataservice.getToken();
+    this.partner_id = this.partnerService.getToken();
   }
 
   postdata(angForm1: any){
@@ -49,8 +49,8 @@ export class AddComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  this.router.navigate(['/dashboard/partner/manage-member']);
-                  alert("Partner Added successfully");
+                  this.router.navigate(['/partner-dashboard/partner/manage-member']);
+                  alert("Added successfully");
                   },
 
                   error => {

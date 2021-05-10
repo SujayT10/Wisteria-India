@@ -1,3 +1,4 @@
+import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
 import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
 import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
 import { FindPpartnerComponent } from './partner-dashboard/pPartner/find-ppartner/find-ppartner.component';
@@ -79,7 +80,7 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/find-member', component: FindPpartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
-// { path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/add', component: PAddComponent, canActivate: [AuthguardGuard] },
 // { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },

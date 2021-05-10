@@ -14,6 +14,12 @@ if(isset($postdata) && !empty($postdata)){
     $referalId = trim($request->referalId);
     $address = trim($request->address);
 
+    // Mail part
+    $to = "sujaytank16595@gmail.com";
+    $subject = "Response from website";
+    $message = "I am Wisteria India";
+    $headers ="From: sujaytank@gmail.com";
+
     $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,address)
                              VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId', '$address')";
 
@@ -38,9 +44,12 @@ if(isset($postdata) && !empty($postdata)){
                     'referalId' => $referalId,
                     'address'=> $address
                    ];
-
          echo json_encode($authdata);
+
     }
+    // if(mail($to,$subject,$message,$headers)){
+    //   echo "Mail send Successfully";
+    // }
     else{
       http_response_code(404);
     }

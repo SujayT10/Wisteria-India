@@ -1,3 +1,4 @@
+
 <!-- Navbar Header -->
 <app-navbar></app-navbar>
 <!-- End Navbar -->
@@ -10,10 +11,10 @@
     <div class="content">
       <div class="page-inner">
         <div class="page-header">
-          <h4 class="page-title">Partners</h4>
+          <h4 class="page-title">Members</h4>
           <ul class="breadcrumbs">
             <li class="nav-home">
-              <a routerLink="/dashboard">
+              <a routerLink="/partner-dashboard">
                 <i class="flaticon-home"></i>
               </a>
             </li>
@@ -21,31 +22,30 @@
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>Manage Partners</a>
+              <a>Manage Members</a>
             </li>
             <li class="separator">
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>View Partners</a>
+              <a>View Members</a>
             </li>
             <li class="separator">
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>View Partners</a>
+              <a>Add Members</a>
             </li>
           </ul>
         </div>
 
       <div class="row">
-
         <div class="col-md-3">
         </div>
         <div class="col-md-6 col-md-offset-3">
           <div class="jumbotron">
-            <div class="float-right"><h6>Referral ID: <b>{{admin_id}}</b></h6></div>
-            <h4 class="text-center">Add Partner</h4>
+            <div class="float-right"><h6>Referral ID: <b>{{partner_id}}</b></h6></div>
+            <h4 class="text-center">Add Member</h4>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
 
@@ -187,9 +187,9 @@
                         <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
                       </div>
               </div>
-              </div>
-
+            </div>
             <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
+
             </form>
           </div>
         </div>
@@ -197,7 +197,7 @@
         </div>
       </div>
 
-</div>
+    </div>
     <!-- End Main Container -->
  <!-- Footer -->
  <app-footer></app-footer>

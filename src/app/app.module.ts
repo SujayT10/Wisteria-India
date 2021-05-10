@@ -52,6 +52,7 @@ import { ManagePpartnerComponent } from './partner-dashboard/pPartner/manage-ppa
 import { FindPpartnerComponent } from './partner-dashboard/pPartner/find-ppartner/find-ppartner.component';
 import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
 import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
+import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppart
     FindPpartnerComponent,
     RecentPpartnerComponent,
     TopupPpartnerComponent,
+    PAddComponent,
 
   ],
   imports: [
