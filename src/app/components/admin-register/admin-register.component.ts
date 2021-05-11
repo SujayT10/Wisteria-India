@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-
+import { NotificationsService } from 'angular2-notifications';
 import { PartnerService } from 'src/app/services/partner.service';
 import { confirmedValidator } from '../../confirmed.validator';
 import { ApiService } from '../../services/api.service';
@@ -15,8 +15,14 @@ import { ApiService } from '../../services/api.service';
 export class AdminRegisterComponent implements OnInit {
   angForm: FormGroup;
   data = "Admin Registration";
+  public options:any = {
+    showProgressBar: false,
+    position: ["top", "right"],
+    timeOut: 2000,
+    animate: "fade",
+  };
 
-  constructor(private fb: FormBuilder,private apiService: ApiService, private router:Router) {
+  constructor(private fb: FormBuilder,private apiService: ApiService, private router:Router,private _service: NotificationsService) {
     this.angForm = this.fb.group({
 
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -45,7 +51,8 @@ export class AdminRegisterComponent implements OnInit {
       .subscribe(
                   data => {
                   // console.log("Hellooooo");
-                  this.router.navigate(['/login']);
+                  // this.router.navigate(['/login']);
+                  this.angForm.reset();
                   },
 
                   error => {
@@ -56,6 +63,10 @@ export class AdminRegisterComponent implements OnInit {
   }
 
   // onSubmit() { this.submitted = true; }
+
+  onSuccess(){
+    this._service.success('Successfully Registred');
+}
 
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }

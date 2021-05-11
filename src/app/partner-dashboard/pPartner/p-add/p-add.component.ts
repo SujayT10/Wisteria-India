@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
-
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-p-add',
@@ -15,8 +15,14 @@ export class PAddComponent implements OnInit {
 
   angForm: FormGroup;
   partner_id:string;
+  public options:any = {
+    showProgressBar: false,
+    position: ["bottom", "right"],
+    timeOut: 2000,
+    animate: "fade",
+  };
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router) {
+  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router,private _service: NotificationsService) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -50,7 +56,8 @@ export class PAddComponent implements OnInit {
       .subscribe(
                   data => {
                   this.router.navigate(['/partner-dashboard/partner/manage-member']);
-                  alert("Added successfully");
+                  alert("successfully added");
+                  // this.angForm.reset();
                   },
 
                   error => {
@@ -62,6 +69,9 @@ export class PAddComponent implements OnInit {
   }
 
   // onSubmit() { this.submitted = true; }
+  onSuccess(){
+    this._service.success('Successfully Registred');
+}
 
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }

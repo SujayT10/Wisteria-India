@@ -39,16 +39,13 @@ export class LoginComponent implements OnInit {
                   data => {
                     const redirect = this.partnerService.redirectUrl ? this.partnerService.redirectUrl : '/partner-dashboard';
                     this.router.navigate([redirect]);
-                  },
-                  error => {
-                    this.onError();
                   }
                   );
     }
 
     onError(){
       this._service.error('Error','Email, UserId or Password Not Match');
-  }
+   }
 
     get email() { return this.angForm.get('email'); }
     get userId() { return this.angForm.get('userId'); }

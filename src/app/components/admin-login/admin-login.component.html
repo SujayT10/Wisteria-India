@@ -60,7 +60,7 @@
                         </div>
                 </div>
 
-                <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Login</button>
+                <button type="submit" (click)="onError()" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Login</button>
                 <button type="button" routerLink="/login" class="btn btn-outline-primary btn-lg btn-block" >Partner Login</button>
                 <!-- Register buttons -->
             <div class="text-center" style="padding-top: 10px;">
@@ -91,6 +91,7 @@
 </div>
 </div>
 </div>
+<simple-notifications [options]="options"></simple-notifications>
 <app-home-footer></app-home-footer>
 
 

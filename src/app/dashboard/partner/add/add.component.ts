@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
 import { ApiService } from 'src/app/services/api.service';
-
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-add',
@@ -15,8 +15,14 @@ import { ApiService } from 'src/app/services/api.service';
 export class AddComponent implements OnInit {
   angForm: FormGroup;
   admin_id: string;
+  public options:any = {
+    showProgressBar: false,
+    position: ["bottom", "right"],
+    timeOut: 2000,
+    animate: "fade",
+  };
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private dataservice: ApiService) {
+  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private dataservice: ApiService,private _service: NotificationsService) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -49,8 +55,9 @@ export class AddComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  this.router.navigate(['/dashboard/partner/manage-member']);
-                  alert("Partner Added successfully");
+                  // this.router.navigate(['/dashboard/partner/manage-member']);
+                  // alert("Partner Added successfully");
+                  this.angForm.reset();
                   },
 
                   error => {
@@ -62,6 +69,9 @@ export class AddComponent implements OnInit {
   }
 
   // onSubmit() { this.submitted = true; }
+  onSuccess(){
+    this._service.success('Successfully Registred');
+}
 
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }

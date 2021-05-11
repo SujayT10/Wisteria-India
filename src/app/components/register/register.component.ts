@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     position: ["top", "right"],
     timeOut: 2000,
     animate: "fade",
-};
+  };
 
   constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private _service: NotificationsService) {
     this.angForm = this.fb.group({
@@ -58,7 +58,8 @@ export class RegisterComponent implements OnInit {
       .subscribe(
                   data => {
                   // this.onSuccess();
-                  this.router.navigate(['/login']);
+                  // this.router.navigate(['/login']);
+                  this.angForm.reset();
                   },
 
                   error => {
