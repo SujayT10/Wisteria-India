@@ -59,9 +59,9 @@
                        class="form-control input-sm"
                        placeholder="First Name">
                   <div *ngIf="firstname.touched && firstname.invalid" class="text-danger" >
-                    <small class="alert alert-danger" *ngIf="firstname.errors.required">Name is required.</small>
-                    <small class="alert alert-danger" *ngIf="firstname.errors.minlength">Name should be minimum {{firstname.errors.minlength.requiredLength}} characters.</small>
-                    <small class="alert alert-danger" *ngIf="firstname.errors.maxlength">Name should be maximum {{firstname.errors.maxlength.requiredLength}} characters.</small>
+                    <small class="alert alert-danger" *ngIf="firstname.errors.required">Required</small>
+                    <small class="alert alert-danger" *ngIf="firstname.errors.minlength">Minimum {{firstname.errors.minlength.requiredLength}} characters</small>
+                    <small class="alert alert-danger" *ngIf="firstname.errors.maxlength">Maximum {{firstname.errors.maxlength.requiredLength}} characters</small>
                   </div>
               </div>
 
@@ -74,9 +74,9 @@
                        class="form-control input-sm"
                        placeholder="Last Name">
                        <div *ngIf="lastname.touched && lastname.invalid" class="text-danger">
-                        <small class="alert alert-danger" *ngIf="lastname.errors.required">Lastname is required.</small>
-                        <small class="alert alert-danger" *ngIf="lastname.errors.minlength">Last Name should be minimum {{lastname.errors.minlength.requiredLength}} characters.</small>
-                        <small class="alert alert-danger" *ngIf="lastname.errors.maxlength">Last Name should be maximum {{lastname.errors.maxlength.requiredLength}} characters.</small>
+                        <small class="alert alert-danger" *ngIf="lastname.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="lastname.errors.minlength">Minimum {{lastname.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="lastname.errors.maxlength">Maximum {{lastname.errors.maxlength.requiredLength}} characters</small>
                       </div>
               </div>
 
@@ -90,7 +90,7 @@
                        class="form-control input-sm"
                        placeholder="Referal Id">
                   <div *ngIf="referalId.touched && referalId.invalid" class="text-danger" >
-                    <small class="alert alert-danger" *ngIf="referalId.errors.required">Name is required.</small>
+                    <small class="alert alert-danger" *ngIf="referalId.errors.required">Required</small>
                   </div>
               </div>
 
@@ -106,7 +106,7 @@
                         class="form-control input-sm"
                         placeholder="Date and Time">
                         <div *ngIf="datetime.touched && datetime.invalid" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="datetime.errors.required">Lastname is required.</small>
+                          <small class="alert alert-danger" *ngIf="datetime.errors.required">Required</small>
                         </div>
                 </div>
 
@@ -119,7 +119,7 @@
                          class="form-control input-sm"
                          placeholder="Address">
                          <div *ngIf="address.touched && address.invalid" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="address.errors.required">Lastname is required.</small>
+                          <small class="alert alert-danger" *ngIf="address.errors.required">Required</small>
                         </div>
                 </div>
                 </div>
@@ -135,8 +135,8 @@
                         class="form-control input-sm"
                         placeholder="Email">
                         <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Email is required</small>
-                          <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Please provide a valid email address</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Required</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Provide a valid email</small>
                         </div>
                 </div>
 
@@ -150,8 +150,8 @@
                         class="form-control input-sm"
                         placeholder="Contact Number">
                         <div *ngIf="contactno.touched && contactno.invalid" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="contactno.errors.required">Mobile Number is required.</small>
-                          <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Please, Enter 10 digit Mobile Number.</small>
+                          <small class="alert alert-danger" *ngIf="contactno.errors.required">Required</small>
+                          <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Enter 10 digit Mobile Number</small>
                         </div>
                 </div>
               </div>
@@ -167,8 +167,8 @@
                       class="form-control input-sm"
                       placeholder="Password">
                       <div *ngIf="password.touched && password.invalid" class="text-danger">
-                        <small class="alert alert-danger" *ngIf="password.errors.required">Password is required.</small>
-                        <small class="alert alert-danger" *ngIf="password.errors.minlength">Password should be minimum {{password.errors.minlength.requiredLength}} characters.</small>
+                        <small class="alert alert-danger" *ngIf="password.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="password.errors.minlength">Minimum {{password.errors.minlength.requiredLength}} characters</small>
                       </div>
 
               </div>
@@ -183,8 +183,8 @@
                       class="form-control input-sm"
                       placeholder="Confirm Password">
                       <div *ngIf="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
-                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.required">Password is required.</small>
-                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password must be match.</small>
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password not match</small>
                       </div>
               </div>
               </div>
