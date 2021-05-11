@@ -1,6 +1,13 @@
 <?php
 include_once("database.php");
 $postdata = file_get_contents("php://input");
+
+// Mail part
+$to = "sujaytank16595@gmail.com";
+$subject = "Response from website";
+$message = "I am Wisteria India";
+$headers ="From: sujaytank@gmail.com";
+
 if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
 
@@ -13,12 +20,6 @@ if(isset($postdata) && !empty($postdata)){
     $datetime = trim($request->datetime);
     $referalId = trim($request->referalId);
     $address = trim($request->address);
-
-    // Mail part
-    $to = "sujaytank16595@gmail.com";
-    $subject = "Response from website";
-    $message = "I am Wisteria India";
-    $headers ="From: sujaytank@gmail.com";
 
     $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,address)
                              VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId', '$address')";
@@ -45,14 +46,14 @@ if(isset($postdata) && !empty($postdata)){
                     'address'=> $address
                    ];
          echo json_encode($authdata);
-
     }
-    // if(mail($to,$subject,$message,$headers)){
-    //   echo "Mail send Successfully";
-    // }
+
     else{
       http_response_code(404);
     }
 }
+// if(mail($to,$subject,$message,$headers)){
+//   echo "Mail send Successfully";
+// }
 
 ?>

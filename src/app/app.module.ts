@@ -53,6 +53,8 @@ import { FindPpartnerComponent } from './partner-dashboard/pPartner/find-ppartne
 import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
 import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
 import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -107,7 +109,9 @@ import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.componen
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [{
     provide: LocationStrategy,

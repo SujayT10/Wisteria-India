@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { confirmedValidator } from '../../confirmed.validator';
 import { PartnerService } from 'src/app/services/partner.service';
+import { NotificationsService } from 'angular2-notifications';
+import { animation } from '@angular/animations';
 
 
 @Component({
@@ -15,9 +17,15 @@ import { PartnerService } from 'src/app/services/partner.service';
 
 export class RegisterComponent implements OnInit {
   angForm: FormGroup;
-  data="Registration"
+  data="Registration";
+  public options:any = {
+    showProgressBar: false,
+    position: ["top", "right"],
+    timeOut: 2000,
+    animate: "fade",
+};
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router) {
+  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private _service: NotificationsService) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -49,18 +57,22 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  // console.log("Hellooooo");
+                  // this.onSuccess();
                   this.router.navigate(['/login']);
                   },
 
                   error => {
-                    console.log("Error from RegisterPage")
+                    console.log("Error from Partner RegisterPage");
                   }
                 );
 
   }
 
   // onSubmit() { this.submitted = true; }
+
+  onSuccess(){
+      this._service.success('Successfully Registred');
+  }
 
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
