@@ -58,8 +58,9 @@ export class RegisterComponent implements OnInit {
       .subscribe(
                   data => {
                   // this.onSuccess();
-                  // this.router.navigate(['/login']);
-                  this.angForm.reset();
+                  console.log("success");
+                  this.router.navigate(['/login']);
+                  // this.angForm.reset();
                   },
 
                   error => {

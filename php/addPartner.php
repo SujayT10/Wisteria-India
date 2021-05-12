@@ -1,15 +1,12 @@
 <?php
 include_once("database.php");
+include_once("PHPMailerAutoload.php");
+
 $postdata = file_get_contents("php://input");
 
-// Mail part
-$to = "sujaytank16595@gmail.com";
-$subject = "Response from website";
-$message = "I am Wisteria India";
-$headers ="From: sujaytank@gmail.com";
 
 if(isset($postdata) && !empty($postdata)){
-    $request = json_decode($postdata);
+    // $request = json_decode($postdata);
 
     $firstname = trim($request->firstname);
     $lastname = trim($request->lastname);
@@ -20,6 +17,7 @@ if(isset($postdata) && !empty($postdata)){
     $datetime = trim($request->datetime);
     $referalId = trim($request->referalId);
     $address = trim($request->address);
+    $fullName = $firstname." ".$lastname;
 
     $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,address)
                              VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId', '$address')";
@@ -46,14 +44,46 @@ if(isset($postdata) && !empty($postdata)){
                     'address'=> $address
                    ];
          echo json_encode($authdata);
-    }
-
-    else{
+    } else{
       http_response_code(404);
-    }
+      }
+
+        // Mail part
+      $mail = new PHPMailer;
+
+      $mail->SMTPDebug = 4;                               // Enable verbose debug output
+
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'sujaytank16595@gmail.com';                 // SMTP username
+      $mail->Password = 'Google@mh27bh3242';                           // SMTP password
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP port to connect to
+
+      $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
+      $mail->addAddress('sujaytank@gmail.com');     // Add a recipient
+      // $mail->addAddress('anirudha.malpe@gmail.com');               // Name is optional
+      $mail->addReplyTo('sujaytank@gmail.com');
+      // $mail->addCC('cc@example.com');
+      // $mail->addBCC('bcc@example.com');
+
+      // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+      // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+      $mail->isHTML(true);                                  // Set email format to HTML
+
+      $mail->Subject = 'Get started with Wisteria India';
+      $mail->Body    = 'Name: <b>'.$firstname.'</b><br> User ID: <b>'.$partner_id.'</b><br>';
+
+      $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+      if(!$mail->send()) {
+          echo 'Message could not be sent.';
+          echo 'Mailer Error: ' . $mail->ErrorInfo;
+      } else {
+          echo 'Message has been sent';
+      }
+
 }
-// if(mail($to,$subject,$message,$headers)){
-//   echo "Mail send Successfully";
-// }
 
 ?>
