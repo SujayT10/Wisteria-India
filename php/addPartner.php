@@ -4,9 +4,8 @@ include_once("PHPMailerAutoload.php");
 
 $postdata = file_get_contents("php://input");
 
-
 if(isset($postdata) && !empty($postdata)){
-    // $request = json_decode($postdata);
+    $request = json_decode($postdata);
 
     $firstname = trim($request->firstname);
     $lastname = trim($request->lastname);
@@ -63,7 +62,7 @@ if(isset($postdata) && !empty($postdata)){
 
       $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
       $mail->addAddress('sujaytank@gmail.com');     // Add a recipient
-      // $mail->addAddress('anirudha.malpe@gmail.com');               // Name is optional
+      $mail->addAddress('radhikanew1@gmail.com');               // Name is optional
       $mail->addReplyTo('sujaytank@gmail.com');
       // $mail->addCC('cc@example.com');
       // $mail->addBCC('bcc@example.com');
@@ -73,7 +72,20 @@ if(isset($postdata) && !empty($postdata)){
       $mail->isHTML(true);                                  // Set email format to HTML
 
       $mail->Subject = 'Get started with Wisteria India';
-      $mail->Body    = 'Name: <b>'.$firstname.'</b><br> User ID: <b>'.$partner_id.'</b><br>';
+      $mail->Body    = '<div style="width: 30%;
+                                    border: 1px solid;
+                                    padding: 20px;
+                                    text-align: center;
+                                    margin-left: 25%;
+                                    border-radius: 10%;
+                                    background-color: gainsboro;
+                                    font-family: inter;">
+                                    <h1>Wisteria India</h1>
+                          <h3>Name: '. $fullName .'</h3>
+                          <h3>Email ID: '. $email .'</h3>
+                          <h3>User ID: '. $partner_id .'</h3>
+                          <h3>Password: '. $password .'</h3>
+                        </div>' ;
 
       $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
