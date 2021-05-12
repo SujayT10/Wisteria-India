@@ -1,9 +1,9 @@
 
 <!-- Navbar Header -->
-<app-navbar></app-navbar>
+<app-pnavbar></app-pnavbar>
 <!-- End Navbar -->
  <!-- Sidebar -->
- <app-sidebar></app-sidebar>
+ <app-psidebar></app-psidebar>
  <!-- End Sidebar -->
 
    <!-- Main Container -->
@@ -188,7 +188,7 @@
                       </div>
               </div>
             </div>
-            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
+            <button type="submit" (click)="onSuccess()" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
 
             </form>
           </div>
@@ -200,7 +200,7 @@
     </div>
     <!-- End Main Container -->
  <!-- Footer -->
- <!-- <simple-notifications [options]="options"></simple-notifications> -->
+ <simple-notifications [options]="options"></simple-notifications>
  <app-footer></app-footer>
  </div>
  </div>

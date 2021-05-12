@@ -55,24 +55,17 @@ export class PAddComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  this.router.navigate(['/partner-dashboard/partner/manage-member']);
-                  alert("successfully added");
-                  // this.angForm.reset();
+                  this.angForm.reset();
                   },
-
                   error => {
-                    // console.log(angForm1.value);
                     console.log("Error from  Add-Partner")
                   }
                 );
 
   }
 
-  // onSubmit() { this.submitted = true; }
-  onSuccess(){
-    this._service.success('Successfully Registred');
-}
-
+  onSuccess(){ this._service.success('Successfully Registred'); }
+  
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }
   get confirmpassword() { return this.angForm.get('confirmpassword'); }
