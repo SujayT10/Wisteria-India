@@ -17,7 +17,7 @@ import { animation } from '@angular/animations';
 
 export class RegisterComponent implements OnInit {
   angForm: FormGroup;
-  data="Registration";
+  data="Partner Registration";
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],
