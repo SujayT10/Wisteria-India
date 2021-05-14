@@ -39,6 +39,9 @@ export class LoginComponent implements OnInit {
                   data => {
                     const redirect = this.partnerService.redirectUrl ? this.partnerService.redirectUrl : '/partner-dashboard';
                     this.router.navigate([redirect]);
+                  },
+                  error => {
+                    this.onError();
                   }
                   );
     }

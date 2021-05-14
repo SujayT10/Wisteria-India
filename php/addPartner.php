@@ -49,7 +49,7 @@ if(isset($postdata) && !empty($postdata)){
         $mail->SMTPDebug = 4;                               // Enable verbose debug output
 
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.in';                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';                                      // Set mailer to use SMTP
         // $mail->Host = 'smtp.hostinger.in ';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;
 
@@ -70,7 +70,7 @@ if(isset($postdata) && !empty($postdata)){
         // $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
         // $mail->addReplyTo('info@wisteriaindia.com');
 
-        $mail->addAddress($email);     // Add a recipient
+        $mail->addAddress($email);        // Add a recipient
         // $mail->addAddress('');               // Name is optional
 
         // $mail->addCC('cc@example.com');

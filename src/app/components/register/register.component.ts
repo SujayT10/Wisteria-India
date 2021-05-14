@@ -60,11 +60,13 @@ export class RegisterComponent implements OnInit {
                   // this.onSuccess();
                   console.log("success");
                   // this.router.navigate(['/login']);
-                  this.angForm.reset();
+                  // this.angForm.reset();
                   },
 
                   error => {
+                    this.onSuccess();
                     console.log("Error from Partner RegisterPage");
+                    this.angForm.reset();
                   }
                 );
 

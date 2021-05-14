@@ -38,8 +38,10 @@ export class AdminLoginComponent implements OnInit {
       .subscribe(
                 data => {
                   const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-                  // sessionStorage.setItem('loggedUser', data.Username);
                   this.router.navigate([redirect]);
+                },
+                error =>{
+                  this.onError();
                 });
   }
 
