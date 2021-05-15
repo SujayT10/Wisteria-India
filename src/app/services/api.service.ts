@@ -36,6 +36,10 @@ constructor(private httpClient : HttpClient) { }
     return this.httpClient.get<Users[]>(this.baseUrl + '/getAdmin.php');
   }
 
+  public activeUser(admin_id: string){
+    return this.httpClient.post<Users[]>(this.baseUrl + '/activeUserById.php', { admin_id });
+  }
+
 //token
   setToken(token: string) {
   localStorage.setItem('token', token);
