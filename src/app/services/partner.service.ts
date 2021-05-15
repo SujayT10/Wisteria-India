@@ -8,8 +8,8 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 })
 export class PartnerService {
   redirectUrl: any;
-  baseUrl:string = "http://localhost/wisteria-india/php";
-  // baseUrl:string = "https://wisteriaindia.com/php";
+  baseUrl:string = "http://localhost/wisteria-india/php/partner";
+  // baseUrl:string = "https://wisteriaindia.com/php/partner";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }

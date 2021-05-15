@@ -9,8 +9,8 @@ providedIn: 'root'
 
 export class ApiService {
 redirectUrl: any;
-baseUrl:string = "http://localhost/wisteria-india/php";
-// baseUrl:string = "https://wisteriaindia.com/php";
+baseUrl:string = "http://localhost/wisteria-india/php/admin";
+// baseUrl:string = "https://wisteriaindia.com/php/admin";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }

@@ -1,6 +1,6 @@
 <?php
-include_once("database.php");
-include_once("PHPMailerAutoload.php");
+include_once("../database.php");
+include_once("../PHPMailerAutoload.php");
 
 $postdata = file_get_contents("php://input");
 
@@ -45,17 +45,16 @@ if(isset($postdata) && !empty($postdata)){
 
         // Mail part
         $mail = new PHPMailer;
-
-        $mail->SMTPDebug = 4;                               // Enable verbose debug output
-
+        $mail->SMTPDebug = 4;                     // Enable verbose debug output
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';                                      // Set mailer to use SMTP
-        // $mail->Host = 'smtp.hostinger.in ';  // Specify main and backup SMTP servers
+        $mail->Host = 'smtp.gmail.com';       // on Localhost
+        // $mail->Host = 'smtp.hostinger.in ';      // on server
         $mail->SMTPAuth = true;
 
         // On LocalHost
         $mail->Username = 'sujaytank16595@gmail.com';
         $mail->Password = 'Google@mh27bh3242';
+
         //On serve Data
         // $mail->Username = 'info@wisteriaindia.com';                // SMTP username
         // $mail->Password = 'WisteriaIndia@admin10';                // SMTP password
@@ -66,12 +65,13 @@ if(isset($postdata) && !empty($postdata)){
         // On LocalHost
         $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
         $mail->addReplyTo('sujaytank16595@gmail.com');
+
         //On serve Data
         // $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
         // $mail->addReplyTo('info@wisteriaindia.com');
 
-        $mail->addAddress($email);        // Add a recipient
-        // $mail->addAddress('');               // Name is optional
+        $mail->addAddress($email);
+        // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
 
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');

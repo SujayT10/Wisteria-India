@@ -1,5 +1,5 @@
 <?php
-include_once("database.php");
+include_once("../database.php");
 
 $id= file_get_contents("php://input");
 $sql = "DELETE FROM 'partners' WHERE 'id'='{$id}' LIMIT 1";

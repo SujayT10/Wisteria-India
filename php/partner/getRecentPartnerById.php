@@ -1,5 +1,5 @@
 <?php
-include_once("database.php");
+include_once("../database.php");
 $postdata = file_get_contents("php://input");
 
 if(isset($postdata) && !empty($postdata)){
@@ -8,7 +8,7 @@ if(isset($postdata) && !empty($postdata)){
   $partner_id = trim($request->partner_id);
     $partners = [];
 
-    $sql = "SELECT * FROM partners where referalId = '$partner_id' ";
+    $sql = "SELECT * FROM partners where referalId = '$partner_id' ORDER BY datetime DESC";
 
     if($result = mysqli_query($mysqli, $sql)){
       $request = json_decode($postdata);
