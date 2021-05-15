@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs/operators';
+import { Users } from 'src/app/classes/users';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class SidebarComponent implements OnInit {
   loginbtn:boolean;
   logoutbtn:boolean;
   admin_id: string;
+  activeUser: Users[];
 
   constructor(private dataService: ApiService) {
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -33,11 +36,20 @@ export class SidebarComponent implements OnInit {
       logout(){
         this.dataService.deleteToken();
         window.location.replace(origin + '#/admin-login');
-        // console.log("loggedOff");
       }
 
   ngOnInit(): void {
     this.admin_id = this.dataService.getToken();
+    this.activeId(this.admin_id);
+  }
+
+  public activeId(activeId: string){
+    this.dataService.activeUser(activeId)
+    .pipe(first())
+    .subscribe((data:Users[]) =>{
+      this.activeUser= data;
+      // console.log(this.activeUser);
+    })
   }
 
 }

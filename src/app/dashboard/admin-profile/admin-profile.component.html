@@ -25,7 +25,7 @@
                 <div class="col-md-6">
                     <div class="profile-head">
                                 <h5>
-                                    Admin
+                                    {{admin_id}}
                                 </h5>
                                 <h6>
                                     Admin
@@ -60,13 +60,14 @@
                 </div>
                 <div class="col-md-8">
                     <div class="tab-content profile-tab" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"
+                              *ngFor="let part of activeUser">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>User Id</label>
+                                            <label>Admin Id</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- <p>Kshiti123</p> -->
+                                            <p>{{ part.admin_id }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -74,7 +75,7 @@
                                             <label>Name</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- <p>Kshiti Ghelani</p> -->
+                                            <p>{{ part.name }} {{part.lastname }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -82,7 +83,7 @@
                                             <label>Email</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- <p>kshitighelani@gmail.com</p> -->
+                                            <p>{{ part.email }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -90,17 +91,17 @@
                                             <label>Phone</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- <p>123 456 7890</p> -->
+                                            <p>{{ part.contactno }}</p>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-md-6">
                                             <label>Profession</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- <p>Web Developer and Designer</p> -->
+                                            <p>Web Developer and Designer</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                         </div>
                         <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="row">

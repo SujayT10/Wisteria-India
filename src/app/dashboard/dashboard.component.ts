@@ -19,27 +19,24 @@ export class DashboardComponent implements OnInit {
   userDisplayName: any;
   admin_id:string;
 
-  constructor(private partnerService: PartnerService, private dataservice: ApiService) { }
+  constructor(private partnerService: PartnerService, private dataService: ApiService) { }
 
   ngOnInit(): void {
       this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
       this.partner= data;
       this.totalLength= data.length;
     });
-    this.admin_id = this.dataservice.getToken();
+    this.admin_id = this.dataService.getToken();
     this.activeId(this.admin_id);
   }
 
   public activeId(activeId: string){
-    this.dataservice.activeUser(activeId)
+    this.dataService.activeUser(activeId)
     .pipe(first())
     .subscribe((data:Users[]) =>{
       this.activeUser= data;
-      console.log(this.activeUser);
+      // console.log(this.activeUser);
     })
   }
-
-
-
-
+  
 }
