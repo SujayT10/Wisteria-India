@@ -34,6 +34,10 @@ export class PartnerService {
     return this.httpClient.post<Partner[]>(this.baseUrl + '/getRecentPartnerById.php',{ partner_id });
   }
 
+  public activePartner(partner_id: string){
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/activePartnerById.php', { partner_id });
+  }
+
   getPartner(){
     return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
   }
