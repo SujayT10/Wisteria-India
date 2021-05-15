@@ -9,7 +9,7 @@ if(isset($postdata) && !empty($postdata)){
 
     $firstname = trim($request->firstname);
     $lastname = trim($request->lastname);
-    // $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
+    // $password = sha1(mysqli_real_escape_string($mysqli, trim($request->pwd)));
     $password = mysqli_real_escape_string($mysqli, trim($request->password));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = trim($request->contactno);

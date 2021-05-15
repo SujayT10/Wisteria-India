@@ -21,10 +21,9 @@ export class PartnerService {
         this.getLoggedInName.emit(true);
         return Users;
     }));
-
   }
 
-  postDataToDB(partner_id: string){
+  public postDataToDB(partner_id: string){
     return this.httpClient.post<Partner[]>(this.baseUrl + '/getPartnerByID.php',{ partner_id })
       .pipe(map(partner => {
           return partner;
@@ -48,7 +47,7 @@ export class PartnerService {
   }
 
   public partnerRegistration(firstname: string, lastname: string, contactno: number, email: string, password: string, datetime: number, referalId: string,	address: string) {
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/addPartner.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/partnerRegister.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
     .pipe(map(partner => {
     return partner;
     }));
