@@ -20,11 +20,9 @@ export class DashboardComponent implements OnInit {
   constructor(private partnerService: PartnerService, private dataservice: ApiService) { }
 
   ngOnInit(): void {
-    this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
+      this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
       this.partner= data;
-      // console.log(this.partner);
       this.totalLength= data.length;
-
     });
     this.admin_id = this.dataservice.getToken();
   }

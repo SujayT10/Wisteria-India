@@ -24,7 +24,7 @@ export class PartnerDashboardComponent implements OnInit {
   }
 
   public postId(partner_id: any){
-    this.partnerService.postDataToDB(partner_id)
+    this.partnerService.recentPartnerBYID(partner_id)
         .pipe(first())
         .subscribe((data: Partner[]) =>{
           this.partner= data;
