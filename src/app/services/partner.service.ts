@@ -24,6 +24,13 @@ export class PartnerService {
 
   }
 
+  postDataToDB(partner_id: string){
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/getPartnerByID.php',{ partner_id })
+      .pipe(map(partner => {
+          return partner;
+       }));
+  }
+
   getPartner(){
     return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
   }

@@ -62,8 +62,6 @@ export class AdminRegisterComponent implements OnInit {
 
   }
 
-  // onSubmit() { this.submitted = true; }
-
   onSuccess(){
     this._service.success('Successfully Registred');
 }

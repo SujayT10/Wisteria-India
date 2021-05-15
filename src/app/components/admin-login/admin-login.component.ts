@@ -31,7 +31,6 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  error = "User name or password is incorrect";
   postdata(angForm1: any){
       this.dataService.userlogin(angForm1.value.email, angForm1.value.userId, angForm1.value.password)
       .pipe(first())

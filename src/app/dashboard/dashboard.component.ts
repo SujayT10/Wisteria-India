@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
       this.totalLength= data.length;
 
     });
-
     this.admin_id = this.dataservice.getToken();
   }
 
