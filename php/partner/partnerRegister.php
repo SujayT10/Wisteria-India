@@ -57,7 +57,7 @@ if(isset($postdata) && !empty($postdata)){
 
         //On serve Data
         // $mail->Username = 'info@wisteriaindia.com';                // SMTP username
-        // $mail->Password = 'WisteriaIndia@admin10';                // SMTP password
+        // $mail->Password = 'WisteriaIndia@admin16';                // SMTP password
 
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
