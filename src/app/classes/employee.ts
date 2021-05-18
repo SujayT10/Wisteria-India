@@ -1,13 +1,12 @@
-export class Partner {
+export class Employee{
   public id: number;
   public firstname: string;
   public lastname: string;
   public contactno: string;
   public email: string;
   public datetime: string;
-  public referalId: string;
   public address: string;
-  public partner_id: string;
+  public emp_Id: string;
 
 
   constructor(id: number,
@@ -16,17 +15,15 @@ export class Partner {
               contactno: string,
               email: string,
               datetime: string,
-              referalId: string,
               address: string,
-              partner_id:string){
+              emp_Id:string){
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
     this.contactno = contactno;
     this.email = email;
     this.datetime = datetime;
-    this.referalId = referalId;
     this.address = address;
-    this.partner_id = partner_id;
+    this.emp_Id = emp_Id;
   }
 }

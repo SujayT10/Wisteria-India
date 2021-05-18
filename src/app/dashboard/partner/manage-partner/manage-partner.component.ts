@@ -22,7 +22,6 @@ export class ManagePartnerComponent implements OnInit {
       this.partner= data;
       // console.log(this.partner);
       this.totalLength= data.length;
-
       // console.log("Partners Data");
     });
     this.admin_id = this.dataservice.getToken();

@@ -55,6 +55,8 @@ import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppart
 import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmpNavbarComponent } from './employee-dashboard/emp-navbar/emp-navbar.component';
+import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +103,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RecentPpartnerComponent,
     TopupPpartnerComponent,
     PAddComponent,
+    EmpNavbarComponent,
+    EmpSidebarComponent,
 
   ],
   imports: [

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/classes/employee';
+import { Partner } from 'src/app/classes/partner';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-manage-employee',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageEmployeeComponent implements OnInit {
 
-  constructor() { }
+  employee: Employee[];
+  totalLength: any;
+  page: number = 1;
+
+  constructor(private _empService: EmployeeService) { }
 
   ngOnInit(): void {
+    this._empService.getEmp().subscribe((data: Employee[]) =>{
+    this.employee = data;
+    this.totalLength= data.length;
+  });
+
   }
 
 }
