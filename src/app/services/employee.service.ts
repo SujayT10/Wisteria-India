@@ -36,6 +36,10 @@ export class EmployeeService {
       return this.httpClient.get<Employee[]>(this.baseUrl + '/getEmp.php');
     }
 
+    recentEmployee(){
+      return this.httpClient.get<Employee[]>(this.baseUrl + '/recentEmployee.php');
+    }
+
     public activeUser(admin_id: string){
       return this.httpClient.post<Users[]>(this.baseUrl + '/activeUserById.php', { admin_id });
     }
