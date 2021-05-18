@@ -57,6 +57,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmpNavbarComponent } from './employee-dashboard/emp-navbar/emp-navbar.component';
 import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sidebar.component';
+import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -105,6 +106,7 @@ import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sideba
     PAddComponent,
     EmpNavbarComponent,
     EmpSidebarComponent,
+    AddEmployeeComponent,
 
   ],
   imports: [

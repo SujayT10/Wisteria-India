@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { PartnerService } from '../services/partner.service';
 import { Partner } from '../classes/partner';
 import { first } from 'rxjs/operators';
+import { EmployeeService } from '../services/employee.service';
+import { Employee } from '../classes/employee';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,21 +15,30 @@ import { first } from 'rxjs/operators';
 export class DashboardComponent implements OnInit {
 
   partner: Partner[];
+  employee: Employee[];
   activeUser: Users[];
   totalLength: any;
   page: number = 1;
+  totalEmpLength: any;
   userDisplayName: any;
   admin_id:string;
 
-  constructor(private partnerService: PartnerService, private dataService: ApiService) { }
+  constructor(private partnerService: PartnerService, private dataService: ApiService, private _empService: EmployeeService) { }
 
   ngOnInit(): void {
-      this.partnerService.recentPartner().subscribe((data: Partner[]) =>{
-      this.partner= data;
-      this.totalLength= data.length;
+      this.partnerService.recentPartner().subscribe((partner: Partner[]) =>{
+      this.partner= partner;
+      this.totalLength= partner.length;
     });
+
+    this._empService.recentEmployee().subscribe((emp: Employee[]) =>{
+      this.employee= emp;
+      this.totalEmpLength= emp.length;
+    });
+
     this.admin_id = this.dataService.getToken();
     this.activeId(this.admin_id);
+
   }
 
   public activeId(activeId: string){
@@ -38,5 +49,5 @@ export class DashboardComponent implements OnInit {
       // console.log(this.activeUser);
     })
   }
-  
+
 }

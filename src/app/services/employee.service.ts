@@ -10,7 +10,7 @@ import { Users } from '../classes/users';
 export class EmployeeService {
   redirectUrl: any;
   baseUrl:string = "http://localhost/wisteria-india/php/employee";
-  // baseUrl:string = "https://wisteriaindia.com/php/admin";
+  // baseUrl:string = "https://wisteriaindia.com/php/employee";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
@@ -25,10 +25,16 @@ export class EmployeeService {
 
     }
 
-    public userregistration(name: string, lastname: string, email: string,contactno: number, pwd: string, ) {
-      return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, lastname, email, pwd, contactno })
-      .pipe(map(Users => {
-      return Users;
+    public employeeRegistration(firstname: string,
+                                lastname: string,
+                                contactno: number,
+                                email: string,
+                                password: string,
+                                datetime: number,
+                                address: string ) {
+      return this.httpClient.post<any>(this.baseUrl + '/employeeRegister.php', { firstname, lastname, contactno, email, password, datetime, address })
+      .pipe(map(Employee => {
+      return Employee;
       }));
      }
 

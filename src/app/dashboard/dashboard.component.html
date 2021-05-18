@@ -51,62 +51,21 @@
             <div class="card">
               <div class="card-body">
                 <div class="card-title fw-mediumbold">Employee</div>
-                <!-- <div class="card-list">
-                  <div class="item-list">
+                <div class="card-list">
+
+                  <div class="item-list" *ngFor="let emp of employee | paginate: { itemsPerPage: 6,
+                                                                        currentPage: page,
+                                                                        totalItems: totalEmpLength }">
                     <div class="avatar">
-                      <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                      <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
                     </div>
                     <div class="info-user ml-3">
-                      <div class="username">Jimmy Denis</div>
-                      <div class="status">Graphic Designer</div>
+                      <div class="username"><h6><b>{{ emp.firstname }} {{ emp.lastname }}</b></h6></div>
+                      <div class="status"><h6>{{emp.emp_Id}}</h6></div>
                     </div>
                   </div>
-                  <div class="item-list">
-                    <div class="avatar">
-                      <img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <div class="info-user ml-3">
-                      <div class="username">Chad</div>
-                      <div class="status">CEO Zeleaf</div>
-                    </div>
-                  </div>
-                  <div class="item-list">
-                    <div class="avatar">
-                      <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <div class="info-user ml-3">
-                      <div class="username">Talha</div>
-                      <div class="status">Front End Designer</div>
-                    </div>
-                  </div>
-                  <div class="item-list">
-                    <div class="avatar">
-                      <img src="../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <div class="info-user ml-3">
-                      <div class="username">John Doe</div>
-                      <div class="status">Back End Developer</div>
-                    </div>
-                  </div>
-                  <div class="item-list">
-                    <div class="avatar">
-                      <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <div class="info-user ml-3">
-                      <div class="username">Talha</div>
-                      <div class="status">Front End Designer</div>
-                    </div>
-                  </div>
-                  <div class="item-list">
-                    <div class="avatar">
-                      <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
-                    </div>
-                    <div class="info-user ml-3">
-                      <div class="username">Jimmy Denis</div>
-                      <div class="status">Graphic Designer</div>
-                    </div>
-                  </div>
-                </div> -->
+
+                </div>
               </div>
             </div>
           </div>

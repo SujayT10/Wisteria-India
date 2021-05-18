@@ -37,6 +37,7 @@ import { AdminProfileComponent } from './dashboard/admin-profile/admin-profile.c
 import { AddComponent } from './dashboard/partner/add/add.component';
 import { PrivacyPolicyComponent } from './components/policy/privacy-policy/privacy-policy.component';
 import { TermAndConditionComponent } from './components/policy/term-and-condition/term-and-condition.component';
+import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -66,6 +67,7 @@ const routes: Routes = [
 { path: 'dashboard/employee/black-listed', component: BlackedListedEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/recent-member', component: RecentEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/topup-member', component: TopupEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/add', component: AddEmployeeComponent, canActivate: [AuthguardGuard] },
 
 { path: 'dashboard/partner/manage-member', component: ManagePartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/find-member', component: FindPartnerComponent, canActivate: [AuthguardGuard] },
