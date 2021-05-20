@@ -1,4 +1,4 @@
-<div class="wrapper" style="background: url(../assets/img/bg-abstract2.png);">
+<div class="wrapper" style="background: url(../assets/img/bg-abstract2.png); background-size: cover; height: 100%;">
   <div class="container-fluid">
   <div class="row" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
     <div class="col-md-4 ml-auto mr-auto">
@@ -136,7 +136,7 @@
                 placeholder="Password">
                 <div *ngIf="password.touched && password.invalid" class="text-danger">
                   <small class="alert alert-danger" *ngIf="password.errors.required">Required</small>
-                  <small class="alert alert-danger" *ngIf="password.errors.minlength">inimum {{password.errors.minlength.requiredLength}} characters.</small>
+                  <small class="alert alert-danger" *ngIf="password.errors.minlength">Minimum {{password.errors.minlength.requiredLength}} characters.</small>
                 </div>
 
         </div>
@@ -163,6 +163,7 @@
       <!-- Register buttons -->
   <div class="text-center" style="padding-top: 10px;">
     <p>Do you have an account?  <a routerLink="/login"> Login Here</a></p>
+    <p>For Referal Code contact us <b><a href="mailto:customer.care@wisteriaindia.com">customer.care@wisteriaindia.com </a></b></p>
     <!--<p>or sign up with:</p>
      <button type="button" class="btn btn-primary btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
@@ -187,6 +188,7 @@
   </div> -->
 </div>
 </div>
-</div>
 <simple-notifications [options]="options"></simple-notifications>
 <app-home-footer></app-home-footer>
+
+</div>
