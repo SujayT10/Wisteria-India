@@ -16,7 +16,7 @@ if(isset($postdata) && !empty($postdata)){
       while($row = mysqli_fetch_assoc($result)){
         $users[$cr]['id'] = $row['id'];
         $users[$cr]['admin_id'] = $row['admin_id'];
-        $users[$cr]['name'] = $row['name'];
+        $users[$cr]['firstname'] = $row['firstname'];
         $users[$cr]['lastname'] = $row['lastname'];
         $users[$cr]['email'] = $row['email'];
         $users[$cr]['contactno'] = $row['contactno'];

@@ -4,15 +4,15 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
 
-    $name = trim($request->name);
+    $firstname = trim($request->name);
     $lastname = trim($request->lastname);
     // $pwd = md5(mysqli_real_escape_string($mysqli, trim($request->pwd)));
     $pwd = mysqli_real_escape_string($mysqli, trim($request->pwd));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = $request->contactno;
 
-    $sql = "INSERT INTO users(name,lastname,password,email,contactno)
-                             VALUES ('$name','$lastname','$pwd','$email','$contactno')";
+    $sql = "INSERT INTO users(firstname,lastname,email,contactno,password)
+                             VALUES ('$firstname','$lastname','$email','$contactno','$pwd')";
 
       $res = mysqli_query($mysqli, $sql);
       $last_id = mysqli_insert_id($mysqli);

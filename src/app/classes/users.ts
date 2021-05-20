@@ -1,6 +1,6 @@
 export class Users {
   public Id: number;
-  public name: string;
+  public firstname: string;
   public lastname: string;
   public pwd:string;
   public email:string;
@@ -8,7 +8,7 @@ export class Users {
   public admin_id: string;
 
   constructor(Id:number,
-              name: string,
+              firstname: string,
               lastname: string,
               pwd:string,
               email:string,
@@ -16,7 +16,7 @@ export class Users {
               admin_id: string) {
 
       this.Id = Id;
-      this.name = name;
+      this.firstname = firstname;
       this.lastname = lastname;
       this.pwd = pwd;
       this.email = email;

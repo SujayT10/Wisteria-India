@@ -4,7 +4,7 @@
 <div class="main-header">
   <!-- Logo Header -->
   <div class="logo-header" data-background-color="blue">
-  
+
     <a routerLink="/dashboard" class="logo">
       <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand" style="max-height: -webkit-fill-available;">
     </a>
@@ -15,15 +15,15 @@
     </button>
     <!-- <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button> -->
     <div class="nav-toggle">
-  
+
     </div>
   </div>
   <!-- End Logo Header -->
   <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" *ngIf="logoutbtn">
-  
+
   </nav>
   </div>
-  
+
 
 
 <div class="sidebar sidebar-style-2">
@@ -38,7 +38,7 @@
         <div class="info" *ngFor="let part of activeUser">
           <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
             <span>
-              {{ part.name }} {{ part.lastname}}
+              {{ part.firstname }} {{ part.lastname}}
               <span class="user-level">Admin</span>
               <span class="caret"></span>
             </span>

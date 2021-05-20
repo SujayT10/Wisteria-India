@@ -6,7 +6,7 @@ export class Employee{
   public email: string;
   public datetime: string;
   public address: string;
-  public emp_Id: string;
+  public emp_id: string;
 
 
   constructor(id: number,
@@ -16,7 +16,7 @@ export class Employee{
               email: string,
               datetime: string,
               address: string,
-              emp_Id:string){
+              emp_id:string){
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
@@ -24,6 +24,6 @@ export class Employee{
     this.email = email;
     this.datetime = datetime;
     this.address = address;
-    this.emp_Id = emp_Id;
+    this.emp_id = emp_id;
   }
 }

@@ -21,6 +21,7 @@ export class ManageEmployeeComponent implements OnInit {
   ngOnInit(): void {
     this._empService.getEmp().subscribe((data: Employee[]) =>{
     this.employee = data;
+    console.log(this.employee);
     this.totalLength= data.length;
   });
   this.admin_id = this.dataService.getToken();
