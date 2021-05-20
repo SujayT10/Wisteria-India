@@ -54,12 +54,14 @@
             <div class="card-body">
               <div class="card-title fw-mediumbold">Earning</div>
               <div class="card-list">
-                <div class="item-list">
+                <div class="item-list" *ngFor="let part1 of activePartner">
                   <!-- <div class="avatar">
                     <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
                   </div> -->
                   <div class="info-user ml-3">
-                    <div class="username"><h6>Wallet Balance : <b>10000.00</b></h6></div>
+                    <div class="username" >
+                      <h6>Wallet Balance : <b>{{part1.wallet}}</b></h6>
+                    </div>
                     <!-- <div class="status">Graphic Designer</div> -->
                   </div>
                 </div>

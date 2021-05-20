@@ -8,11 +8,13 @@ export class Partner {
   public referalId: string;
   public address: string;
   public partner_id: string;
+  public wallet:string;
 
 
   constructor(id: number,
               firstname: string,
               lastname: string,
+              wallet:string,
               contactno: string,
               email: string,
               datetime: string,
@@ -22,6 +24,7 @@ export class Partner {
     this.id = id;
     this.firstname = firstname;
     this.lastname = lastname;
+    this.wallet = wallet;
     this.contactno = contactno;
     this.email = email;
     this.datetime = datetime;

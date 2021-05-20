@@ -12,6 +12,7 @@ import { Partner } from '../classes/partner';
 export class PartnerDashboardComponent implements OnInit {
 
   partner_id : string;
+  activePartner:Partner[];
   partner: Partner[];
   totalLength: any;
   page: number = 1;
@@ -21,6 +22,7 @@ export class PartnerDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.partner_id  = this.partnerService.getToken();
     this.postId(this.partner_id);
+    this.activeId(this.partner_id);
   }
 
   public postId(partner_id: any){
@@ -29,6 +31,15 @@ export class PartnerDashboardComponent implements OnInit {
         .subscribe((data: Partner[]) =>{
           this.partner= data;
         })
+  }
+
+  public activeId(partner_id: any){
+    this.partnerService.activePartner(partner_id)
+    .pipe(first())
+    .subscribe((data:Partner[]) =>{
+      this.activePartner= data;
+      console.log(this.activePartner);
+    })
   }
 
 }

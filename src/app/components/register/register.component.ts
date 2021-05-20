@@ -48,6 +48,7 @@ export class RegisterComponent implements OnInit {
     // console.log(angForm1.control);
       this.partnerService.partnerRegistration(angForm1.value.firstname,
                                               angForm1.value.lastname,
+                                              angForm1.value.wallet,
                                               angForm1.value.contactno,
                                               angForm1.value.email,
                                               angForm1.value.password,

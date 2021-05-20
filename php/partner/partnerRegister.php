@@ -9,6 +9,7 @@ if(isset($postdata) && !empty($postdata)){
 
     $firstname = trim($request->firstname);
     $lastname = trim($request->lastname);
+    $wallet = trim($request->wallet);
     // $password = sha1(mysqli_real_escape_string($mysqli, trim($request->pwd)));
     $password = mysqli_real_escape_string($mysqli, trim($request->password));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
@@ -18,8 +19,8 @@ if(isset($postdata) && !empty($postdata)){
     $address = trim($request->address);
     $fullName = $firstname." ".$lastname;
 
-    $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,address)
-                             VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId', '$address')";
+    $sql = "INSERT INTO partners(firstname,lastname,contactno,email,password,datetime,referalId,wallet,address)
+                             VALUES ('$firstname','$lastname','$contactno','$email','$password', '$datetime', '$referalId',$wallet, '$address')";
 
       $res = mysqli_query($mysqli, $sql);
       $last_id = mysqli_insert_id($mysqli);
