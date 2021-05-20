@@ -40,7 +40,7 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 
 const routes: Routes = [
-{ path: '', component: LoginComponent, pathMatch: 'full' },
+{ path: '', component: HomeComponent, pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 { path: 'admin-login', component: AdminLoginComponent },
 { path: 'home', component: HomeComponent },
