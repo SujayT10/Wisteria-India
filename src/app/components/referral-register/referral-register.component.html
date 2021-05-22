@@ -56,7 +56,8 @@
                  formControlName="referalId"
                  autocomplete="off"
                  class="form-control input-sm"
-                 [(ngModel)] = "referral_id">
+                 [(ngModel)] = "referral_id"
+                 readonly>
             <div *ngIf="referalId.touched && referalId.invalid" class="text-danger" >
               <small class="alert alert-danger" *ngIf="referalId.errors.required">Required</small>
             </div>
