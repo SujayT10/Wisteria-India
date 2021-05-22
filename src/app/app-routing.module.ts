@@ -38,6 +38,8 @@ import { AddComponent } from './dashboard/partner/add/add.component';
 import { PrivacyPolicyComponent } from './components/policy/privacy-policy/privacy-policy.component';
 import { TermAndConditionComponent } from './components/policy/term-and-condition/term-and-condition.component';
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
+import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
+import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -47,6 +49,7 @@ const routes: Routes = [
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },
 { path: 'admin-registration', component: AdminRegisterComponent },
+{ path: 'referral-registration/:id', component: ReferralRegisterComponent },
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },
@@ -83,7 +86,7 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'partner-dashboard/partner/add', component: PAddComponent, canActivate: [AuthguardGuard] },
-// { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard/partner/partner-profile', component: PartnerProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 

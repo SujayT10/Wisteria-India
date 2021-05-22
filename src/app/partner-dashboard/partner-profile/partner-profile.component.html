@@ -1,14 +1,13 @@
 <!-- Navbar Header -->
-<app-navbar></app-navbar>
+<app-pnavbar></app-pnavbar>
 <!-- End Navbar -->
  <!-- Sidebar -->
- <app-sidebar></app-sidebar>
+ <app-psidebar></app-psidebar>
  <!-- End Sidebar -->
 
-   <!-- Main Container -->
-   <div class="main-panel">
+  <!-- Main Container -->
+  <div class="main-panel">
     <div class="content">
-
 
       <div class="container emp-profile">
         <form method="post">
@@ -24,12 +23,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="profile-head">
-                                <h5>
-                                    {{admin_id}}
-                                </h5>
-                                <h6>
-                                    Admin
-                                </h6>
+                                <h5> {{partner_id}} </h5>
+                                <h6> Partner </h6>
 
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -61,13 +56,14 @@
                 <div class="col-md-8">
                     <div class="tab-content profile-tab" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"
-                              *ngFor="let part of activeUser">
+                        *ngFor="let part of activePartner">
+
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label>Admin Id</label>
+                                            <label>Partner Id</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{ part.admin_id }}</p>
+                                            <p>{{ part.partner_id }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -75,7 +71,7 @@
                                             <label>Name</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>{{ part.firstname }} {{part.lastname }}</p>
+                                            <p>{{ part.firstname }} {{ part.lastname }}</p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -96,10 +92,10 @@
                                     </div>
                                     <!-- <div class="row">
                                         <div class="col-md-6">
-                                            <label>Profession</label>
+                                            <label>Referral ID</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p>Web Developer and Designer</p>
+                                            <p>{{ part.referalId}}</p>
                                         </div>
                                     </div> -->
                         </div>
@@ -158,11 +154,6 @@
      </div>
 
 
-
-
-
-    <!-- End Main Container -->
- <!-- Footer -->
- <app-footer></app-footer>
- </div>
- </div>
+      <app-footer></app-footer>
+    </div>
+  </div>

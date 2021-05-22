@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Router, Params, ActivatedRoute} from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { confirmedValidator } from '../../confirmed.validator';
 import { PartnerService } from 'src/app/services/partner.service';
 import { NotificationsService } from 'angular2-notifications';
 import { animation } from '@angular/animations';
-
-
 @Component({
-          selector: 'app-register',
-          templateUrl: './register.component.html',
-          styleUrls: ['./register.component.css']
+  selector: 'app-referral-register',
+  templateUrl: './referral-register.component.html',
+  styleUrls: ['./referral-register.component.css']
 })
+export class ReferralRegisterComponent implements OnInit {
 
-export class RegisterComponent implements OnInit {
   angForm: FormGroup;
-  data="Partner Registration";
+  data="Referral Registration";
+  referral_id: any;
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],
@@ -25,7 +24,11 @@ export class RegisterComponent implements OnInit {
     animate: "fade",
   };
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private _service: NotificationsService) {
+  constructor(private fb: FormBuilder,
+             private partnerService: PartnerService,
+             private router:Router,
+             private route: ActivatedRoute,
+             private _service: NotificationsService) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -42,13 +45,15 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    const routeParams =this.route.snapshot.params;
+    console.log(routeParams.id);
+    this.referral_id = routeParams.id;
   }
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
       this.partnerService.partnerRegistration(angForm1.value.firstname,
                                               angForm1.value.lastname,
-                                             
                                               angForm1.value.contactno,
                                               angForm1.value.email,
                                               angForm1.value.password,

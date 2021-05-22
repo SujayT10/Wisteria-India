@@ -30,7 +30,7 @@ export class PAddComponent implements OnInit {
       referalId: ['', [Validators.required]],
       address: ['', [Validators.required]],
       datetime: ['', [Validators.required]],
-      wallet: ['', [Validators.required]],
+      // wallet: ['', [Validators.required]],
       contactno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(8)] ],
       confirmpassword: ['',[Validators.required]]
@@ -47,7 +47,6 @@ export class PAddComponent implements OnInit {
     // console.log(angForm1.control);
     this.partnerService.partnerRegistration(angForm1.value.firstname,
                                             angForm1.value.lastname,
-                                            angForm1.value.wallet,
                                             angForm1.value.contactno,
                                             angForm1.value.email,
                                             angForm1.value.password,
@@ -60,7 +59,9 @@ export class PAddComponent implements OnInit {
                   this.angForm.reset();
                   },
                   error => {
-                    console.log("Error from  Add-Partner")
+                    this.onSuccess();
+                    this.angForm.reset();
+                    // console.log("Error from  Add-Partner")
                   }
                 );
 
@@ -77,5 +78,5 @@ export class PAddComponent implements OnInit {
   get referalId() { return this.angForm.get('referalId'); }
   get address() { return this.angForm.get('address'); }
   get datetime() { return this.angForm.get('address'); }
-  get wallet() { return this.angForm.get('wallet'); }
+  // get wallet() { return this.angForm.get('wallet'); }
 }

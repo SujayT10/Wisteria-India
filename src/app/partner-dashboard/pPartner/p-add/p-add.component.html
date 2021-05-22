@@ -84,8 +84,8 @@
             <div class="row">
 
               <!-- Wallet -->
-              <div class="form-group col-6">
-                <!-- <label for="name">First Name</label> -->
+              <!-- <div class="form-group col-6">
+                <label for="name">First Name</label>
                 <input type="text" name="wallet"
                       formControlName="wallet"
                       autocomplete="off"
@@ -94,7 +94,7 @@
                   <div *ngIf="wallet.touched && wallet.invalid" class="text-danger" >
                     <small class="alert alert-danger" *ngIf="wallet.errors.required">Required</small>
                   </div>
-              </div>
+              </div> -->
 
                <!-- Referal ID -->
                <div class="form-group col-6">
@@ -204,7 +204,7 @@
                       </div>
               </div>
             </div>
-            <button type="submit" (click)="onSuccess()" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
 
             </form>
           </div>

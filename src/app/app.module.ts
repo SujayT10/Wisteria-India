@@ -58,6 +58,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmpNavbarComponent } from './employee-dashboard/emp-navbar/emp-navbar.component';
 import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sidebar.component';
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
+import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
+import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +109,8 @@ import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-empl
     EmpNavbarComponent,
     EmpSidebarComponent,
     AddEmployeeComponent,
+    ReferralRegisterComponent,
+    PartnerProfileComponent,
 
   ],
   imports: [
