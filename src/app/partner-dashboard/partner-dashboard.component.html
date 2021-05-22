@@ -15,12 +15,20 @@
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
           <div>
             <h2 class="text-white pb-2 fw-bold">Partner Dashboard</h2>
-            <h5 class="text-white">
-              <b>http://localhost:4200/#/referral-registration/{{partner_id}}</b>
-              <!-- <b> https://wisteriaindia.com/#/referral-registration/{{partner_id}} </b> -->
-            </h5>
           </div>
         </div>
+
+        <div class="row">
+          <div class="input-group mb-3 col-md-4 ">
+            <input type="text" class="form-control" [(ngModel)]="link"  aria-describedby="button-addon2">
+            <button class="btn btn-info" cdkCopyToClipboard="{{link}}" type="button" (click)="toggleMe()">Copy</button>
+          </div>
+          <div class="input-group mb-3 col-md-4 ">
+            <h5 class="text-white pb-2 fw-bold toggleBox" *ngIf="showMe">Successfully copied</h5>
+          </div>
+        </div>
+
+
       </div>
     </div>
     <div class="page-inner mt--5">
@@ -62,7 +70,7 @@
                   </div> -->
                   <div class="info-user ml-3">
                     <div class="username" >
-                      <h6>Wallet Balance : <b>{{part1.wallet}}</b></h6>
+                      <h6>Wallet Balance : <b>Will Update Soon</b></h6>
                     </div>
                     <!-- <div class="status">Graphic Designer</div> -->
                   </div>

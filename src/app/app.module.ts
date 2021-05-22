@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ClipboardModule } from "@angular/cdk/clipboard";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -60,6 +61,7 @@ import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sideba
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
 import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -121,7 +123,7 @@ import { PartnerProfileComponent } from './partner-dashboard/partner-profile/par
     ReactiveFormsModule,
     NgxPaginationModule,
     SimpleNotificationsModule.forRoot(),
-    BrowserAnimationsModule
+    ClipboardModule
   ],
   providers: [{
     provide: LocationStrategy,

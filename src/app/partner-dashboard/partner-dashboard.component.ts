@@ -16,11 +16,15 @@ export class PartnerDashboardComponent implements OnInit {
   partner: Partner[];
   totalLength: any;
   page: number = 1;
+  link : string;
+  showMe:boolean = false;
 
   constructor(private partnerService: PartnerService) { }
 
   ngOnInit(): void {
     this.partner_id  = this.partnerService.getToken();
+    this.link = "http://localhost:4200/#/referral-registration/" + this.partner_id;
+    // this.link = "https://wisteriaindia.com/#/referral-registration/" + this.partner_id;
     this.postId(this.partner_id);
     this.activeId(this.partner_id);
   }
@@ -41,5 +45,7 @@ export class PartnerDashboardComponent implements OnInit {
       console.log(this.activePartner);
     })
   }
+
+  public toggleMe(){ this.showMe =! this.showMe; }
 
 }
