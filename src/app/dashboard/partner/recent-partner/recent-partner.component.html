@@ -50,7 +50,7 @@
                         <th>Email</th>
                         <!-- <th>Wallet</th> -->
                         <th>Refered ID  </th>
-                        <!-- <th>Edit</th> -->
+                        <th>Add Wallet</th>
                         <!-- <th>Delete</th> -->
                       </tr>
                     </thead>
@@ -65,7 +65,7 @@
                         <td> {{part.email}} </td>
                         <!-- <td> {{part.wallet}} </td> -->
                         <td> {{part.referalId}} </td>
-                        <!-- <td> <button class="btn btn-success">Edit</button> </td> -->
+                        <td> <button class="btn btn-success" (click)="addWallet(part)">TopUp</button> </td>
                         <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
                       </tr>
                     </tbody>

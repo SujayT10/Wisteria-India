@@ -76,7 +76,7 @@ const routes: Routes = [
 { path: 'dashboard/partner/find-member', component: FindPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/black-listed', component: BlackListedPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/recent-member', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/partner/topup-member', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/topup-member/:id', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 

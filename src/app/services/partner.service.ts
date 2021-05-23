@@ -2,6 +2,7 @@ import { Partner } from '../classes/partner';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Wallet } from '../classes/wallet';
 
 @Injectable({
   providedIn: 'root'
