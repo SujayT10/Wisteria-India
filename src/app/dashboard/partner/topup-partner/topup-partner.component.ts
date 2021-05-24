@@ -3,9 +3,8 @@ import { first } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, Params, ActivatedRoute} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
 import { NotificationsService } from 'angular2-notifications';
-import { WalletService } from 'src/app/services/wallet.service';
+import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-topup-partner',
@@ -23,15 +22,14 @@ export class TopupPartnerComponent implements OnInit {
   };
 
   constructor(private fb: FormBuilder,
-              private walletService: WalletService,
               private router:Router,
-              private dataservice: ApiService,
+              private partnerService: PartnerService,
               private _service: NotificationsService,
               private routes: ActivatedRoute) {
 
       this.angForm = this.fb.group({
         amount: ['', [Validators.required]],
-        referral_id: ['', [Validators.required]],
+        partner_id: ['', [Validators.required]],
 
       });
   }
@@ -44,7 +42,7 @@ export class TopupPartnerComponent implements OnInit {
   }
 
   topUpPartner(angForm1: any){
-    this.walletService.addAmount( angForm1.value.referral_id, angForm1.value.amount )
+    this.partnerService.addAmount( angForm1.value.partner_id, angForm1.value.amount )
       .pipe(first())
       .subscribe(
                   data => {

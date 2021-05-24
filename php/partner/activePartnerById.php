@@ -18,7 +18,7 @@ if(isset($postdata) && !empty($postdata)){
         $partners[$cr]['partner_id'] = $row['partner_id'];
         $partners[$cr]['firstname'] = $row['firstname'];
         $partners[$cr]['lastname'] = $row['lastname'];
-        // $partners[$cr]['wallet'] = $row['wallet'];
+        $partners[$cr]['wallet'] = $row['wallet'];
         $partners[$cr]['contactno'] = $row['contactno'];
         $partners[$cr]['email'] = $row['email'];
         $partners[$cr]['datetime'] = $row['datetime'];

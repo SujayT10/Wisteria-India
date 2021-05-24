@@ -7,24 +7,24 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
 
-    $referral_id = trim($request->referral_id);
+    $partner_id = trim($request->partner_id);
     $amount = trim($request->amount);
 
-    $sql = "INSERT INTO wallet(referral_id, amount) VALUES ('$referral_id','$amount')";
+    $sql = "UPDATE partners SET wallet = wallet + '$amount' WHERE partner_id = '$partner_id' ";
 
       // $res = mysqli_query($mysqli, $sql);
-
     if ($mysqli->query($sql) === TRUE) {
         $authdata = [
-                    'referral_id' => $referral_id,
+                    'partner_id' => $partner_id,
                     'amount' => $amount,
                    ];
 
          echo json_encode($authdata);
-    } else{
+    }
+    else{
       http_response_code(404);
       }
-
 }
 
 ?>
+

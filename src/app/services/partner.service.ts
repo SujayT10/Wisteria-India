@@ -58,6 +58,13 @@ export class PartnerService {
     }));
   }
 
+  public addAmount(partner_id:string, amount:string ){
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/partnerAmount.php', { partner_id, amount })
+    .pipe(map(partner => {
+    return partner;
+    }));
+  }
+
   //token
   setToken(token: string) {
     localStorage.setItem('token', token);
