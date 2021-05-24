@@ -15,7 +15,7 @@ import { animation } from '@angular/animations';
 export class ReferralRegisterComponent implements OnInit {
 
   angForm: FormGroup;
-  data="Referral Registration";
+  data="Partner Registration";
   referral_id: any;
   public options:any = {
     showProgressBar: false,
@@ -36,6 +36,7 @@ export class ReferralRegisterComponent implements OnInit {
       referalId: ['', [Validators.required]],
       address: ['', [Validators.required]],
       datetime: ['', [Validators.required]],
+      checkbox: ['', [Validators.required]],
       contactno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(8)] ],
       confirmpassword: ['',[Validators.required]]
@@ -93,5 +94,6 @@ export class ReferralRegisterComponent implements OnInit {
   get referalId() { return this.angForm.get('referalId'); }
   get address() { return this.angForm.get('address'); }
   get datetime() { return this.angForm.get('datetime'); }
+  get checkbox() { return this.angForm.get('checkbox'); }
 
 }

@@ -157,6 +157,13 @@
                 </div>
         </div>
         </div>
+        <div class="form-checkbox">
+          <input type="checkbox" class="form-check-input" style="margin-left: 10px;" id="exampleCheck1" formControlName="checkbox">
+          <label class="form-check-label" style="margin-left: 30px;" for="exampleCheck1">Accept all terms & policies</label>
+          <div *ngIf="checkbox.touched && checkbox.invalid" class="text-danger">
+            <small class="alert alert-danger" *ngIf="checkbox.errors.required">Required</small>
+          </div>
+        </div>
 
 
       <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>

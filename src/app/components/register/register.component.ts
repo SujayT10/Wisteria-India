@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
       referalId: ['', [Validators.required]],
       address: ['', [Validators.required]],
       datetime: ['', [Validators.required]],
+      checkbox: ['', [Validators.required]],
       contactno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(8)] ],
       confirmpassword: ['',[Validators.required]]
@@ -48,7 +49,6 @@ export class RegisterComponent implements OnInit {
     // console.log(angForm1.control);
       this.partnerService.partnerRegistration(angForm1.value.firstname,
                                               angForm1.value.lastname,
-                                             
                                               angForm1.value.contactno,
                                               angForm1.value.email,
                                               angForm1.value.password,
@@ -88,5 +88,7 @@ export class RegisterComponent implements OnInit {
   get referalId() { return this.angForm.get('referalId'); }
   get address() { return this.angForm.get('address'); }
   get datetime() { return this.angForm.get('datetime'); }
+  get checkbox() { return this.angForm.get('checkbox'); }
+
 
 }

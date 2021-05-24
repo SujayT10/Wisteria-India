@@ -40,6 +40,7 @@ import { TermAndConditionComponent } from './components/policy/term-and-conditio
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
 import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
+import { PartnerAuthguardGuard } from './PartnerAuthguard.guard';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -80,13 +81,13 @@ const routes: Routes = [
 { path: 'dashboard/partner/add', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
-{ path: 'partner-dashboard', component: PartnerDashboardComponent,canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/manage-member', component: ManagePpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/find-member', component: FindPpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/add', component: PAddComponent, canActivate: [AuthguardGuard] },
-{ path: 'partner-dashboard/partner/partner-profile', component: PartnerProfileComponent, canActivate: [AuthguardGuard] },
+{ path: 'partner-dashboard', component: PartnerDashboardComponent,canActivate: [PartnerAuthguardGuard] }, 
+{ path: 'partner-dashboard/partner/manage-member', component: ManagePpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/find-member', component: FindPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/add', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/partner-profile', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 
