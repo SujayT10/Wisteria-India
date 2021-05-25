@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
 
   loginbtn:boolean;
   logoutbtn:boolean;
+  admin_id: string;
 
   constructor(private dataService: ApiService) {
     dataService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -37,7 +38,8 @@ export class NavbarComponent implements OnInit {
       }
 
   ngOnInit(): void {
-
+    this.admin_id = this.dataService.getToken();
+    console.log(this.admin_id);
   }
 
 }

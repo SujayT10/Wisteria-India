@@ -1,31 +1,4 @@
 
-
-
-<div class="main-header">
-  <!-- Logo Header -->
-  <div class="logo-header" data-background-color="blue">
-
-    <a routerLink="/dashboard" class="logo">
-      <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand" style="max-height: -webkit-fill-available;">
-    </a>
-    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-        <i class="icon-menu"></i>
-      </span>
-    </button>
-    <!-- <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button> -->
-    <div class="nav-toggle">
-
-    </div>
-  </div>
-  <!-- End Logo Header -->
-  <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2" *ngIf="logoutbtn">
-
-  </nav>
-  </div>
-
-
-
 <div class="sidebar sidebar-style-2">
   <div class="sidebar-wrapper scrollbar scrollbar-inner">
     <div class="sidebar-content">
@@ -49,7 +22,7 @@
             <ul class="nav">
               <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/dashboard/partner/profile" >My Profile</a>
+                <a class="dropdown-item" routerLink="/dashboard/partner/profile/?{{admin_id}}" >My Profile</a>
 
                 <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/admin-login" >logout</a>
               </li>
@@ -60,7 +33,7 @@
 
       <ul class="nav nav-primary">
         <li class="nav-item active">
-          <a routerLink="/dashboard" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+          <a routerLink="/dashboard/?{{admin_id}}" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
             <i class="fas fa-home"></i>
             <p>Dashboard</p>
           </a>
@@ -78,18 +51,18 @@
           <div class="collapse" id="partner">
             <ul class="nav nav-collapse">
               <li>
-                <a routerLink="/dashboard/partner/manage-member">
+                <a routerLink="/dashboard/partner/manage-member/?{{admin_id}}">
                   <span class="sub-item">View Partner</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/dashboard/partner/find-member">
+                <a routerLink="/dashboard/partner/find-member/?{{admin_id}}">
                   <span class="sub-item">Find Partner</span>
                 </a>
               </li>
 
               <li>
-                <a routerLink="/dashboard/partner/recent-member">
+                <a routerLink="/dashboard/partner/recent-member/?{{admin_id}}">
                   <span class="sub-item">Recent Partner</span>
                 </a>
               </li>
@@ -112,18 +85,18 @@
           <div class="collapse" id="employee">
             <ul class="nav nav-collapse">
               <li>
-                <a routerLink="/dashboard/employee/manage-member">
+                <a routerLink="/dashboard/employee/manage-member/?{{admin_id}}">
                   <span class="sub-item">View Employee</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/dashboard/employee/find-member">
+                <a routerLink="/dashboard/employee/find-member/?{{admin_id}}">
                   <span class="sub-item">Find Employee</span>
                 </a>
               </li>
 
               <li>
-                <a routerLink="/dashboard/employee/recent-member">
+                <a routerLink="/dashboard/employee/recent-member/?{{admin_id}}">
                   <span class="sub-item">Recent Employee</span>
                 </a>
               </li>
