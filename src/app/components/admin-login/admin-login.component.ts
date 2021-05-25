@@ -36,7 +36,7 @@ export class AdminLoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
                 data => {
-                  const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : ['/dashboard/'];
+                  const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : ['/dashboard/?'];
                   this.router.navigate([redirect + angForm1.value.userId]);
                 },
                 error =>{
