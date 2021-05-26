@@ -42,6 +42,7 @@ import { ReferralRegisterComponent } from './components/referral-register/referr
 import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
 import { PartnerAuthguardGuard } from './PartnerAuthguard.guard';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -51,8 +52,9 @@ const routes: Routes = [
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },
 { path: 'admin-registration', component: AdminRegisterComponent },
-{ path: 'forgotten-password', component: ForgotPasswordComponent },
 { path: 'referral-registration/:id', component: ReferralRegisterComponent },
+{ path: 'forgotten-password', component: ForgotPasswordComponent },
+{ path: 'reset-password/:id', component: ResetPasswordComponent },
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },

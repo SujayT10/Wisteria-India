@@ -62,6 +62,7 @@ import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-empl
 import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
 import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -115,6 +116,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     ReferralRegisterComponent,
     PartnerProfileComponent,
     ForgotPasswordComponent,
+    ResetPasswordComponent,
 
   ],
   imports: [

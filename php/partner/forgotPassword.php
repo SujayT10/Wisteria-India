@@ -16,6 +16,7 @@ if(isset($postdata) && !empty($postdata)){
         while($row = mysqli_fetch_assoc($result)){
           $rows[] = $row;
         }
+        echo json_encode($rows);
 
 
          // Mail part
@@ -66,8 +67,10 @@ if(isset($postdata) && !empty($postdata)){
                                        font-family: inter;">
                                        <h1>Wisteria India</h1>
                              <h3>Name: </h3>
-                             <h3>Email ID: '. $email .'</h3>
-
+                             <h3>Partner ID: '. $partner_id .'</h3>
+                             <a href="http://localhost:4200/#/reset-password/'. $partner_id .'" target="_blank">
+                               <h3>Reset Password</h3>
+                             </a>
                            </div>' ;
 
          $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -82,9 +85,8 @@ if(isset($postdata) && !empty($postdata)){
 
 
 
-
-        echo json_encode($rows);
     }
+
     else{
       http_response_code(404);
     }

@@ -72,6 +72,13 @@ export class PartnerService {
        }));
   }
 
+  public resetPassword(password: string, partner_id: string){
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/resetPassword.php',{ password, partner_id })
+    .pipe(map(partner => {
+        return partner;
+     }));
+  }
+
   //token
   setToken(token: string) {
     localStorage.setItem('token', token);
