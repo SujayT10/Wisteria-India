@@ -65,7 +65,7 @@ export class ResetPasswordComponent implements OnInit {
   // onSubmit() { this.submitted = true; }
 
   onSuccess(){
-      this._service.success('Successfully Registred');
+      this._service.success('Successfully Send');
   }
 
   get password() { return this.angForm.get('password'); }
