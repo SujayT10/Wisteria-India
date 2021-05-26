@@ -17,9 +17,10 @@
 
         <div class="jumbotron">
           <h2 class="text-center">{{data}}</h2>
-
+          <div class="mb-4">
+            <hr class="solid">
+          </div>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
-
 
                 <!-- Email -->
                 <div class="form-group ">
@@ -66,7 +67,7 @@
                 </div>
                 <div class="mb-4">
                   <hr class="solid">
-               </div>
+                </div>
                 <button type="button" routerLink="/login" class="btn btn-outline-primary btn-lg btn-block" >Partner Login</button>
                 <!-- Register buttons -->
             <div class="text-center" style="padding-top: 10px;">

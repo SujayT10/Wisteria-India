@@ -14,8 +14,10 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="jumbotron">
       <h4 class="text-center">{{data}}</h4>
+      <div class="mb-4">
+        <hr class="solid">
+      </div>
       <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
-
 
         <div class="row">
         <!-- First Name -->
@@ -122,6 +124,9 @@
       <!-- Register buttons -->
   <div class="text-center" style="padding-top: 10px;">
     <p>Do you have an account?  <a routerLink="/login"> Login Here</a></p>
+    <div class="mb-4">
+      <hr class="solid">
+    </div>
     <p>For Referal Code contact us <b><a href="mailto:customer.care@wisteriaindia.com">customer.care@wisteriaindia.com </a></b></p>
 
     <!--<p>or sign up with:</p>
