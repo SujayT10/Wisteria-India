@@ -1,11 +1,9 @@
+import { PartnerService } from './../../services/partner.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
-import { PartnerService } from 'src/app/services/partner.service';
-import { confirmedValidator } from '../../confirmed.validator';
-import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -22,11 +20,11 @@ export class ForgotPasswordComponent implements OnInit {
     animate: "fade",
   };
 
-  constructor(private fb: FormBuilder,private apiService: ApiService, private router:Router,private _service: NotificationsService) {
+  constructor(private fb: FormBuilder,private PartnerService: PartnerService, private router:Router,private _service: NotificationsService) {
     this.angForm = this.fb.group({
 
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      user_id: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      userId: ['', [Validators.required ]],
       });
   }
 
@@ -35,22 +33,21 @@ export class ForgotPasswordComponent implements OnInit {
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
-      this.apiService.userregistration(angForm1.value.name,
-                                       angForm1.value.lastname,
-                                       angForm1.value.email,
-                                       angForm1.value.contactno,
-                                       angForm1.value.password,
-                                       )
+      this.PartnerService.forgotPassword( angForm1.value.email,
+                                          angForm1.value.userId,
+                                        )
       .pipe(first())
       .subscribe(
                   data => {
-                  // console.log("Hellooooo");
-                  // this.router.navigate(['/login']);
-                  this.angForm.reset();
+                  // this.onSuccess();
+                  // this.angForm.reset();
+                  console.log("I am Forgot Password");
                   },
 
                   error => {
-                    console.log("Error from RegisterPage")
+                    this.onSuccess();
+                    this.angForm.reset();
+                    // console.log("Error from RegisterPage")
                   }
                 );
 
@@ -60,5 +57,5 @@ export class ForgotPasswordComponent implements OnInit {
   onCancle(){ this.router.navigate(['/login']); }
 
   get email() { return this.angForm.get('email'); }
-  get user_id() { return this.angForm.get('user_id'); }
+  get userId() { return this.angForm.get('userId'); }
 }
