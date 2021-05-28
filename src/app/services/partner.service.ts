@@ -43,8 +43,8 @@ export class PartnerService {
     return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
   }
 
-  deletePartner(id: number){
-    return this.httpClient.delete<Partner[]>(this.baseUrl + '/delete.php?id='+ id);
+  deletePartner(id: any){
+    return this.httpClient.post<Partner[]>(this.baseUrl + '/delete.php?', { id } );
   }
 
   recentPartner(){

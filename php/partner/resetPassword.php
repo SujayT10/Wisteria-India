@@ -1,6 +1,6 @@
 <?php
 include_once("../database.php");
-include_once("../PHPMailerAutoload.php");
+// include_once("../PHPMailerAutoload.php");
 
 $postdata = file_get_contents("php://input");
 

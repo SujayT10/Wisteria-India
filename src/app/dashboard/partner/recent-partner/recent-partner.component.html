@@ -51,7 +51,7 @@
                         <th>Wallet</th>
                         <th>Refered ID  </th>
                         <th>Add Wallet</th>
-                        <!-- <th>Delete</th> -->
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -66,7 +66,7 @@
                         <td> {{part.wallet}} </td>
                         <td> {{part.referalId}} </td>
                         <td> <button class="btn btn-success" (click)="addWallet(part)">TopUp</button> </td>
-                        <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
+                        <td> <button class="btn btn-danger" (click)="deleteUser(part)">Delete</button> </td>
                       </tr>
                     </tbody>
                   </table>

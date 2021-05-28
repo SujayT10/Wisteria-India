@@ -24,7 +24,7 @@ if(isset($postdata) && !empty($postdata)){
          $mail->SMTPDebug = 4;                     // Enable verbose debug output
          $mail->isSMTP();
          $mail->Host = 'smtp.gmail.com';       // on Localhost
-         // $mail->Host = 'smtp.hostinger.in ';      // on server
+        //  $mail->Host = 'smtp.hostinger.in ';      // on server
          $mail->SMTPAuth = true;
 
          // On LocalHost
@@ -32,8 +32,8 @@ if(isset($postdata) && !empty($postdata)){
          $mail->Password = 'Google@mh27bh3242';
 
          //On serve Data
-         // $mail->Username = 'info@wisteriaindia.com';                // SMTP username
-         // $mail->Password = 'infoWimpl@2017';                // SMTP password
+        //  $mail->Username = 'info@wisteriaindia.com';                // SMTP username
+        //  $mail->Password = 'infoWimpl@2017';                // SMTP password
 
          $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
          $mail->Port = 587;                                    // TCP port to connect to
@@ -43,8 +43,8 @@ if(isset($postdata) && !empty($postdata)){
          $mail->addReplyTo('sujaytank16595@gmail.com');
 
          //On serve Data
-         // $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
-         // $mail->addReplyTo('info@wisteriaindia.com');
+        //  $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
+        //  $mail->addReplyTo('info@wisteriaindia.com');
 
          $mail->addAddress($email);
          // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
@@ -68,7 +68,7 @@ if(isset($postdata) && !empty($postdata)){
                                        <h1>Wisteria India</h1>
                              <h3>Name: </h3>
                              <h3>Partner ID: '. $partner_id .'</h3>
-                             <a href="http://localhost:4200/#/reset-password/'. $partner_id .'" target="_blank">
+                             <a href="https://wisteriaindia.com/#/reset-password/'. $partner_id .'" target="_blank">
                                <h3>Reset Password</h3>
                              </a>
                            </div>' ;

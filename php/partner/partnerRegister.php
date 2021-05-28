@@ -94,7 +94,6 @@ if(isset($postdata) && !empty($postdata)){
                             <h3>Name: '. $fullName .'</h3>
                             <h3>Email ID: '. $email .'</h3>
                             <h3>User ID: '. $partner_id .'</h3>
-                            <h3>Password: '. $password .'</h3>
                           </div>' ;
 
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

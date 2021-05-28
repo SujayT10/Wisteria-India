@@ -2,6 +2,7 @@ import { PartnerService } from './../../../services/partner.service';
 import { Component, OnInit } from '@angular/core';
 import { Partner } from 'src/app/classes/partner';
 import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recent-partner',
@@ -28,6 +29,18 @@ export class RecentPartnerComponent implements OnInit {
   public addWallet(part: Partner){
     this.id = part.partner_id;
     this.router.navigate([ '/dashboard/partner/topup-member/' + this.id ]);
+  }
+
+  public deleteUser(partner: Partner) {
+    this.partnerService.deletePartner( partner.partner_id )
+     .subscribe(data => {
+      console.log("Success");
+      //  this.partner = this.partner.filter(u => u !== partner)
+     },
+     error => {
+      this.partner = this.partner.filter(u => u !== partner)
+      //  console.log("Error from TopUp");
+     })
   }
 
 }
