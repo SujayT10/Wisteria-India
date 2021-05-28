@@ -203,7 +203,7 @@
                       </div>
               </div>
             </div>
-            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
+            <button type="submit" [disabled]="!angForm.valid" (click)="loader()" class="btn btn-primary btn-lg btn-block" >Register</button>
 
             </form>
           </div>
@@ -215,6 +215,7 @@
     </div>
     <!-- End Main Container -->
  <!-- Footer -->
+ <ngx-ui-loader></ngx-ui-loader>
  <simple-notifications [options]="options"></simple-notifications>
  <app-footer></app-footer>
  </div>

@@ -1,4 +1,4 @@
-
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -127,7 +127,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     ReactiveFormsModule,
     NgxPaginationModule,
     SimpleNotificationsModule.forRoot(),
-    ClipboardModule
+    ClipboardModule,
+    NgxUiLoaderModule
   ],
   providers: [{
     provide: LocationStrategy,

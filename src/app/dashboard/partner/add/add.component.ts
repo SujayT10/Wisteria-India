@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
 import { ApiService } from 'src/app/services/api.service';
 import { NotificationsService } from 'angular2-notifications';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-add',
@@ -22,7 +23,12 @@ export class AddComponent implements OnInit {
     animate: "fade",
   };
 
-  constructor(private fb: FormBuilder,private partnerService: PartnerService, private router:Router, private dataservice: ApiService,private _service: NotificationsService) {
+  constructor(private fb: FormBuilder,
+              private partnerService: PartnerService,
+              private router:Router,
+              private dataservice: ApiService,
+              private _service: NotificationsService,
+              private ngxService: NgxUiLoaderService) {
     this.angForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
@@ -68,6 +74,13 @@ export class AddComponent implements OnInit {
   }
 
   onSuccess(){ this._service.success('Successfully Registred'); }
+  loader(){
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // Stop the foreground loading after 5s
+    setTimeout(() => {
+      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 9000);
+  }
 
   get email() { return this.angForm.get('email'); }
   get password() { return this.angForm.get('password'); }

@@ -166,7 +166,7 @@
           </div>
         </div>
 
-      <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Register</button>
+      <button type="submit" [disabled]="!angForm.valid" (click)="loader()" class="btn btn-primary btn-lg btn-block" >Register</button>
 
       <!-- Register buttons -->
   <div class="text-center" style="padding-top: 10px;">
@@ -199,6 +199,7 @@
   </div> -->
 </div>
 </div>
+<ngx-ui-loader></ngx-ui-loader>
 <simple-notifications [options]="options"></simple-notifications>
 <app-home-footer></app-home-footer>
 
