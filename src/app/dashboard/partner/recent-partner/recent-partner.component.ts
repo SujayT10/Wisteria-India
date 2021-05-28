@@ -35,11 +35,11 @@ export class RecentPartnerComponent implements OnInit {
     this.partnerService.deletePartner( partner.partner_id )
      .subscribe(data => {
       console.log("Success");
-      //  this.partner = this.partner.filter(u => u !== partner)
+       this.partner = this.partner.filter(u => u !== partner)
      },
      error => {
-      this.partner = this.partner.filter(u => u !== partner)
-      //  console.log("Error from TopUp");
+      // this.partner = this.partner.filter(u => u !== partner)
+       console.log("Error from TopUp");
      })
   }
 
