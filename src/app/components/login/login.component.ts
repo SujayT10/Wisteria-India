@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
 
     constructor(private fb: FormBuilder,private partnerService: PartnerService,private router:Router,private _service: NotificationsService) {
         this.angForm = this.fb.group({
-          // email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
           userId: ['', Validators.required],
           password: ['', Validators.required]
         });
@@ -46,11 +45,8 @@ export class LoginComponent implements OnInit {
                   );
     }
 
-    onError(){
-      this._service.error('Error','Email, UserId or Password Not Match');
-   }
+    onError(){ this._service.error('Error','Email, UserId or Password Not Match'); }
 
-    get email() { return this.angForm.get('email'); }
     get userId() { return this.angForm.get('userId'); }
     get password() { return this.angForm.get('password'); }
 

@@ -5,9 +5,9 @@ $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata)){
     $pwd = mysqli_real_escape_string($mysqli, trim($request->password));
     $userId = mysqli_real_escape_string($mysqli, trim($request->userId));
-    // $email = mysqli_real_escape_string($mysqli, trim($request->username));
+    $id = "WIA-".$userId;
 
-    $sql = "SELECT * FROM users where admin_id = '$userId' and password = '$pwd' ";
+    $sql = "SELECT * FROM users where admin_id = '$id' and password = '$pwd' ";
 
     if($result = mysqli_query($mysqli,$sql)){
       $rows = array();

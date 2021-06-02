@@ -15,36 +15,29 @@
     </div>
     <div class="col-md-4 col-md-offset-5">
 
-        <div class="jumbotron">
+        <div class="jumbotron" style="background-color: #e9eceff2;" >
           <h2 class="text-center">Partner Login</h2>
           <div class="mb-4">
             <hr class="solid">
           </div>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
-                <!-- Email -->
-                <!-- <div class="form-group ">
-                  <input type="email"name="email"
-                         formControlName="email"
-                         autocomplete="off"
-                         class="form-control input-sm"
-                         placeholder="Email">
-                         <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Required</small>
-                        </div>
-                </div> -->
-
-                <!-- userId-->
-                <div class="form-group ">
-                  <input type="text"name="userId"
-                         formControlName="userId"
-                         autocomplete="off"
-                         class="form-control input-sm"
-                         placeholder="User ID">
-                         <div *ngIf="(userId.invalid && userId.touched) || userId.dirty" class="text-danger">
-                          <small class="alert alert-danger" *ngIf="userId.errors?.required" >Required</small>
-
-                        </div>
+                 <!-- userId -->
+                  <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">WIP-</div>
+                    </div>
+                    <input type="text" name="userId"
+                           formControlName="userId"
+                           autocomplete="off"
+                           class="form-control input-sm"
+                           id="inlineFormInputGroupUsername"
+                           placeholder="User ID">
+                  </div>
+                  <div *ngIf="(userId.invalid && userId.touched) || userId.dirty" class="text-danger">
+                    <small class="alert alert-danger" *ngIf="userId.errors?.required" >Required</small>
+                  </div>
                 </div>
 
                 <!-- password  -->

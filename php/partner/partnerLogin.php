@@ -6,9 +6,10 @@ if(isset($postdata) && !empty($postdata)){
     // $pwd = sha1(mysqli_real_escape_string($mysqli, trim($request->password)));
     $pwd = mysqli_real_escape_string($mysqli, trim($request->password));
     $userId = mysqli_real_escape_string($mysqli, trim($request->userId));
+    $id = "WIP-".$userId;
     // $email = mysqli_real_escape_string($mysqli, trim($request->username));
 
-    $sql = "SELECT * FROM partners where partner_id = '$userId' and password='$pwd'";
+    $sql = "SELECT * FROM partners where partner_id = '$id' and password='$pwd'";
 
     if($result = mysqli_query($mysqli,$sql)){
       $rows = array();

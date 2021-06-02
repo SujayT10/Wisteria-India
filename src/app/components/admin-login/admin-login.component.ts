@@ -22,7 +22,6 @@ export class AdminLoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private _service: NotificationsService) {
       this.angForm = this.fb.group({
-        // email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         userId: ['', [Validators.required ]],
         password: ['', Validators.required]
       });
@@ -44,10 +43,8 @@ export class AdminLoginComponent implements OnInit {
                 });
   }
 
-  onError(){
-    this._service.error('Error','Email, UserId or Password Not Match');
-  }
-  get email() { return this.angForm.get('email'); }
+  onError(){ this._service.error('Error','Email, UserId or Password Not Match'); }
+
   get userId() { return this.angForm.get('userId'); }
   get password() { return this.angForm.get('password'); }
 
