@@ -22,9 +22,8 @@
           </div>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
-
                 <!-- Email -->
-                <div class="form-group ">
+                <!-- <div class="form-group ">
                   <input type="email"name="email"
                          formControlName="email"
                          autocomplete="off"
@@ -32,9 +31,8 @@
                          placeholder="Email">
                          <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
                           <small class="alert alert-danger" *ngIf="email.errors?.required" >Required</small>
-                          <!-- <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Please provide a valid email address</small> -->
                         </div>
-                </div>
+                </div> -->
 
                 <!-- userId-->
                 <div class="form-group ">

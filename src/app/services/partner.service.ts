@@ -15,8 +15,8 @@ export class PartnerService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
 
-  public partnerlogin(username: string, userId: string, password: string ) {
-    return this.httpClient.post<any>(this.baseUrl + '/partnerLogin.php', { username, userId, password })
+  public partnerlogin( userId: string, password: string ) {
+    return this.httpClient.post<any>(this.baseUrl + '/partnerLogin.php', { userId, password })
     .pipe(map(Users => {
         this.setToken(Users[0].partner_id);
         this.getLoggedInName.emit(true);

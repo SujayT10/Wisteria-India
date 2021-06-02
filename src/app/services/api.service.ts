@@ -15,8 +15,8 @@ baseUrl:string = "http://localhost/wisteria-india/php/admin";
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient) { }
 
-  public userlogin(username: string , userId: string, password: string ) {
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, userId, password })
+  public userlogin( userId: string, password: string ) {
+    return this.httpClient.post<any>(this.baseUrl + '/login.php', { userId, password })
     .pipe(map(Users => {
         this.setToken(Users[0].admin_id);
         this.getLoggedInName.emit(true);

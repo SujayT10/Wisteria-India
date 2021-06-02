@@ -22,7 +22,7 @@ export class AdminLoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private _service: NotificationsService) {
       this.angForm = this.fb.group({
-        email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+        // email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         userId: ['', [Validators.required ]],
         password: ['', Validators.required]
       });
@@ -32,7 +32,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   postdata(angForm1: any){
-      this.dataService.userlogin(angForm1.value.email, angForm1.value.userId, angForm1.value.password)
+      this.dataService.userlogin( angForm1.value.userId, angForm1.value.password )
       .pipe(first())
       .subscribe(
                 data => {
