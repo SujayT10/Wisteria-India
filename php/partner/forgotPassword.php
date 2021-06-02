@@ -18,7 +18,6 @@ if(isset($postdata) && !empty($postdata)){
         }
         echo json_encode($rows);
 
-
          // Mail part
          $mail = new PHPMailer;
          $mail->SMTPDebug = 4;                     // Enable verbose debug output
@@ -81,9 +80,6 @@ if(isset($postdata) && !empty($postdata)){
          } else {
              echo 'Message has been sent';
          }
-
-
-
 
     }
 
