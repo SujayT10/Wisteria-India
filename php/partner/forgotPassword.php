@@ -27,8 +27,8 @@ if(isset($postdata) && !empty($postdata)){
          $mail->SMTPAuth = true;
 
          // On LocalHost
-         $mail->Username = 'sujaytank16595@gmail.com';
-         $mail->Password = 'Google@mh27bh3242';
+         $mail->Username = 'gal1leo.demo16@gmail.com';
+         $mail->Password = 'MH27bh3242';
 
          //On serve Data
         //  $mail->Username = 'info@wisteriaindia.com';                // SMTP username
@@ -38,8 +38,8 @@ if(isset($postdata) && !empty($postdata)){
          $mail->Port = 587;                                    // TCP port to connect to
 
          // On LocalHost
-         $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
-         $mail->addReplyTo('sujaytank16595@gmail.com');
+         $mail->setFrom('gal1leo.demo16@gmail.com', 'Wisteria India');
+         $mail->addReplyTo('gal1leo.demo16@gmail.com');
 
          //On serve Data
         //  $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');

@@ -24,7 +24,7 @@ export class PartnerProfileComponent implements OnInit {
     .pipe(first())
     .subscribe((data:Partner[]) =>{
       this.activePartner= data;
-      console.log(this.activePartner);
+      // console.log(this.activePartner);
     })
   }
 
