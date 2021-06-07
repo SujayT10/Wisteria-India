@@ -43,6 +43,7 @@ import { PartnerProfileComponent } from './partner-dashboard/partner-profile/par
 import { PartnerAuthguardGuard } from './PartnerAuthguard.guard';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -92,6 +93,7 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/topup-member/:id', component: TopupPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/add/:id', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/partner-profile/:id', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/partner-update-profile/:id', component: UpdateProfileComponent, canActivate: [PartnerAuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 
