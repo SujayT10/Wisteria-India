@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-pnavbar',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pnavbar.component.css']
 })
 export class PnavbarComponent implements OnInit {
+  partner_id: any;
 
-  constructor() { }
+  constructor(private partnerService: PartnerService) { }
 
   ngOnInit(): void {
+    this.partner_id = this.partnerService.getToken();
   }
 
 }

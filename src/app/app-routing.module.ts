@@ -85,13 +85,13 @@ const routes: Routes = [
 { path: 'dashboard/partner/add/:id', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile/:id', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
-{ path: 'partner-dashboard', component: PartnerDashboardComponent,canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/manage-member', component: ManagePpartnerComponent, canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/find-member', component: FindPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/recent-member', component: RecentPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/topup-member', component: TopupPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/add', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
-{ path: 'partner-dashboard/partner/partner-profile', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/:id', component: PartnerDashboardComponent,canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/manage-member/:id', component: ManagePpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/find-member/:id', component: FindPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/recent-member/:id', component: RecentPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/topup-member/:id', component: TopupPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/add/:id', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/partner-profile/:id', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 

@@ -2,7 +2,6 @@
   <div class="sidebar-wrapper scrollbar scrollbar-inner">
     <div class="sidebar-content">
 
-
       <div class="user">
         <div class="avatar-sm float-left mr-2">
           <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
@@ -21,7 +20,7 @@
             <ul class="nav">
               <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" routerLink="/partner-dashboard/partner/partner-profile" >My Profile</a>
+                <a class="dropdown-item" routerLink="/partner-dashboard/partner/partner-profile/{{partner_id}}" >My Profile</a>
 
                 <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/login" >logout</a>
               </li>
@@ -32,7 +31,7 @@
 
       <ul class="nav nav-primary">
         <li class="nav-item active">
-          <a routerLink="/partner-dashboard" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+          <a routerLink="/partner-dashboard/{{partner_id}}" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
             <i class="fas fa-home"></i>
             <p>Dashboard</p>
           </a>
@@ -50,23 +49,23 @@
           <div class="collapse" id="partner">
             <ul class="nav nav-collapse">
               <li>
-                <a routerLink="/partner-dashboard/partner/manage-member">
+                <a routerLink="/partner-dashboard/partner/manage-member/{{partner_id}}">
                   <span class="sub-item">View Member</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/partner-dashboard/partner/find-member">
+                <a routerLink="/partner-dashboard/partner/find-member/{{partner_id}}">
                   <span class="sub-item">Find Member</span>
                 </a>
               </li>
 
               <li>
-                <a routerLink="/partner-dashboard/partner/recent-member">
+                <a routerLink="/partner-dashboard/partner/recent-member/{{partner_id}}">
                   <span class="sub-item">Recent Member</span>
                 </a>
               </li>
               <li>
-                <a routerLink="/partner-dashboard/partner/topup-member">
+                <a routerLink="/partner-dashboard/partner/topup-member/{{partner_id}}">
                   <span class="sub-item">TopUp Member</span>
                 </a>
               </li>

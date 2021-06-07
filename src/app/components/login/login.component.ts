@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
         .pipe(first())
         .subscribe(
                   data => {
-                    const redirect = this.partnerService.redirectUrl ? this.partnerService.redirectUrl : '/partner-dashboard';
-                    this.router.navigate([redirect]);
+                    const redirect = this.partnerService.redirectUrl ? this.partnerService.redirectUrl : '/partner-dashboard/WIP-';
+                    this.router.navigate([redirect + angForm1.value.userId ]);
                   },
                   error => {
                     this.onError();
