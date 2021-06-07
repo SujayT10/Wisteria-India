@@ -44,6 +44,7 @@ import { PartnerAuthguardGuard } from './PartnerAuthguard.guard';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
+import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -91,6 +92,7 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/find-member/:id', component: FindPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/recent-member/:id', component: RecentPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/topup-member/:id', component: TopupPpartnerComponent, canActivate: [PartnerAuthguardGuard] },
+{ path: 'partner-dashboard/partner/payment-option/:id', component: PaymentOptionComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/add/:id', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/partner-profile/:id', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/partner-update-profile/:id', component: UpdateProfileComponent, canActivate: [PartnerAuthguardGuard] },

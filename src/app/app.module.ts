@@ -65,6 +65,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
 import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view-plans.component';
+import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 
 
 @NgModule({
@@ -121,6 +122,7 @@ import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view
     ResetPasswordComponent,
     UpdateProfileComponent,
     ViewPlansComponent,
+    PaymentOptionComponent,
 
   ],
   imports: [

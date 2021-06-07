@@ -73,46 +73,62 @@
           </div>
         </li>
 
-        <!-- Employee -->
-        <!-- <li class="nav-item">
-          <a data-toggle="collapse" href="#employee">
-            <i class="fas fa-users"></i>
-            <p>Manage Employees</p>
-            <span class="caret"></span>
-          </a>
-          <div class="collapse" id="employee">
-            <ul class="nav nav-collapse">
-              <li>
-                <a routerLink="/dashboard/employee/manage-member">
-                  <span class="sub-item">View Employee</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/dashboard/employee/find-member">
-                  <span class="sub-item">Find Employee</span>
-                </a>
-              </li>
-
-              <li>
-                <a routerLink="/dashboard/employee/recent-member">
-                  <span class="sub-item">Recent Employee</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/dashboard/employee/topup-member">
-                  <span class="sub-item">TopUp Employee</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li> -->
-
         <li class="nav-item">
           <a data-toggle="collapse" class="collapsed" aria-expanded="false">
             <i class="fas fa-tree"></i>
             <p>Member Tree View</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+            <i class="fas fa-credit-card"></i>
+            <p>Payment  Option</p>
+          </a>
+        </li>
+
+         <!-- Employee -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#purchase ">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Purchase </p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="purchase ">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Share Market Course </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Fashion Design </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Domo 4G Calling Tab</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Home Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Health Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{partner_id}}">
+                  <span class="sub-item">Personal Care Pack</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
 
         <li class="nav-item">
           <a data-toggle="collapse" *ngIf="logoutbtn" (click)="logout()"
