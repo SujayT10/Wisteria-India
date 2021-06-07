@@ -64,6 +64,7 @@ import { PartnerProfileComponent } from './partner-dashboard/partner-profile/par
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
+import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view-plans.component';
 
 
 @NgModule({
@@ -119,6 +120,7 @@ import { UpdateProfileComponent } from './partner-dashboard/update-profile/updat
     ForgotPasswordComponent,
     ResetPasswordComponent,
     UpdateProfileComponent,
+    ViewPlansComponent,
 
   ],
   imports: [
