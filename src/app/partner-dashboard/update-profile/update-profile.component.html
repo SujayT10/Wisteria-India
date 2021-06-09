@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <form role="form" action="" method="post">
+        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
 
           <div class="row setup-content" id="step-1">
             <div class="stepwizard col">
@@ -67,30 +67,81 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="col">
-                      <label class="control-label">Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Name" type="text">
+
+                      <label class="control-label">Full Name</label>
+                      <input type="text" name="fullname"
+                       formControlName="fullname"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Enter Full Name">
+                      <div *ngIf="fullname.touched && fullname.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="fullname.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="fullname.errors.minlength">Minimum {{fullname.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="fullname.errors.maxlength">Maximum {{fullname.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
                     </div>
                    <div class="col">
+
                       <label class="control-label">Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+                      <input type="date" name="m_DOB"
+                      formControlName="m_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Date of Birth">
+                      <div *ngIf="m_DOB.touched && m_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="m_DOB.errors.required">Required</small>
+                      </div>
+
+                </div>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="row">
                     <div class="col">
+
                       <label class="control-label">Nominee Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Name" type="text">
+                      <input type="text" name="nominee"
+                      formControlName="nominee"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Nominee Name">
+                      <div *ngIf="nominee.touched && nominee.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="nominee.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="nominee.errors.minlength">Minimum {{nominee.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="nominee.errors.maxlength">Maximum {{nominee.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
                     </div>
                    <div class="col">
+
                       <label class="control-label">Relation</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Relation" type="text">
-                   </div>
+                      <input type="text" name="relation"
+                      formControlName="relation"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Relation">
+                      <div *ngIf="relation.touched && relation.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="relation.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="relation.errors.minlength">Minimum {{relation.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="relation.errors.maxlength">Maximum {{relation.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
+                    </div>
                    <div class="col">
+
                       <label class="control-label">Nominee Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+                      <input type="date" name="n_DOB"
+                      formControlName="n_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Nominee Date of Birth">
+                      <div *ngIf="n_DOB.touched && n_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="n_DOB.errors.required">Required</small>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
 
@@ -106,49 +157,131 @@
                 <div class="form-group">
                   <div class="row">
                    <div class="col">
+
                       <label class="control-label">First Child Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter First Child Name" type="text">
-                   </div>
-                   <div class="col">
+                      <input type="text" name="childName1"
+                      formControlName="childName1"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter First Child Name">
+                      <div *ngIf="childName1.touched && childName1.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="childName1.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="childName1.errors.minlength">Minimum {{childName1.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="childName1.errors.maxlength">Maximum {{childName1.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
+                    </div>
+                   <div class="col">  
+
                       <label class="control-label">First Child Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+                      <input type="date" name="c1_DOB"
+                      formControlName="c1_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter First Child Date of Birth">
+                      <div *ngIf="c1_DOB.touched && c1_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="c1_DOB.errors.required">Required</small>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <div class="row">
                    <div class="col">
+
                       <label class="control-label">Second Child Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter First Child Name" type="text">
-                   </div>
+                      <input type="text" name="childName2"
+                      formControlName="childName2"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Second Child Name">
+                      <div *ngIf="childName2.touched && childName2.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="childName2.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="childName2.errors.minlength">Minimum {{childName2.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="childName2.errors.maxlength">Maximum {{childName2.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
+                    </div>
                    <div class="col">
+
                       <label class="control-label">Second Child Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+                      <input type="date" name="c2_DOB"
+                      formControlName="c2_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Enter Second Child Date of Birth">
+                      <div *ngIf="c2_DOB.touched && c2_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="c2_DOB.errors.required">Required</small>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <div class="row">
                    <div class="col">
+
                       <label class="control-label">Grand Father Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Grand Father Name" type="text">
-                   </div>
+                      <input type="text" name="gf_name"
+                      formControlName="gf_name"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Grand Father Name">
+                      <div *ngIf="gf_name.touched && gf_name.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="gf_name.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="gf_name.errors.minlength">Minimum {{gf_name.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="gf_name.errors.maxlength">Maximum {{gf_name.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
+                    </div>
                    <div class="col">
+
                       <label class="control-label">Grand Father Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+                      <input type="date" name="gf_DOB"
+                      formControlName="gf_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Grand Father Date of Birth">
+                      <div *ngIf="gf_DOB.touched && gf_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="gf_DOB.errors.required">Required</small>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="row">
                    <div class="col">
-                      <label class="control-label">Grand Father Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter First Child Name" type="text">
-                   </div>
+
+                      <label class="control-label">Grand Mother Name</label>
+                      <input type="text" name="gm_name"
+                      formControlName="gm_name"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Grand Mother Name">
+                      <div *ngIf="gm_name.touched && gm_name.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="gm_name.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="gm_name.errors.minlength">Minimum {{gm_name.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="gm_name.errors.maxlength">Maximum {{gm_name.errors.maxlength.requiredLength}} characters</small>
+                      </div>
+
+                    </div>
                    <div class="col">
-                      <label class="control-label">Second Child Date of Birth</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Nominee Date of Birth" type="date">
-                   </div>
+
+                      <label class="control-label">Grand Mother Date of Birth</label>
+                      <input type="date" name="gm_DOB"
+                      formControlName="gm_DOB"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Grand Father Date of Birth">
+                      <div *ngIf="gm_DOB.touched && gm_DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="gm_DOB.errors.required">Required</small>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
@@ -160,31 +293,77 @@
           <div class="row setup-content" id="step-3">
             <div class="stepwizard col">
               <div class="col-md-12">
-                <h3> Step 3</h3>
+                <!-- <h3> Step 3</h3> -->
                 <div class="form-group">
+
                       <label class="control-label">Pan Number</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Pan Number" type="text">
+                      <input type="text" name="panNumber"
+                      formControlName="panNumber"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Pan Number">
+                      <div *ngIf="panNumber.touched && panNumber.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="panNumber.errors.required">Required</small>
+                      </div>
 
                       <label class="control-label">Account number</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Bank Account number" type="text">
+                      <input type="text" name="accNumber"
+                      formControlName="accNumber"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Account number">
+                      <div *ngIf="accNumber.touched && accNumber.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="accNumber.errors.required">Required</small>
+                      </div>
                 </div>
                 <div class="form-group">
+
                       <label class="control-label">Bank Name</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Bank Name" type="text">
+                      <input type="text" name="bankName"
+                      formControlName="bankName"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Bank Name">
+                      <div *ngIf="bankName.touched && bankName.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="bankName.errors.required">Required</small>
+                      </div>
 
+                      <label class="control-label">Branch Name</label>
+                      <input type="text" name="branchName"
+                      formControlName="branchName"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Branch Name">
+                      <div *ngIf="branchName.touched && branchName.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="branchName.errors.required">Required</small>
+                      </div>
 
-                      <label class="control-label">Branch</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Branch" type="text">
                 </div>
                 <div class="form-group">
-                      <label class="control-label"> IFSC code</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter IFSC code" type="text">
+
+                      <label class="control-label">IFSC code</label>
+                      <input type="text" name="ifscCode"
+                      formControlName="ifscCode"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="IFSC code">
+                      <div *ngIf="ifscCode.touched && ifscCode.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="ifscCode.errors.required">Required</small>
+                      </div>
 
                       <label class="control-label">Emergency contact number</label>
-                      <input maxlength="100" required="required" class="form-control" placeholder="Enter Emergency contact number" type="text">
+                      <input type="text" name="eContactNo"
+                      formControlName="eContactNo"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Emergency contact number">
+                      <div *ngIf="eContactNo.touched && eContactNo.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="eContactNo.errors.required">Required</small>
+                      </div>
+
                 </div>
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
-                <button class="btn btn-success pull-right" type="submit">Submit</button>
+                <button class="btn btn-success pull-right" type="submit" [disabled]="!angForm.valid" (click)="loader()">Submit</button>
               </div>
             </div>
           </div>
