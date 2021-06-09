@@ -4,7 +4,6 @@ import { first } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { confirmedValidator } from 'src/app/confirmed.validator';
 import { NotificationsService } from 'angular2-notifications';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
@@ -32,25 +31,25 @@ export class UpdateProfileComponent implements OnInit {
               private ngxService: NgxUiLoaderService) {
     this.angForm = this.fb.group({
 
-      fullname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      fullname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       m_DOB: ['', [Validators.required]],
-      nominee: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-      relation: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      nominee: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
+      relation: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       n_DOB: ['', [Validators.required]],
-      childName1: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      childName1: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       c1_DOB: ['', [Validators.required]],
-      childName2: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      childName2: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       c2_DOB: ['', [Validators.required]],
-      gf_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      gf_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       gf_DOB: ['', [Validators.required]],
-      gm_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      gm_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       gm_DOB: ['', [Validators.required]],
       panNumber: ['', [Validators.required]],
       accNumber: ['', [Validators.required]],
       bankName: ['', [Validators.required]],
       branchName: ['', [Validators.required]],
       ifscCode: ['', [Validators.required]],
-      eContactNo: ['', [Validators.required]],
+      eContactNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
 
       });
   }
@@ -62,7 +61,7 @@ export class UpdateProfileComponent implements OnInit {
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
-    this.partnerService.updateProfile(this.partner_id,angForm1.value.fullname, angForm1.value.m_DOB,
+    this.partnerService.updateProfile(this.partner_id, angForm1.value.fullname, angForm1.value.m_DOB,
                                       angForm1.value.nominee, angForm1.value.relation,
                                       angForm1.value.n_DOB, angForm1.value.childName1,
                                       angForm1.value.c1_DOB, angForm1.value.childName2,
@@ -71,17 +70,15 @@ export class UpdateProfileComponent implements OnInit {
                                       angForm1.value.gm_DOB, angForm1.value.panNumber,
                                       angForm1.value.accNumber, angForm1.value.bankName,
                                       angForm1.value.ifscCode,  angForm1.value.eContactNo,)
-
-
       .pipe(first())
       .subscribe(
                   data => {
                   this.angForm.reset();
-                  console.log(this.angForm);
+                  // console.log("form Update Profile");
                   },
                   error => {
                     this.onSuccess();
-                    console.log("Error from  Update profile");
+                    // console.log("Error from  Update profile");
                   }
                 );
 
@@ -94,7 +91,7 @@ export class UpdateProfileComponent implements OnInit {
     // Stop the foreground loading after 5s
     setTimeout(() => {
       this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 9000);
+    }, 5000);
   }
 
 

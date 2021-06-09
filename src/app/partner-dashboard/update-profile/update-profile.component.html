@@ -357,6 +357,7 @@
                       placeholder="Emergency contact number">
                       <div *ngIf="eContactNo.touched && eContactNo.invalid" class="text-danger" >
                         <small class="alert alert-danger" *ngIf="eContactNo.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="eContactNo.errors.pattern">Enter 10 digit Mobile Number</small>
                       </div>
 
                 </div>

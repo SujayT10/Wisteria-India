@@ -31,7 +31,7 @@ if(isset($postdata) && !empty($postdata)){
 
       $res = mysqli_query($mysqli, $sql);
 
-    if ($mysqli->query($sql1) === TRUE) {
+    if ($res === TRUE) {
         $authdata = [
                     'Id' => mysqli_insert_id($mysqli),
                     'referal_id' => $referal_id,
@@ -57,7 +57,7 @@ if(isset($postdata) && !empty($postdata)){
 
          echo json_encode($authdata);
     } else{
-      http_response_code(404);
+      http_response_code(402);
       }
 
 }
