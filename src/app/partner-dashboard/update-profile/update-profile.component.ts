@@ -62,14 +62,17 @@ export class UpdateProfileComponent implements OnInit {
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
-    this.partnerService.partnerRegistration(angForm1.value.firstname,
-                                            angForm1.value.lastname,
-                                            angForm1.value.contactno,
-                                            angForm1.value.email,
-                                            angForm1.value.password,
-                                            angForm1.value.datetime,
-                                            angForm1.value.referalId,
-                                            angForm1.value.address)
+    this.partnerService.updateProfile(angForm1.value.fullname, angForm1.value.m_DOB,
+                                      angForm1.value.nominee, angForm1.value.relation,
+                                      angForm1.value.n_DOB, angForm1.value.childName1,
+                                      angForm1.value.c1_DOB, angForm1.value.childName2,
+                                      angForm1.value.c2_DOB, angForm1.value.gf_name,
+                                      angForm1.value.gf_DOB, angForm1.value.gm_name,
+                                      angForm1.value.gm_DOB, angForm1.value.panNumber,
+                                      angForm1.value.accNumber, angForm1.value.bankName,
+                                      angForm1.value.ifscCode,  angForm1.value.eContactNo,)
+
+
       .pipe(first())
       .subscribe(
                   data => {

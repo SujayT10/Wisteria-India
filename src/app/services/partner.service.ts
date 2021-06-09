@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Wallet } from '../classes/wallet';
+import { UpdatePartnerProfile } from '../classes/update-partner-profile';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PartnerService {
+
   redirectUrl: any;
   baseUrl:string = "http://localhost/wisteria-india/php/partner";
   // baseUrl:string = "https://wisteriaindia.com/php/partner";
@@ -79,8 +81,16 @@ export class PartnerService {
      }));
   }
 
-  public show() {
+  public updateProfile(fullname: string,m_DOB: number,nominee: string,relation: string,n_DOB: number,childName1: string,c1_DOB: number, childName2:string,c2_DOB: number,gf_name: string,gf_DOB: number,
+                        gm_name: string,gm_DOB: number,panNumber: string,accNumber: string,bankName: string,ifscCode: string, eContactNo: number,){
+      return this.httpClient.post<UpdatePartnerProfile[]>(this.baseUrl + '/partnerRegister.php',
+      { fullname, m_DOB, nominee, relation, n_DOB, childName1, c1_DOB, childName2,c2_DOB,gf_name, gf_DOB,gm_name, gm_DOB,panNumber, accNumber, bankName, ifscCode,eContactNo})
+      .pipe(map(partner => {
+      return partner;
+      }));
+    }
 
+  public show() {
     $(document).ready(function () {
       var navListItems = $('div.setup-panel div a'),
               allWells = $('.setup-content'),
