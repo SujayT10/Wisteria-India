@@ -62,7 +62,7 @@ export class UpdateProfileComponent implements OnInit {
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
-    this.partnerService.updateProfile(angForm1.value.fullname, angForm1.value.m_DOB,
+    this.partnerService.updateProfile(this.partner_id,angForm1.value.fullname, angForm1.value.m_DOB,
                                       angForm1.value.nominee, angForm1.value.relation,
                                       angForm1.value.n_DOB, angForm1.value.childName1,
                                       angForm1.value.c1_DOB, angForm1.value.childName2,
@@ -77,11 +77,11 @@ export class UpdateProfileComponent implements OnInit {
       .subscribe(
                   data => {
                   this.angForm.reset();
+                  console.log(this.angForm);
                   },
                   error => {
                     this.onSuccess();
-                    this.angForm.reset();
-                    // console.log("Error from  Add-Partner")
+                    console.log("Error from  Update profile");
                   }
                 );
 

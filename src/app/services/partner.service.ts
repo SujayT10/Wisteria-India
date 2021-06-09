@@ -81,10 +81,10 @@ export class PartnerService {
      }));
   }
 
-  public updateProfile(fullname: string,m_DOB: number,nominee: string,relation: string,n_DOB: number,childName1: string,c1_DOB: number, childName2:string,c2_DOB: number,gf_name: string,gf_DOB: number,
+  public updateProfile(partner_id: string,fullname: string,m_DOB: number,nominee: string,relation: string,n_DOB: number,childName1: string,c1_DOB: number, childName2:string,c2_DOB: number,gf_name: string,gf_DOB: number,
                         gm_name: string,gm_DOB: number,panNumber: string,accNumber: string,bankName: string,ifscCode: string, eContactNo: number,){
-      return this.httpClient.post<UpdatePartnerProfile[]>(this.baseUrl + '/partnerRegister.php',
-      { fullname, m_DOB, nominee, relation, n_DOB, childName1, c1_DOB, childName2,c2_DOB,gf_name, gf_DOB,gm_name, gm_DOB,panNumber, accNumber, bankName, ifscCode,eContactNo})
+      return this.httpClient.post<UpdatePartnerProfile[]>(this.baseUrl + '/updateProfile.php',
+      { partner_id, fullname, m_DOB, nominee, relation, n_DOB, childName1, c1_DOB, childName2,c2_DOB,gf_name, gf_DOB,gm_name, gm_DOB,panNumber, accNumber, bankName, ifscCode,eContactNo})
       .pipe(map(partner => {
       return partner;
       }));
