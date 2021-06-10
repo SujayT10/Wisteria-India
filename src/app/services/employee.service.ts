@@ -9,8 +9,8 @@ import { Users } from '../classes/users';
 })
 export class EmployeeService {
   redirectUrl: any;
-  baseUrl:string = "http://localhost/wisteria-india/php/employee";
-  // baseUrl:string = "https://wisteriaindia.com/php/employee";
+  // baseUrl:string = "http://localhost/wisteria-india/php/employee";
+  baseUrl:string = "https://wisteriaindia.com/php/employee";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }

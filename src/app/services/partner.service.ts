@@ -11,8 +11,8 @@ import { UpdatePartnerProfile } from '../classes/update-partner-profile';
 export class PartnerService {
 
   redirectUrl: any;
-  baseUrl:string = "http://localhost/wisteria-india/php/partner";
-  // baseUrl:string = "https://wisteriaindia.com/php/partner";
+  // baseUrl:string = "http://localhost/wisteria-india/php/partner";
+  baseUrl:string = "https://wisteriaindia.com/php/partner";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }

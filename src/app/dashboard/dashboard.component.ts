@@ -39,8 +39,8 @@ export class DashboardComponent implements OnInit {
     });
 
     this.admin_id = this.dataService.getToken();
-    this.link = "http://localhost:4200/#/referral-registration/" + this.admin_id;
-    // this.link = "https://wisteriaindia.com/#/referral-registration/" + this.admin_id;
+    // this.link = "http://localhost:4200/#/referral-registration/" + this.admin_id;
+    this.link = "https://wisteriaindia.com/#/referral-registration/" + this.admin_id;
     this.activeId(this.admin_id);
 
   }

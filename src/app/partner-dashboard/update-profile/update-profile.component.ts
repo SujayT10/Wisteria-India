@@ -74,17 +74,18 @@ export class UpdateProfileComponent implements OnInit {
       .subscribe(
                   data => {
                   this.angForm.reset();
+                  this.onSuccess();
                   // console.log("form Update Profile");
                   },
                   error => {
-                    this.onSuccess();
-                    // console.log("Error from  Update profile");
+                    // this.onSuccess();
+                    console.log("Error from Update profile");
                   }
                 );
 
   }
 
-  onSuccess(){ this._service.success('Successfully Registred'); }
+  onSuccess(){ this._service.success('Profile Updated'); }
 
   loader(){
     this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
