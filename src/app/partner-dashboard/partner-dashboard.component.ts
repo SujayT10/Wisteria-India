@@ -3,6 +3,7 @@ import { ApiService } from '../services/api.service';
 import { PartnerService } from '../services/partner.service';
 import { first } from 'rxjs/operators';
 import { Partner } from '../classes/partner';
+import { CommonLinksService } from '../services/common-links.service';
 
 @Component({
   selector: 'app-partner-dashboard',
@@ -19,12 +20,11 @@ export class PartnerDashboardComponent implements OnInit {
   link : string;
   showMe:boolean = false;
 
-  constructor(private partnerService: PartnerService) { }
+  constructor(private partnerService: PartnerService, private _linksService : CommonLinksService) { }
 
   ngOnInit(): void {
     this.partner_id  = this.partnerService.getToken();
-    // this.link = "http://localhost:4200/#/referral-registration/" + this.partner_id;
-    this.link = "https://wisteriaindia.com/#/referral-registration/" + this.partner_id;
+    this.link = this._linksService.referal_link + this.partner_id;
     this.postId(this.partner_id);
     this.activeId(this.partner_id);
   }

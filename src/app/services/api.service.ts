@@ -2,6 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from '../classes/users';
+import { CommonLinksService } from './common-links.service';
 
 @Injectable({
 providedIn: 'root'
@@ -9,14 +10,12 @@ providedIn: 'root'
 
 export class ApiService {
 redirectUrl: any;
-// baseUrl:string = "http://localhost/wisteria-india/php/admin";
-baseUrl:string = "https://wisteriaindia.com/php/admin";
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-constructor(private httpClient : HttpClient) { }
+constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
 
   public userlogin( userId: string, password: string ) {
-    return this.httpClient.post<any>(this.baseUrl + '/login.php', { userId, password })
+    return this.httpClient.post<any>(this._linksService.baseUrl_api + '/login.php', { userId, password })
     .pipe(map(Users => {
         this.setToken(Users[0].admin_id);
         this.getLoggedInName.emit(true);
@@ -26,18 +25,18 @@ constructor(private httpClient : HttpClient) { }
   }
 
   public userregistration(name: string, lastname: string, email: string,contactno: number, pwd: string, ) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, lastname, email, pwd, contactno })
+    return this.httpClient.post<any>(this._linksService.baseUrl_api + '/register.php', { name, lastname, email, pwd, contactno })
     .pipe(map(Users => {
     return Users;
     }));
    }
 
    getPartner(){
-    return this.httpClient.get<Users[]>(this.baseUrl + '/getAdmin.php');
+    return this.httpClient.get<Users[]>(this._linksService.baseUrl_api + '/getAdmin.php');
   }
 
   public activeUser(admin_id: string){
-    return this.httpClient.post<Users[]>(this.baseUrl + '/activeUserById.php', { admin_id });
+    return this.httpClient.post<Users[]>(this._linksService.baseUrl_api + '/activeUserById.php', { admin_id });
   }
 
 //token

@@ -6,6 +6,7 @@ import { Partner } from '../classes/partner';
 import { first } from 'rxjs/operators';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../classes/employee';
+import { CommonLinksService } from '../services/common-links.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ export class DashboardComponent implements OnInit {
   link : string;
   showMe:boolean = false;
 
-  constructor(private partnerService: PartnerService, private dataService: ApiService, private _empService: EmployeeService) { }
+  constructor(private partnerService: PartnerService, private dataService: ApiService, private _empService: EmployeeService, private _linksService : CommonLinksService) { }
 
   ngOnInit(): void {
       this.partnerService.recentPartner().subscribe((partner: Partner[]) =>{
@@ -39,8 +40,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.admin_id = this.dataService.getToken();
-    // this.link = "http://localhost:4200/#/referral-registration/" + this.admin_id;
-    this.link = "https://wisteriaindia.com/#/referral-registration/" + this.admin_id;
+    this.link = this._linksService.referal_link+ this.admin_id;
     this.activeId(this.admin_id);
 
   }

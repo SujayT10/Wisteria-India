@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Wallet } from '../classes/wallet';
 import { UpdatePartnerProfile } from '../classes/update-partner-profile';
+import { CommonLinksService } from './common-links.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +12,12 @@ import { UpdatePartnerProfile } from '../classes/update-partner-profile';
 export class PartnerService {
 
   redirectUrl: any;
-  // baseUrl:string = "http://localhost/wisteria-india/php/partner";
-  baseUrl:string = "https://wisteriaindia.com/php/partner";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
 
   public partnerlogin( userId: string, password: string ) {
-    return this.httpClient.post<any>(this.baseUrl + '/partnerLogin.php', { userId, password })
+    return this.httpClient.post<any>(this._linksService.baseUrl_partner + '/partnerLogin.php', { userId, password })
     .pipe(map(Users => {
         this.setToken(Users[0].partner_id);
         this.getLoggedInName.emit(true);
@@ -27,55 +26,55 @@ export class PartnerService {
   }
 
   public postDataToDB(partner_id: string){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/getPartnerByID.php',{ partner_id })
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getPartnerByID.php',{ partner_id })
       .pipe(map(partner => {
           return partner;
        }));
   }
 
   recentPartnerBYID(partner_id: string){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/getRecentPartnerById.php',{ partner_id });
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getRecentPartnerById.php',{ partner_id });
   }
 
   public activePartner(partner_id: string){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/activePartnerById.php', { partner_id });
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/activePartnerById.php', { partner_id });
   }
 
   getPartner(){
-    return this.httpClient.get<Partner[]>(this.baseUrl + '/partner.php');
+    return this.httpClient.get<Partner[]>(this._linksService.baseUrl_partner + '/partner.php');
   }
 
   deletePartner(id: any){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/delete.php?', { id } );
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/delete.php?', { id } );
   }
 
   recentPartner(){
-    return this.httpClient.get<Partner[]>(this.baseUrl + '/recentPartners.php');
+    return this.httpClient.get<Partner[]>(this._linksService.baseUrl_partner + '/recentPartners.php');
   }
 
   public partnerRegistration(firstname: string, lastname: string, contactno: number, email: string, password: string, datetime: number, referalId: string,	address: string) {
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/partnerRegister.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/partnerRegister.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
     .pipe(map(partner => {
     return partner;
     }));
   }
 
   public addAmount(partner_id:string, amount:string ){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/partnerAmount.php', { partner_id, amount })
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/partnerAmount.php', { partner_id, amount })
     .pipe(map(partner => {
     return partner;
     }));
   }
 
   public forgotPassword(email: string, partner_id: string){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/forgotPassword.php',{ email, partner_id })
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/forgotPassword.php',{ email, partner_id })
       .pipe(map(partner => {
           return partner;
        }));
   }
 
   public resetPassword(password: string, partner_id: string){
-    return this.httpClient.post<Partner[]>(this.baseUrl + '/resetPassword.php',{ password, partner_id })
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/resetPassword.php',{ password, partner_id })
     .pipe(map(partner => {
         return partner;
      }));
@@ -83,7 +82,7 @@ export class PartnerService {
 
   public updateProfile(partner_id: string,fullname: string,m_DOB: number,nominee: string,relation: string,n_DOB: number,childName1: string,c1_DOB: number, childName2:string,c2_DOB: number,gf_name: string,gf_DOB: number,
                         gm_name: string,gm_DOB: number,panNumber: string,accNumber: string,bankName: string,ifscCode: string, eContactNo: number,){
-      return this.httpClient.post<UpdatePartnerProfile[]>(this.baseUrl + '/updateProfile.php',
+      return this.httpClient.post<UpdatePartnerProfile[]>(this._linksService.baseUrl_partner + '/updateProfile.php',
       { partner_id, fullname, m_DOB, nominee, relation, n_DOB, childName1, c1_DOB, childName2,c2_DOB,gf_name, gf_DOB,gm_name, gm_DOB,panNumber, accNumber, bankName, ifscCode,eContactNo})
       .pipe(map(partner => {
       return partner;

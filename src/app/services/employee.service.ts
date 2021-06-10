@@ -3,26 +3,24 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from '../classes/users';
+import { CommonLinksService } from './common-links.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
   redirectUrl: any;
-  // baseUrl:string = "http://localhost/wisteria-india/php/employee";
-  baseUrl:string = "https://wisteriaindia.com/php/employee";
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
 
     public userlogin(username: string , userId: string, password: string ) {
-      return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, userId, password })
+      return this.httpClient.post<any>(this._linksService.baseUrl_employee + '/login.php', { username, userId, password })
       .pipe(map(Users => {
           this.setToken(Users[0].admin_id);
           this.getLoggedInName.emit(true);
           return Users;
       }));
-
     }
 
     public employeeRegistration(firstname: string,
@@ -32,22 +30,22 @@ export class EmployeeService {
                                 password: string,
                                 datetime: number,
                                 address: string ) {
-      return this.httpClient.post<any>(this.baseUrl + '/employeeRegister.php', { firstname, lastname, contactno, email, password, datetime, address })
+      return this.httpClient.post<any>(this._linksService.baseUrl_employee + '/employeeRegister.php', { firstname, lastname, contactno, email, password, datetime, address })
       .pipe(map(Employee => {
       return Employee;
       }));
      }
 
     public getEmp(){
-      return this.httpClient.get<Employee[]>(this.baseUrl + '/getEmp.php');
+      return this.httpClient.get<Employee[]>(this._linksService.baseUrl_employee + '/getEmp.php');
     }
 
     recentEmployee(){
-      return this.httpClient.get<Employee[]>(this.baseUrl + '/recentEmployee.php');
+      return this.httpClient.get<Employee[]>(this._linksService.baseUrl_employee + '/recentEmployee.php');
     }
 
     public activeUser(admin_id: string){
-      return this.httpClient.post<Users[]>(this.baseUrl + '/activeUserById.php', { admin_id });
+      return this.httpClient.post<Users[]>(this._linksService.baseUrl_employee + '/activeUserById.php', { admin_id });
     }
 
   //token
