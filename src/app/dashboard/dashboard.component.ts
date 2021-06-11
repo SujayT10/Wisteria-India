@@ -7,6 +7,7 @@ import { first } from 'rxjs/operators';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../classes/employee';
 import { CommonLinksService } from '../services/common-links.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-dashboard',
