@@ -66,6 +66,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
 import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view-plans.component';
 import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
+import { TalentHuntRegisterComponent } from './components/talent-hunt-register/talent-hunt-register.component';
 
 
 @NgModule({
@@ -123,6 +124,7 @@ import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-opt
     UpdateProfileComponent,
     ViewPlansComponent,
     PaymentOptionComponent,
+    TalentHuntRegisterComponent,
 
   ],
   imports: [
