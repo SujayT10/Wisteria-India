@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-talent-hunt-register',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TalentHuntRegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private partnerService: PartnerService) { }
 
   ngOnInit(): void {
+
+    this.partnerService.show();
+
     $(document).ready(function(){
       //group add limit
       var maxGroup = 5;
