@@ -31,7 +31,7 @@
           </div>
         </div>&nbsp;&nbsp;
 
-        <form  >
+        <form [formGroup]="angForm"  autocomplete="off">
 
           <div class="row setup-content" id="step-1">
             <div class="stepwizard col">
@@ -44,49 +44,62 @@
                     <label class="control-label">Full Name</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="text" name="name[]" class="form-control" placeholder="Enter name"/>
+                      <input type="text" name="name[]"
+                             formControlName="name"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter Full Name"/>
+                             <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                              <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                              <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                            </div>
                     </div>
                   </div>&nbsp;
 
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label class="control-label">Date of Birth</label>
+                    </div>
+                    <div class="col-md-10">
+                      <input type="date" name="date[]"
+                             formControlName="DOB"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter email"/>
+                             <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                            </div>
+                    </div>
+                  </div>&nbsp;
 
-                <div class="row">
-                  <div class="col-md-2">
-                    <label class="control-label">Date of Birth</label>
-                  </div>
-                  <div class="col-md-10">
-                    <input type="date" name="date[]" class="form-control" placeholder="Enter email"/>
-                  </div>
-                </div>&nbsp;
+                  <div class="row">
+                    <div class="col-md-2">
+                    <label class="control-label">Hobbie</label>
+                    </div>
+                    <div class="col-md-10">
+                      <input type="test" name="hobbie[]"
+                              formControlName="hobbie"
+                              autocomplete="off"
+                              class="form-control"
+                              placeholder="Enter Hobbie"/>
+                              <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                            </div>
+                    </div>
+                  </div>&nbsp;
+                <div class="row"></div>
 
-                <div class="row">
-                  <div class="col-md-2">
-                  <label class="control-label">Choice Talent</label>
+                  <div class="input-group-addon float-right">
+                    <a href="javascript:void(0)" class="btn btn-success addMore">
+                      <i class="fas fa-plus"></i>
+                    </a>
                   </div>
-                  <div class="col-md-10">
-                    <select class="form-select form-control" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">Dance</option>
-                      <option value="2">Poem</option>
-                      <option value="3">Story </option>
-                      <option value="4">Singing </option>
-                      <option value="5">Acting </option>
-                      <option value="6">Drawing </option>
-                      <option value="7">Photography </option>
-                    </select>&nbsp;&nbsp;
-                  </div>
-                </div>
-
-                <div class="input-group-addon float-right">
-                  <a href="javascript:void(0)" class="btn btn-success addMore">
-                    <!-- <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add -->
-                    <i class="fas fa-plus"></i>
-                  </a>
-                </div>
 
                   <div class="mb-4">
-                <hr class="solid">
-              </div>
-            </div>
+                    <hr class="solid">
+                  </div>
+                </div>
 
                 <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
               </div>
@@ -103,7 +116,14 @@
                       <label class="control-label">Email</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="text" name="date[]" class="form-control" placeholder="Enter Email"/>
+                      <input type="text" name="email"
+                             formControlName="email"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter Email"/>
+                             <div *ngIf="email.touched && email.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="email.errors.required">Required</small>
+                            </div>
                     </div>
                   </div>&nbsp;
 
@@ -112,7 +132,14 @@
                       <label class="control-label">Contact No</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="text" name="date[]" class="form-control" placeholder="Enter Contact No"/>
+                      <input type="text" name="contactno"
+                             formControlName="contactno"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter Contact No"/>
+                             <div *ngIf="contactno.touched && contactno.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="contactno.errors.required">Required</small>
+                            </div>
                     </div>
                   </div>&nbsp;
 
@@ -121,8 +148,17 @@
                       <label class="control-label">Address</label>
                     </div>
                     <div class="col-md-10">
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                      </div>
+                      <textarea class="form-control" name="address"
+                                formControlName="address"
+                                autocomplete="off"
+                                id="exampleFormControlTextarea1"
+                                rows="2"
+                                placeholder="Enter Address">
+                      </textarea>
+                      <div *ngIf="address.touched && address.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="address.errors.required">Required</small>
+                      </div>
+                    </div>
                   </div>&nbsp;
 
                   <div class="row">
@@ -130,7 +166,14 @@
                       <label class="control-label">Pin Code</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="text" name="date[]" class="form-control" placeholder="Enter Pin Code"/>
+                      <input type="text" name="pinCode"
+                             formControlName="pinCode"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter Pin Code"/>
+                             <div *ngIf="pinCode.touched && pinCode.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="pinCode.errors.required">Required</small>
+                            </div>
                     </div>
                   </div>&nbsp;
 
@@ -170,15 +213,18 @@
                       <label class="control-label">Transaction ID</label>
                     </div>
                     <div class="col-md-9">
-                      <input type="text" name="transaction_id" class="form-control" placeholder="Enter Transaction ID"/>
+                      <input type="text" name="transaction_id"
+                             formControlName="transaction_id"
+                             autocomplete="off"
+                             class="form-control"
+                             placeholder="Enter Transaction ID"/>
+                             <div *ngIf="transaction_id.touched && transaction_id.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="transaction_id.errors.required">Required</small>
+                            </div>
                     </div>
                   </div>&nbsp;
 
                 </div>
-
-
-
-
 
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
                 <button class="btn btn-success pull-right" type="submit" >Submit</button>
@@ -202,7 +248,16 @@
                <label class="control-label">Full Name</label>
               </div>
               <div class="col-md-10">
-                <input type="text" name="name[]" class="form-control" placeholder="Enter name"/>
+                <input type="text" name="name[]"
+                        formControlName="name"
+                        autocomplete="off"
+                        class="form-control"
+                        placeholder="Enter Full Name (optional)"/>
+                        <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                      </div>
               </div>
             </div>&nbsp;
 
@@ -211,7 +266,14 @@
                 <label class="control-label">Date of Birth</label>
               </div>
               <div class="col-md-10">
-                <input type="date" name="date[]" class="form-control" placeholder="Enter email"/>
+                <input type="date" name="date[]"
+                        formControlName="DOB"
+                        autocomplete="off"
+                        class="form-control"
+                        placeholder="Enter email (optional)"/>
+                        <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                      </div>
               </div>
             </div>&nbsp;
 
@@ -220,18 +282,16 @@
                <label class="control-label">Choice Talent</label>
               </div>
               <div class="col-md-10">
-                <select class="form-select form-control" aria-label="Default select example">
-                  <option selected>Open this select menu</option>
-                  <option value="1">Dance</option>
-                  <option value="2">Poem</option>
-                  <option value="3">Story </option>
-                  <option value="4">Singing </option>
-                  <option value="5">Acting </option>
-                  <option value="6">Drawing </option>
-                  <option value="7">Photography </option>
-                </select>&nbsp;&nbsp;
+                <input type="test" name="hobbie[]"
+                              formControlName="hobbie"
+                              autocomplete="off"
+                              class="form-control"
+                              placeholder="Enter Hobbie (optional)"/>
+                              <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                              <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                            </div>
                </div>
-            </div>
+            </div>&nbsp;
 
             <div class="input-group-addon">
                 <a href="javascript:void(0)" class="btn btn-danger remove float-right">
