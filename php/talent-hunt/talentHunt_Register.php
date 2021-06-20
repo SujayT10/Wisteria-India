@@ -45,9 +45,16 @@ if(isset($postdata) && !empty($postdata)){
                                      '$name4','$dob4','$hobbie4',
                                      '$name5','$dob5','$hobbie5',
                                      '$email','$contactno','$address','$pinCode','$transaction_id')";
+      $res = mysqli_query($mysqli, $sql);
+      $last_id = mysqli_insert_id($mysqli);
 
+      if($last_id){
+        $customer_id = "WIC-".str_replace(' ', '', $name).$last_id;
+        $sql1 = "UPDATE telent_hunt SET customer_id = '$customer_id' WHERE id = '$last_id' ";
+        $res1 = mysqli_query($mysqli, $sql1);
+      }
 
-    if ($mysqli->query($sql) === TRUE) {
+    if ($mysqli->query($sql1) === TRUE) {
         $authdata = [
                        'Id' => mysqli_insert_id($mysqli),
                        'name'=> $name,
