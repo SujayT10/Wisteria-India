@@ -14,6 +14,7 @@
     <div class="col"></div>
     <div class="col-md-6">
       <div class="jumbotron">
+        <h4 class="text-center">Talent Hunt Registration</h4>&nbsp;
         <div class="stepwizard col-md-offset-3">
           <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -31,7 +32,7 @@
           </div>
         </div>&nbsp;&nbsp;
 
-        <form [formGroup]="angForm"  autocomplete="off">
+        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
 
           <div class="row setup-content" id="step-1">
             <div class="stepwizard col">
@@ -39,16 +40,19 @@
                 <!-- <h3> Step 1</h3> -->
 
                 <div class="form-group fieldGroup">
-                  <div class="row">
+
+                  <!-- first -->
+                  <div class="row" >
                     <div class="col-md-2">
                     <label class="control-label">Full Name</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="text" name="name[]"
+                      <input type="text" name="name"
                              formControlName="name"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="Enter Full Name"/>
+                             placeholder="Enter Full Name"
+                             [(ngModel)] = "demoName"/>
                              <div *ngIf="name.touched && name.invalid" class="text-danger" >
                               <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
                               <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
@@ -62,11 +66,12 @@
                       <label class="control-label">Date of Birth</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="date" name="date[]"
+                      <input type="text" name="DOB"
                              formControlName="DOB"
                              autocomplete="off"
                              class="form-control"
-                             placeholder="Enter email"/>
+                             placeholder="Enter DOB"
+                             [(ngModel)]="demoDate"/>
                              <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
                               <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
                             </div>
@@ -78,11 +83,12 @@
                     <label class="control-label">Hobbie</label>
                     </div>
                     <div class="col-md-10">
-                      <input type="test" name="hobbie[]"
+                      <input type="text" name="hobbie"
                               formControlName="hobbie"
                               autocomplete="off"
                               class="form-control"
-                              placeholder="Enter Hobbie"/>
+                              placeholder="Enter Hobbie"
+                              [(ngModel)] = "demoHobbie"/>
                               <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
                               <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
                             </div>
@@ -90,11 +96,247 @@
                   </div>&nbsp;
                 <div class="row"></div>
 
-                  <div class="input-group-addon float-right">
+                <div class="mb-4">
+                  <hr class="solid">
+                </div>
+
+                <!-- Second -->
+                <div class="row">
+                  <div class="col-md-2">
+                  <label class="control-label">Full Name</label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="name2"
+                           formControlName="name2"
+                           autocomplete="off"
+                           class="form-control"
+                           placeholder="Enter Full Name"
+                           [(ngModel)] = "demoName"/>
+                           <!-- <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                            <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                            <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                            <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                          </div> -->
+                  </div>
+                </div>&nbsp;
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <label class="control-label">Date of Birth</label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="DOB2"
+                           formControlName="DOB2"
+                           autocomplete="off"
+                           class="form-control"
+                           placeholder="Enter DOB"
+                           [(ngModel)]="demoDate"/>
+                           <!-- <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                            <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                          </div> -->
+                  </div>
+                </div>&nbsp;
+
+                <div class="row">
+                  <div class="col-md-2">
+                  <label class="control-label">Hobbie</label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="hobbie2"
+                            formControlName="hobbie2"
+                            autocomplete="off"
+                            class="form-control"
+                            placeholder="Enter Hobbie"
+                            [(ngModel)] = "demoHobbie"/>
+                            <!-- <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                            <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                          </div> -->
+                  </div>
+                </div>&nbsp;
+              <div class="row"></div>
+
+              <div class="mb-4">
+                <hr class="solid">
+              </div>
+
+              <!-- third -->
+              <div class="row">
+                <div class="col-md-2">
+                <label class="control-label">Full Name</label>
+                </div>
+                <div class="col-md-10">
+                  <input type="text" name="name3"
+                         formControlName="name3"
+                         autocomplete="off"
+                         class="form-control"
+                         placeholder="Enter Full Name"
+                         [(ngModel)] = "demoName"/>
+                         <!-- <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                          <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                          <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                          <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                        </div> -->
+                </div>
+              </div>&nbsp;
+
+              <div class="row">
+                <div class="col-md-2">
+                  <label class="control-label">Date of Birth</label>
+                </div>
+                <div class="col-md-10">
+                  <input type="text" name="DOB3"
+                         formControlName="DOB3"
+                         autocomplete="off"
+                         class="form-control"
+                         placeholder="Enter DOB"
+                         [(ngModel)]="demoDate"/>
+                         <!-- <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                          <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                        </div> -->
+                </div>
+              </div>&nbsp;
+
+              <div class="row">
+                <div class="col-md-2">
+                <label class="control-label">Hobbie</label>
+                </div>
+                <div class="col-md-10">
+                  <input type="text" name="hobbie3"
+                          formControlName="hobbie3"
+                          autocomplete="off"
+                          class="form-control"
+                          placeholder="Enter Hobbie"
+                          [(ngModel)] = "demoHobbie"/>
+                          <!-- <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                          <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                        </div> -->
+                </div>
+              </div>&nbsp;
+            <div class="row"></div>
+
+            <div class="mb-4">
+              <hr class="solid">
+            </div>
+
+            <!-- fourth -->
+            <div class="row">
+              <div class="col-md-2">
+              <label class="control-label">Full Name</label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="name4"
+                       formControlName="name4"
+                       autocomplete="off"
+                       class="form-control"
+                       placeholder="Enter Full Name"
+                       [(ngModel)] = "demoName"/>
+                       <!-- <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                        <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                      </div> -->
+              </div>
+            </div>&nbsp;
+
+            <div class="row">
+              <div class="col-md-2">
+                <label class="control-label">Date of Birth</label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="DOB4"
+                       formControlName="DOB4"
+                       autocomplete="off"
+                       class="form-control"
+                       placeholder="Enter DOB"
+                       [(ngModel)]="demoDate"/>
+                       <!-- <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                      </div> -->
+              </div>
+            </div>&nbsp;
+
+            <div class="row">
+              <div class="col-md-2">
+              <label class="control-label">Hobbie</label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="hobbie4"
+                        formControlName="hobbie4"
+                        autocomplete="off"
+                        class="form-control"
+                        placeholder="Enter Hobbie"
+                        [(ngModel)] = "demoHobbie"/>
+                        <!-- <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                        <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                      </div> -->
+              </div>
+            </div>&nbsp;
+          <div class="row"></div>
+
+          <div class="mb-4">
+            <hr class="solid">
+          </div>
+
+          <!-- Fifth -->
+          <div class="row">
+            <div class="col-md-2">
+            <label class="control-label">Full Name</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" name="name5"
+                     formControlName="name5"
+                     autocomplete="off"
+                     class="form-control"
+                     placeholder="Enter Full Name"
+                     [(ngModel)] = "demoName"/>
+                     <!-- <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                      <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                      <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                      <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
+                    </div> -->
+            </div>
+          </div>&nbsp;
+
+          <div class="row">
+            <div class="col-md-2">
+              <label class="control-label">Date of Birth</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" name="DOB5"
+                     formControlName="DOB5"
+                     autocomplete="off"
+                     class="form-control"
+                     placeholder="Enter DOB"
+                     [(ngModel)]="demoDate"/>
+                     <!-- <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
+                      <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
+                    </div> -->
+            </div>
+          </div>&nbsp;
+
+          <div class="row">
+            <div class="col-md-2">
+            <label class="control-label">Hobbie</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" name="hobbie5"
+                      formControlName="hobbie5"
+                      autocomplete="off"
+                      class="form-control"
+                      placeholder="Enter Hobbie"
+                      [(ngModel)] = "demoHobbie"/>
+                      <!-- <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
+                      <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
+                    </div> -->
+            </div>
+          </div>&nbsp;
+          <div class="row"></div>
+
+                  <!-- <div class="input-group-addon float-right">
                     <a href="javascript:void(0)" class="btn btn-success addMore">
                       <i class="fas fa-plus"></i>
                     </a>
-                  </div>
+                  </div> -->
 
                   <div class="mb-4">
                     <hr class="solid">
@@ -176,8 +418,7 @@
                             </div>
                     </div>
                   </div>&nbsp;
-
-              </div>
+                </div>
 
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
                 <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
@@ -190,9 +431,10 @@
               <div class="col-md-12">
                 <!-- <h3> Step 3</h3> -->
 
-                <!-- <div class="timeline-body">
-                  <h4 class="timeline-title center">Bank Detail</h4>
-                </div> -->
+                <div class="timeline-body">
+                  <!-- <h4 class="timeline-title">Bank Detail</h4> -->
+                  <p>Registration Fee for all Family Members <b>₹ 100/-</b> only.</p>
+                </div>
 
                 <div class="form-group form-inline">
                   <div class="col-md-6 col-form-label">
@@ -227,84 +469,13 @@
                 </div>
 
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
-                <button class="btn btn-success pull-right" type="submit" >Submit</button>
+                <button class="btn btn-success pull-right" [disabled]="!angForm.valid" type="submit" >Submit</button>
               </div>
             </div>
           </div>
 
         </form>
       </div>
-    </div>
-    <div class="col"></div>
-  </div>
-
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-md-6 form-group fieldGroupCopy" style="display: none;">
-       <!-- copy of input fields group -->
-
-            <div class="row">
-              <div class="col-md-2">
-               <label class="control-label">Full Name</label>
-              </div>
-              <div class="col-md-10">
-                <input type="text" name="name[]"
-                        formControlName="name"
-                        autocomplete="off"
-                        class="form-control"
-                        placeholder="Enter Full Name (optional)"/>
-                        <div *ngIf="name.touched && name.invalid" class="text-danger" >
-                        <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
-                        <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
-                        <small class="alert alert-danger" *ngIf="name.errors.maxlength">Maximum {{name.errors.maxlength.requiredLength}} characters</small>
-                      </div>
-              </div>
-            </div>&nbsp;
-
-            <div class="row">
-              <div class="col-md-2">
-                <label class="control-label">Date of Birth</label>
-              </div>
-              <div class="col-md-10">
-                <input type="date" name="date[]"
-                        formControlName="DOB"
-                        autocomplete="off"
-                        class="form-control"
-                        placeholder="Enter email (optional)"/>
-                        <div *ngIf="DOB.touched && DOB.invalid" class="text-danger" >
-                        <small class="alert alert-danger" *ngIf="DOB.errors.required">Required</small>
-                      </div>
-              </div>
-            </div>&nbsp;
-
-            <div class="row">
-              <div class="col-md-2">
-               <label class="control-label">Choice Talent</label>
-              </div>
-              <div class="col-md-10">
-                <input type="test" name="hobbie[]"
-                              formControlName="hobbie"
-                              autocomplete="off"
-                              class="form-control"
-                              placeholder="Enter Hobbie (optional)"/>
-                              <div *ngIf="hobbie.touched && hobbie.invalid" class="text-danger" >
-                              <small class="alert alert-danger" *ngIf="hobbie.errors.required">Required</small>
-                            </div>
-               </div>
-            </div>&nbsp;
-
-            <div class="input-group-addon">
-                <a href="javascript:void(0)" class="btn btn-danger remove float-right">
-                  <!-- <span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove -->
-                  <i class="fas fa-minus"></i>
-                </a>
-            </div>
-            <div class="mb-4">
-              <hr class="solid">
-            </div>
-        <!-- </div> -->
-
-
     </div>
     <div class="col"></div>
   </div>

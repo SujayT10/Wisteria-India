@@ -1,12 +1,13 @@
 
 import { first } from 'rxjs/operators';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
 import { NotificationsService } from 'angular2-notifications';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PartnerService } from 'src/app/services/partner.service';
+import { TalentHuntService } from 'src/app/services/talent-hunt.service';
 
 @Component({
   selector: 'app-talent-hunt-register',
@@ -16,17 +17,35 @@ import { PartnerService } from 'src/app/services/partner.service';
 export class TalentHuntRegisterComponent implements OnInit {
 
   angForm: FormGroup;
+  demoName = 'for ex. Alex Lynn';
+  demoDate = 'dd-mm-yyyy';
+  demoHobbie = 'for ex. Dancing';
+  dateObjectControl = new Date();
 
   constructor(private fb: FormBuilder,
               private partnerService: PartnerService,
+              private _thService: TalentHuntService,
               private router:Router,
               private _service: NotificationsService,
               private ngxService: NgxUiLoaderService) {
       this.angForm = this.fb.group({
 
-      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
       DOB: ['', [Validators.required]],
-      hobbie: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+      hobbie: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      name2: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      DOB2: ['', [Validators.required]],
+      hobbie2: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      name3: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      DOB3: ['', [Validators.required]],
+      hobbie3: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      name4: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      DOB4: ['', [Validators.required]],
+      hobbie4: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      name5: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+      DOB5: ['', [Validators.required]],
+      hobbie5: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
 
       transaction_id: ['', [Validators.required]],
@@ -37,9 +56,33 @@ export class TalentHuntRegisterComponent implements OnInit {
 }
 
   ngOnInit(): void {
-
     this.partnerService.show();
     this.show();
+    console.log(this.dateObjectControl)
+  }
+
+  postdata(angForm1: any){
+    // console.log(angForm1.control);
+    this._thService.th_register( angForm1.value.name, angForm1.value.DOB,angForm1.value.hobbie,
+                                      angForm1.value.name2, angForm1.value.DOB2,angForm1.value.hobbie2,
+                                      angForm1.value.name3, angForm1.value.DOB3,angForm1.value.hobbie3,
+                                      angForm1.value.name4, angForm1.value.DOB4,angForm1.value.hobbie4,
+                                      angForm1.value.name5, angForm1.value.DOB5,angForm1.value.hobbie5,
+                                     angForm1.value.email, angForm1.value.contactno, angForm1.value.address,
+                                     angForm1.value.pinCode, angForm1.value.transaction_id)
+      .pipe(first())
+      .subscribe(
+                  data => {
+                  this.angForm.reset();
+                  // this.onSuccess();
+                  console.log("form Update Profile");
+                  },
+                  error => {
+                    // this.onSuccess();
+                    console.log(angForm1.value)
+                    console.log("Error from Update profile");
+                  }
+                );
 
   }
 
@@ -54,7 +97,7 @@ export class TalentHuntRegisterComponent implements OnInit {
               var fieldHTML = '<div class="form-group fieldGroup">'+$(".fieldGroupCopy").html()+'</div>';
               $('body').find('.fieldGroup:last').after(fieldHTML);
           }else{
-              alert('Maximum '+maxGroup+' groups are allowed.');
+              alert('Maximum '+maxGroup+' entries are allowed.');
           }
       });
 
@@ -68,6 +111,7 @@ export class TalentHuntRegisterComponent implements OnInit {
 
 
   get name() { return this.angForm.get('name'); }
+  get name1() { return this.angForm.get('name'); }
   get DOB() { return this.angForm.get('DOB'); }
   get hobbie() { return this.angForm.get('hobbie'); }
   get email() { return this.angForm.get('email'); }

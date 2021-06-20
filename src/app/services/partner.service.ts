@@ -5,6 +5,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Wallet } from '../classes/wallet';
 import { UpdatePartnerProfile } from '../classes/update-partner-profile';
 import { CommonLinksService } from './common-links.service';
+import { TelentHunt } from '../classes/telent-hunt';
 
 @Injectable({
   providedIn: 'root'
@@ -88,6 +89,8 @@ export class PartnerService {
       return partner;
       }));
     }
+
+   
 
   public show() {
     $(document).ready(function () {
