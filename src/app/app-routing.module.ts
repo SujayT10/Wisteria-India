@@ -46,6 +46,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { UpdateProfileComponent } from './partner-dashboard/update-profile/update-profile.component';
 import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 import { TalentHuntRegisterComponent } from './components/talent-hunt-register/talent-hunt-register.component';
+import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -59,6 +60,7 @@ const routes: Routes = [
 { path: 'forgotten-password', component: ForgotPasswordComponent },
 { path: 'reset-password/:id', component: ResetPasswordComponent },
 { path: 'telent-hunt-registration', component: TalentHuntRegisterComponent },
+{ path: 'telent-hunt-registration/successful', component: SuccessfulRegisterComponent },
 
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },

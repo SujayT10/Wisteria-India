@@ -67,7 +67,7 @@ import { UpdateProfileComponent } from './partner-dashboard/update-profile/updat
 import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view-plans.component';
 import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 import { TalentHuntRegisterComponent } from './components/talent-hunt-register/talent-hunt-register.component';
-
+import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +125,7 @@ import { TalentHuntRegisterComponent } from './components/talent-hunt-register/t
     ViewPlansComponent,
     PaymentOptionComponent,
     TalentHuntRegisterComponent,
+    SuccessfulRegisterComponent,
 
   ],
   imports: [

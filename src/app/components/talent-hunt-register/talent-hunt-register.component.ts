@@ -18,8 +18,21 @@ export class TalentHuntRegisterComponent implements OnInit {
 
   angForm: FormGroup;
   demoName = 'for ex. Alex Lynn';
-  demoDate = 'dd-mm-yyyy';
+  demoDate = 'for ex. 15-Aug-1995';
   demoHobbie = 'for ex. Dancing';
+  demoName2 = 'for ex. Jone Lynn';
+  demoDate2 = 'for ex. 15-Aug-1995';
+  demoHobbie2 = 'for ex. Painting';
+  demoName3 = 'for ex. Eone Lynn';
+  demoDate3 = 'for ex. 15-Aug-1995';
+  demoHobbie3 = 'for ex. Singing';
+  demoName4 = 'for ex. Alex Lynn';
+  demoDate4 = 'for ex. 15-Aug-1995';
+  demoHobbie4 = 'for ex. Dancing';
+  demoName5 = 'for ex. Alex Lynn';
+  demoDate5 = 'for ex. 15-Aug-1995';
+  demoHobbie5 = 'for ex. Dancing';
+
   dateObjectControl = new Date();
 
   constructor(private fb: FormBuilder,
@@ -73,8 +86,9 @@ export class TalentHuntRegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                  this.angForm.reset();
+                  // this.angForm.reset();
                   // this.onSuccess();
+                  this.router.navigate([ '/telent-hunt-registration/successful' ]);
                   console.log("form Update Profile");
                   },
                   error => {
