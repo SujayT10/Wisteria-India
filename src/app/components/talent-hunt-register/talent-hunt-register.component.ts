@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { confirmedValidator } from 'src/app/confirmed.validator';
-import { NotificationsService } from 'angular2-notifications';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { PartnerService } from 'src/app/services/partner.service';
 import { TalentHuntService } from 'src/app/services/talent-hunt.service';
@@ -17,6 +16,9 @@ import { TalentHuntService } from 'src/app/services/talent-hunt.service';
 export class TalentHuntRegisterComponent implements OnInit {
 
   angForm: FormGroup;
+  formName = "Full Name";
+  formDOB = "Date Of Birth";
+  formTalent = "Talent";
   demoName = 'for ex. Alex Lynn';
   demoDate = 'for ex. 15-Aug-1995';
   demoHobbie = 'for ex. Dancing';
@@ -39,7 +41,6 @@ export class TalentHuntRegisterComponent implements OnInit {
               private partnerService: PartnerService,
               private _thService: TalentHuntService,
               private router:Router,
-              private _service: NotificationsService,
               private ngxService: NgxUiLoaderService) {
       this.angForm = this.fb.group({
 
@@ -93,11 +94,20 @@ export class TalentHuntRegisterComponent implements OnInit {
                   },
                   error => {
                     // this.onSuccess();
-                    console.log(angForm1.value)
-                    console.log("Error from Update profile");
+                    // console.log(angForm1.value)
+                    // console.log("Error from Update profile");
+                    this.router.navigate([ '/telent-hunt-registration/successful' ]);
                   }
                 );
 
+  }
+
+  loader(){
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // Stop the foreground loading after 5s
+    setTimeout(() => {
+      this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 9000);
   }
 
   show(){

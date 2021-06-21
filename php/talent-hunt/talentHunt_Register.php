@@ -1,6 +1,6 @@
 <?php
 include_once("../database.php");
-// include_once("../PHPMailerAutoload.php");
+include_once("../PHPMailerAutoload.php");
 
 $postdata = file_get_contents("php://input");
 
@@ -79,6 +79,64 @@ if(isset($postdata) && !empty($postdata)){
                        'pinCode' => $pinCode,
                        'transaction_id' => $transaction_id,
                    ];
+
+
+        // Mail part
+        $mail = new PHPMailer;
+        $mail->SMTPDebug = 4;                     // Enable verbose debug output
+        $mail->isSMTP();
+        // $mail->Host = 'smtp.gmail.com';       // on Localhost
+        $mail->Host = 'smtp.hostinger.in ';      // on server
+        $mail->SMTPAuth = true;
+
+        // On LocalHost
+        // $mail->Username = 'sujaytank16595@gmail.com';
+        // $mail->Password = 'MH27bh3242@google';
+
+        //On serve Data
+        $mail->Username = 'talenthunt@wisteriaindia.com';                // SMTP username
+        $mail->Password = 'TalentHuntWimpl@2017';                // SMTP password
+
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        // On LocalHost
+        // $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
+        // $mail->addReplyTo('sujaytank16595@gmail.com');
+
+        //On serve Data
+        $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
+        $mail->addReplyTo('info@wisteriaindia.com');
+
+        $mail->addAddress($email);
+        // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
+
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+
+        // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = 'Thanks for Participate in Wisteria India Talent Hunt Program';
+        $mail->Body    = '<div style="font-family: inter;">
+                                      <h1>Wisteria India</h1>
+                            <p>First Time for all family Members base on social causes solution theme Performance is the best way to express the problem and solution also. We are looking for solution against social causes like Hunger, Poverty, Crime, Illness, Dowry, Extortion, Pollution, and Women Insecurity and any kinds which affect  Earth. </p>
+                            <p>You and your all Families member can give solution through: - Dance Poem, Story Singing, Acting, Drawing, and Photography.It helps to encourage awareness leading to informed concern for active participation in resolving any problems</p>
+                            <p> Welcome to the digital world of Talent Hunt Program fastest way to express.</p>
+                            <p>Regard<br>
+                            Talent Hunt Department<br>
+                            Wisteria India Multitrade Pvt. Ltd.</p>
+                          </div>' ;
+
+        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        if(!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Message has been sent';
+        }
 
          echo json_encode($authdata);
     } else{

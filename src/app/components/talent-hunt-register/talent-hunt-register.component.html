@@ -42,7 +42,7 @@
                   <!-- first -->
                   <div class="row" >
                     <div class="col-md-2">
-                    <label class="control-label">Full Name</label>
+                    <label class="control-label">{{formName}}</label>
                     </div>
                     <div class="col-md-10">
                       <input type="text" name="name"
@@ -61,7 +61,7 @@
 
                   <div class="row">
                     <div class="col-md-2">
-                      <label class="control-label">Date of Birth</label>
+                      <label class="control-label">{{formDOB}}</label>
                     </div>
                     <div class="col-md-10">
                       <input type="text" name="DOB"
@@ -78,7 +78,7 @@
 
                   <div class="row">
                     <div class="col-md-2">
-                    <label class="control-label">Hobbie</label>
+                    <label class="control-label">{{formTalent}}</label>
                     </div>
                     <div class="col-md-10">
                       <input type="text" name="hobbie"
@@ -101,7 +101,7 @@
                 <!-- Second -->
                 <div class="row">
                   <div class="col-md-2">
-                  <label class="control-label">Full Name</label>
+                  <label class="control-label">{{formName}}</label>
                   </div>
                   <div class="col-md-10">
                     <input type="text" name="name2"
@@ -120,7 +120,7 @@
 
                 <div class="row">
                   <div class="col-md-2">
-                    <label class="control-label">Date of Birth</label>
+                    <label class="control-label">{{formDOB}}</label>
                   </div>
                   <div class="col-md-10">
                     <input type="text" name="DOB2"
@@ -137,7 +137,7 @@
 
                 <div class="row">
                   <div class="col-md-2">
-                  <label class="control-label">Hobbie</label>
+                  <label class="control-label">{{formTalent}}</label>
                   </div>
                   <div class="col-md-10">
                     <input type="text" name="hobbie2"
@@ -160,7 +160,7 @@
               <!-- third -->
               <div class="row">
                 <div class="col-md-2">
-                <label class="control-label">Full Name</label>
+                <label class="control-label">{{formName}}</label>
                 </div>
                 <div class="col-md-10">
                   <input type="text" name="name3"
@@ -179,7 +179,7 @@
 
               <div class="row">
                 <div class="col-md-2">
-                  <label class="control-label">Date of Birth</label>
+                  <label class="control-label">{{formDOB}}</label>
                 </div>
                 <div class="col-md-10">
                   <input type="text" name="DOB3"
@@ -196,7 +196,7 @@
 
               <div class="row">
                 <div class="col-md-2">
-                <label class="control-label">Hobbie</label>
+                <label class="control-label">{{formTalent}}</label>
                 </div>
                 <div class="col-md-10">
                   <input type="text" name="hobbie3"
@@ -219,7 +219,7 @@
             <!-- fourth -->
             <div class="row">
               <div class="col-md-2">
-              <label class="control-label">Full Name</label>
+              <label class="control-label">{{formName}}</label>
               </div>
               <div class="col-md-10">
                 <input type="text" name="name4"
@@ -238,7 +238,7 @@
 
             <div class="row">
               <div class="col-md-2">
-                <label class="control-label">Date of Birth</label>
+                <label class="control-label">{{formDOB}}</label>
               </div>
               <div class="col-md-10">
                 <input type="text" name="DOB4"
@@ -255,7 +255,7 @@
 
             <div class="row">
               <div class="col-md-2">
-              <label class="control-label">Hobbie</label>
+              <label class="control-label">{{formTalent}}</label>
               </div>
               <div class="col-md-10">
                 <input type="text" name="hobbie4"
@@ -278,7 +278,7 @@
           <!-- Fifth -->
           <div class="row">
             <div class="col-md-2">
-            <label class="control-label">Full Name</label>
+            <label class="control-label">{{formName}}</label>
             </div>
             <div class="col-md-10">
               <input type="text" name="name5"
@@ -297,7 +297,7 @@
 
           <div class="row">
             <div class="col-md-2">
-              <label class="control-label">Date of Birth</label>
+              <label class="control-label">{{formDOB}}</label>
             </div>
             <div class="col-md-10">
               <input type="text" name="DOB5"
@@ -314,7 +314,7 @@
 
           <div class="row">
             <div class="col-md-2">
-            <label class="control-label">Hobbie</label>
+            <label class="control-label">{{formTalent}}</label>
             </div>
             <div class="col-md-10">
               <input type="text" name="hobbie5"
@@ -379,6 +379,7 @@
                              placeholder="Enter Contact No"/>
                              <div *ngIf="contactno.touched && contactno.invalid" class="text-danger" >
                               <small class="alert alert-danger" *ngIf="contactno.errors.required">Required</small>
+                              <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Enter 10 digit Mobile Number</small>
                             </div>
                     </div>
                   </div>&nbsp;
@@ -467,7 +468,7 @@
                 </div>
 
                 <button class="btn btn-primary prevBtn pull-left" type="button">Previous</button>
-                <button class="btn btn-success pull-right" [disabled]="!angForm.valid" type="submit" >Submit</button>
+                <button class="btn btn-success pull-right" [disabled]="!angForm.valid" (click)="loader()" type="submit" >Submit</button>
               </div>
             </div>
           </div>
@@ -478,5 +479,6 @@
     <div class="col"></div>
   </div>
 
+  <ngx-ui-loader></ngx-ui-loader>
 </div>
 </div>
