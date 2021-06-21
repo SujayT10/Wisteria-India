@@ -49,7 +49,8 @@ if(isset($postdata) && !empty($postdata)){
       $last_id = mysqli_insert_id($mysqli);
 
       if($last_id){
-        $customer_id = "WIC-".str_replace(' ', '', $name).$last_id;
+        // $customer_id = "WIC-".str_replace(' ', '', $name).$last_id;
+        $customer_id = "WIC-".substr($email, 0, strpos($email, '@')).$last_id;
         $sql1 = "UPDATE telent_hunt SET customer_id = '$customer_id' WHERE id = '$last_id' ";
         $res1 = mysqli_query($mysqli, $sql1);
       }
@@ -85,28 +86,28 @@ if(isset($postdata) && !empty($postdata)){
         $mail = new PHPMailer;
         $mail->SMTPDebug = 4;                     // Enable verbose debug output
         $mail->isSMTP();
-        // $mail->Host = 'smtp.gmail.com';       // on Localhost
-        $mail->Host = 'smtp.hostinger.in ';      // on server
+        $mail->Host = 'smtp.gmail.com';       // on Localhost
+        // $mail->Host = 'smtp.hostinger.in ';      // on server
         $mail->SMTPAuth = true;
 
         // On LocalHost
-        // $mail->Username = 'sujaytank16595@gmail.com';
-        // $mail->Password = 'MH27bh3242@google';
+        $mail->Username = 'sujaytank16595@gmail.com';
+        $mail->Password = 'MH27bh3242@google';
 
         //On serve Data
-        $mail->Username = 'talenthunt@wisteriaindia.com';                // SMTP username
-        $mail->Password = 'TalentHuntWimpl@2017';                // SMTP password
+        // $mail->Username = 'talenthunt@wisteriaindia.com';                // SMTP username
+        // $mail->Password = 'TalentHuntWimpl@2017';                // SMTP password
 
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
         // On LocalHost
-        // $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
-        // $mail->addReplyTo('sujaytank16595@gmail.com');
+        $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
+        $mail->addReplyTo('sujaytank16595@gmail.com');
 
         //On serve Data
-        $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
-        $mail->addReplyTo('info@wisteriaindia.com');
+        // $mail->setFrom('talenthunt@wisteriaindia.com', 'Wisteria India');
+        // $mail->addReplyTo('talenthunt@wisteriaindia.com');
 
         $mail->addAddress($email);
         // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
