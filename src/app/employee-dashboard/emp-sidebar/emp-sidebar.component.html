@@ -1,0 +1,144 @@
+<div class="sidebar sidebar-style-2">
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+
+      <div class="user">
+        <div class="avatar-sm float-left mr-2">
+          <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
+        </div>
+        <div class="info" *ngFor="let part of activeEmployee">
+          <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+            <span>
+              {{ part.firstname }} {{ part.lastname }}
+              <span class="user-level">Employee</span>
+              <span class="caret"></span>
+            </span>
+          </a>
+          <div class="clearfix"></div>
+
+          <div class="collapse in" id="collapseExample">
+            <ul class="nav">
+              <li>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/employee-dashboard/employee/employee-profile/{{emp_id}}" >My Profile</a>
+                <!-- <a class="dropdown-item" routerLink="/partner-dashboard/partner/partner-update-profile/{{emp_id}}" >Update Profile</a> -->
+                <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/employee-login" >logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav nav-primary">
+        <li class="nav-item active">
+          <a routerLink="/employee-dashboard/{{emp_id}}" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+            <i class="fas fa-home"></i>
+            <p>Dashboard</p>
+          </a>
+
+        </li>
+
+
+        <!-- Partner -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#employee">
+            <i class="fas fa-handshake"></i>
+            <p>Manage Member</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="employee">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/employee-dashboard/employee/manage-member/{{emp_id}}">
+                  <span class="sub-item">View Member</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/find-member/{{emp_id}}">
+                  <span class="sub-item">Find Member</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/employee-dashboard/employee/recent-member/{{emp_id}}">
+                  <span class="sub-item">Recent Member</span>
+                </a>
+              </li>
+              <!-- <li>
+                <a routerLink="/partner-dashboard/partner/topup-member/{{emp_id}}">
+                  <span class="sub-item">TopUp Member</span>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a data-toggle="collapse" class="collapsed" aria-expanded="false">
+            <i class="fas fa-tree"></i>
+            <p>Member Tree View</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+            <i class="fas fa-credit-card"></i>
+            <p>Payment  Option</p>
+          </a>
+        </li>
+
+         <!-- Employee -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#purchase ">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Purchase </p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="purchase ">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Share Market Course </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Fashion Design </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Domo 4G Calling Tab</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Home Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Health Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/employee-dashboard/employee/payment-option/{{emp_id}}">
+                  <span class="sub-item">Personal Care Pack</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="nav-item">
+          <a data-toggle="collapse" *ngIf="logoutbtn" (click)="logout()"
+                      routerLink="/employee-login" class="collapsed" aria-expanded="false">
+            <i class="fas fa-sign-out-alt"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

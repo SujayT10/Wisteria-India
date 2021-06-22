@@ -1,3 +1,5 @@
+import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-emp.component';
+import { FindEmpComponent } from './employee-dashboard/emp/find-emp/find-emp.component';
 import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
 import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppartner/topup-ppartner.component';
 import { RecentPpartnerComponent } from './partner-dashboard/pPartner/recent-ppartner/recent-ppartner.component';
@@ -49,6 +51,9 @@ import { TalentHuntRegisterComponent } from './components/talent-hunt-register/t
 import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
 import { EmployeeLoginComponent } from './components/employee-login/employee-login.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { EmpProfileComponent } from './employee-dashboard/emp-profile/emp-profile.component';
+import { ManageEmpComponent } from './employee-dashboard/emp/manage-emp/manage-emp.component';
+import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-option/emp-paymet-option.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -106,13 +111,13 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/partner-update-profile/:id', component: UpdateProfileComponent, canActivate: [PartnerAuthguardGuard] },
 
 { path: 'employee-dashboard/:id', component: EmployeeDashboardComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/manage-member/:id', component: ManagePpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/find-member/:id', component: FindPpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/recent-member/:id', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/manage-member/:id', component: ManageEmpComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/find-member/:id', component: FindEmpComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/recent-member/:id', component: RecentEmpComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/topup-member/:id', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/payment-option/:id', component: PaymentOptionComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/payment-option/:id', component: EmpPaymetOptionComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/add/:id', component: PAddComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/employee-profile/:id', component: PartnerProfileComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/employee-profile/:id', component: EmpProfileComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },

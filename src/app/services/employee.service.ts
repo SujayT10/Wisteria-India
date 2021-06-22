@@ -40,8 +40,8 @@ export class EmployeeService {
       return this.httpClient.get<Employee[]>(this._linksService.baseUrl_employee + '/recentEmployee.php');
     }
 
-    public activeUser(admin_id: string){
-      return this.httpClient.post<Users[]>(this._linksService.baseUrl_employee + '/activeUserById.php', { admin_id });
+    public activeEmployee(emp_id: string){
+      return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/activeEmpById.php', { emp_id });
     }
 
   //token

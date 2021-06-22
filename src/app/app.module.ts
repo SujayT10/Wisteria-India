@@ -68,6 +68,13 @@ import { TalentHuntRegisterComponent } from './components/talent-hunt-register/t
 import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { EmployeeLoginComponent } from './components/employee-login/employee-login.component';
+import { EmpNavbarComponent } from './employee-dashboard/emp-navbar/emp-navbar.component';
+import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sidebar.component';
+import { EmpProfileComponent } from './employee-dashboard/emp-profile/emp-profile.component';
+import { ManageEmpComponent } from './employee-dashboard/emp/manage-emp/manage-emp.component';
+import { FindEmpComponent } from './employee-dashboard/emp/find-emp/find-emp.component';
+import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-emp.component';
+import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-option/emp-paymet-option.component';
 
 @NgModule({
   declarations: [
@@ -126,6 +133,13 @@ import { EmployeeLoginComponent } from './components/employee-login/employee-log
     SuccessfulRegisterComponent,
     EmployeeDashboardComponent,
     EmployeeLoginComponent,
+    EmpNavbarComponent,
+    EmpSidebarComponent,
+    EmpProfileComponent,
+    ManageEmpComponent,
+    FindEmpComponent,
+    RecentEmpComponent,
+    EmpPaymetOptionComponent,
 
   ],
   imports: [
