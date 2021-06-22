@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmpSidebarComponent } from './emp-sidebar.component';
+import { EmployeeDashboardComponent } from './employee-dashboard.component';
 
-describe('EmpSidebarComponent', () => {
-  let component: EmpSidebarComponent;
-  let fixture: ComponentFixture<EmpSidebarComponent>;
+describe('EmployeeDashboardComponent', () => {
+  let component: EmployeeDashboardComponent;
+  let fixture: ComponentFixture<EmployeeDashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmpSidebarComponent ]
+      declarations: [ EmployeeDashboardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmpSidebarComponent);
+    fixture = TestBed.createComponent(EmployeeDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -14,22 +14,18 @@ export class EmployeeService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
 
-    public userlogin(username: string , userId: string, password: string ) {
-      return this.httpClient.post<any>(this._linksService.baseUrl_employee + '/login.php', { username, userId, password })
-      .pipe(map(Users => {
-          this.setToken(Users[0].admin_id);
+    public employeeLogin(userId: string, password: string ) {
+      return this.httpClient.post<any>(this._linksService.baseUrl_employee + '/employeeLogin.php', { userId, password })
+      .pipe(map(Employee => {
+          this.setToken(Employee[0].emp_id);
           this.getLoggedInName.emit(true);
-          return Users;
+          return Employee;
       }));
     }
 
-    public employeeRegistration(firstname: string,
-                                lastname: string,
-                                contactno: number,
-                                email: string,
-                                password: string,
-                                datetime: number,
-                                address: string ) {
+    public employeeRegistration(firstname: string, lastname: string,
+                                contactno: number, email: string,
+                                password: string, datetime: number, address: string ) {
       return this.httpClient.post<any>(this._linksService.baseUrl_employee + '/employeeRegister.php', { firstname, lastname, contactno, email, password, datetime, address })
       .pipe(map(Employee => {
       return Employee;

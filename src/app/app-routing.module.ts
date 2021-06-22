@@ -47,11 +47,14 @@ import { UpdateProfileComponent } from './partner-dashboard/update-profile/updat
 import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 import { TalentHuntRegisterComponent } from './components/talent-hunt-register/talent-hunt-register.component';
 import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
+import { EmployeeLoginComponent } from './components/employee-login/employee-login.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 { path: 'admin-login', component: AdminLoginComponent },
+{ path: 'employee-login', component: EmployeeLoginComponent },
 { path: 'home', component: HomeComponent },
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },
@@ -101,6 +104,16 @@ const routes: Routes = [
 { path: 'partner-dashboard/partner/add/:id', component: PAddComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/partner-profile/:id', component: PartnerProfileComponent, canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/partner-update-profile/:id', component: UpdateProfileComponent, canActivate: [PartnerAuthguardGuard] },
+
+{ path: 'employee-dashboard/:id', component: EmployeeDashboardComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/manage-member/:id', component: ManagePpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/find-member/:id', component: FindPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/recent-member/:id', component: RecentPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/topup-member/:id', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/payment-option/:id', component: PaymentOptionComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/add/:id', component: PAddComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/employee-profile/:id', component: PartnerProfileComponent, canActivate: [AuthguardGuard] },
+{ path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 

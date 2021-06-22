@@ -56,8 +56,6 @@ import { TopupPpartnerComponent } from './partner-dashboard/pPartner/topup-ppart
 import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EmpNavbarComponent } from './employee-dashboard/emp-navbar/emp-navbar.component';
-import { EmpSidebarComponent } from './employee-dashboard/emp-sidebar/emp-sidebar.component';
 import { AddEmployeeComponent } from './dashboard/employee/add-employee/add-employee.component';
 import { ReferralRegisterComponent } from './components/referral-register/referral-register.component';
 import { PartnerProfileComponent } from './partner-dashboard/partner-profile/partner-profile.component';
@@ -68,6 +66,8 @@ import { ViewPlansComponent } from './partner-dashboard/pPartner/view-plans/view
 import { PaymentOptionComponent } from './partner-dashboard/pPartner/payment-option/payment-option.component';
 import { TalentHuntRegisterComponent } from './components/talent-hunt-register/talent-hunt-register.component';
 import { SuccessfulRegisterComponent } from './components/talent-hunt-register/successful-register/successful-register.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { EmployeeLoginComponent } from './components/employee-login/employee-login.component';
 
 @NgModule({
   declarations: [
@@ -114,8 +114,6 @@ import { SuccessfulRegisterComponent } from './components/talent-hunt-register/s
     RecentPpartnerComponent,
     TopupPpartnerComponent,
     PAddComponent,
-    EmpNavbarComponent,
-    EmpSidebarComponent,
     AddEmployeeComponent,
     ReferralRegisterComponent,
     PartnerProfileComponent,
@@ -126,6 +124,8 @@ import { SuccessfulRegisterComponent } from './components/talent-hunt-register/s
     PaymentOptionComponent,
     TalentHuntRegisterComponent,
     SuccessfulRegisterComponent,
+    EmployeeDashboardComponent,
+    EmployeeLoginComponent,
 
   ],
   imports: [
