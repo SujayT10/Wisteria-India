@@ -1,1 +1,90 @@
-<p>manage-emp works!</p>
+<!-- Navbar Header -->
+<app-emp-navbar></app-emp-navbar>
+<!-- End Navbar -->
+ <!-- Sidebar -->
+ <app-emp-sidebar></app-emp-sidebar>
+ <!-- End Sidebar -->
+
+  <!-- Main Container -->
+  <div class="main-panel">
+    <div class="content">
+
+      <div class="page-inner">
+        <div class="page-header">
+          <h4 class="page-title">Members</h4>
+          <ul class="breadcrumbs">
+            <li class="nav-home">
+                <i class="flaticon-home"></i>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>Manage Members</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>View Members</a>
+            </li>
+          </ul>
+        </div>
+      <div>
+        <div class="card">
+              <div class="card-header">
+                <div class="card-title">All Members
+
+                 <!-- <a routerLink="/partner-dashboard/partner/add/{{partner_id}}">
+                   <button class="btn btn-success float-right" >Add</button>
+                 </a> -->
+                 <div class="float-right">Referral ID: {{emp_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Partner ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <!-- <th>Referral ID </th> -->
+                        <!-- <th>Edit</th> -->
+                        <!-- <th>Delete</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let part of partner | paginate: { itemsPerPage: 5,
+                                                                    currentPage: page,
+                                                                    totalItems: totalLength }">
+                        <td> {{part.partner_id}} </td>
+                        <td> {{part.firstname}} </td>
+                        <td> {{part.lastname}} </td>
+                        <td> {{part.contactno}} </td>
+                        <td> {{part.email}} </td>
+                        <!-- <td> {{part.referalId}} </td> -->
+                        <!-- <td> <button class="btn btn-success">Edit</button> </td>
+                        <td> <button class="btn btn-danger">Delete</button> </td> -->
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+
+
+  <!-- End Main Container -->
+
+ <!-- Footer -->
+ <app-home-footer></app-home-footer>
+</div>
+</div>
+ <!-- Footer End -->

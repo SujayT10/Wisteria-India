@@ -11,6 +11,196 @@
 <div class="main-panel">
   <div class="content">
 
+    <div class="panel-header bg-primary-gradient">
+      <div class="page-inner py-5">
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+          <div>
+            <h2 class="text-white pb-2 fw-bold">Employee Dashboard</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-group mb-3 col-md-4">
+            <input type="text" class="form-control" [(ngModel)]="link"  aria-describedby="button-addon2">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-info" cdkCopyToClipboard="{{link}}" data-toggle="modal" data-target="#exampleModalCenter">
+                Copy
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Successfully Copied</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      {{link}}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="page-inner mt--5">
+      <div class="row">
+      <!-- Partner blog -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title fw-mediumbold">Join Members</div>
+              <div class="card-list">
+                <div class="item-list" *ngFor="let part of partner | paginate: { itemsPerPage: 6,
+                                                                      currentPage: page,
+                                                                      totalItems: totalLength }">
+                  <div class="avatar">
+                    <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username"><h6>{{ part.firstname }} {{ part.lastname }}</h6></div>
+                    <div class="status"><h6>{{part.contactno}}</h6></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- New employee -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+              <div class="col-6">
+                <div class="card-title fw-mediumbold">Earning</div>
+              </div>
+              <div class="col-6">
+                <div class="card-title fw-mediumbold">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                        View Plans
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Customer/ Vendor/
+                                Partner Benefits
+                                </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+
+                              <app-view-plans></app-view-plans>
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              </div>
+              <div class="card-list">
+                <div class="item-list" *ngFor="let part1 of activePartner">
+                  <!-- <div class="avatar">
+                    <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div> -->
+                  <div class="info-user ml-3" *ngFor="let part1 of activePartner">
+                    <div class="username" >
+                      <h6>Wallet Balance : <b>₹{{ part1.wallet }}.00</b></h6>
+                    </div>
+                    <!-- <div class="status">Graphic Designer</div> -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title fw-mediumbold">My Account</div>
+              <!-- <div class="card-list">
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">Jimmy Denis</div>
+                    <div class="status">Graphic Designer</div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">Chad</div>
+                    <div class="status">CEO Zeleaf</div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">Talha</div>
+                    <div class="status">Front End Designer</div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/mlane.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">John Doe</div>
+                    <div class="status">Back End Developer</div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/talha.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">Talha</div>
+                    <div class="status">Front End Designer</div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="avatar">
+                    <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div>
+                  <div class="info-user ml-3">
+                    <div class="username">Jimmy Denis</div>
+                    <div class="status">Graphic Designer</div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- Footer -->
