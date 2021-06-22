@@ -12,7 +12,7 @@
 
       <div class="page-inner">
         <div class="page-header">
-          <h4 class="page-title">Recent Customers</h4>
+          <h4 class="page-title">Recent Employee</h4>
           <ul class="breadcrumbs">
             <li class="nav-home">
               <a routerLink="/dashboard">
@@ -23,20 +23,20 @@
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>Manage Customers</a>
+              <a>Manage Employee</a>
             </li>
             <li class="separator">
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>Recent Customers</a>
+              <a>Recent Employee</a>
             </li>
           </ul>
         </div>
       <div>
         <div class="card">
               <div class="card-header">
-                <div class="card-title">Recent Customers</div>
+                <div class="card-title">Recent Employee</div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -48,9 +48,9 @@
                         <th>Last Name</th>
                         <th>Contact Number</th>
                         <th>Email</th>
-                        <th>address</th>
-                        <!-- <th>Edit</th> -->
-                        <!-- <th>Delete</th> -->
+                        <th>Balance</th>
+                        <th>TopUp</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -62,9 +62,9 @@
                         <td> {{part.lastname}} </td>
                         <td> {{part.contactno}} </td>
                         <td> {{part.email}} </td>
-                        <td> {{part.address}} </td>
-                        <!-- <td> <button class="btn btn-success">Edit</button> </td> -->
-                        <!-- <td> <button class="btn btn-danger">Delete</button> </td> -->
+                        <td> {{part.wallet}} </td>
+                        <td> <button class="btn btn-success" (click)="addWallet(part)">TopUp</button> </td>
+                        <td> <button class="btn btn-danger" (click)="deleteUser(part)">Delete</button> </td>
                       </tr>
                     </tbody>
                   </table>

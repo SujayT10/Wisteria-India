@@ -9,12 +9,13 @@
   <div class="main-panel">
     <div class="content">
 
-      <!-- <div class="page-inner">
+
+      <div class="page-inner">
         <div class="page-header">
-          <h4 class="page-title">Top Up Customers</h4>
+          <h4 class="page-title">TopUp</h4>
           <ul class="breadcrumbs">
             <li class="nav-home">
-              <a href="index.html">
+              <a routerLink="/dashboard">
                 <i class="flaticon-home"></i>
               </a>
             </li>
@@ -22,44 +23,73 @@
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a href="#">Manage Customers</a>
+              <a>Manage Partners</a>
             </li>
             <li class="separator">
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a href="#">Top Up Customers</a>
+              <a>View Partners</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>TopUp Partners</a>
             </li>
           </ul>
         </div>
-        <div>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">Top Up Customer</div>
-            </div>
-            <div class="card-body">
+
+      <div class="row">
+
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="form-group">
+
+            <!-- <h4 class="text-center">Add Partner</h4> -->
+            <form [formGroup]="angForm" (ngSubmit)="topUpPartner(angForm)" autocomplete="off" >
+
+              <div class="card">
+                <div class="card-body">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>User ID</label>
-                    <input type="text" class="form-control" id="" placeholder="username">
+              <!-- Wallet -->
+              <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="amount"
+                      formControlName="amount"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Amount" >
+                  <div *ngIf="amount.touched && amount.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="amount.errors.required">Required</small>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Amount to Topup</label>
-                    <input type="text" class="form-control" id="" placeholder="Amount">
-                  </div>
-                </div>
               </div>
 
-              <div class="card-action">
-                <button class="btn btn-success">TopUp</button>
+               <!-- Referal ID -->
+               <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="emp_id"
+                       formControlName="emp_id"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       [(ngModel)] = "emp_id"
+                       readonly>
+                  </div>
               </div>
-            </div>
+
+          </div>
+          </div>
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >TopUp</button>
+            </form>
           </div>
         </div>
-    </div> -->
+        <div class="col-md-3">
+        </div>
+      </div>
+
+      </div>
+
 
   <!-- End Main Container -->
 

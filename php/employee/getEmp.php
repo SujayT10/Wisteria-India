@@ -13,6 +13,7 @@ if($result = mysqli_query($mysqli, $sql)){
     $employee[$cr]['lastname'] = $row['lastname'];
     $employee[$cr]['contactno'] = $row['contactno'];
     $employee[$cr]['email'] = $row['email'];
+    $employee[$cr]['wallet'] = $row['wallet'];
     $employee[$cr]['address'] = $row['address'];
     $employee[$cr]['datetime'] = $row['datetime'];
     $cr++;
