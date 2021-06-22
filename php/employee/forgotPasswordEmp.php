@@ -6,10 +6,10 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 if(isset($postdata) && !empty($postdata)){
 
-    $partner_id = mysqli_real_escape_string($mysqli, trim($request->partner_id));
+    $emp_id = mysqli_real_escape_string($mysqli, trim($request->emp_id));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
 
-    $sql = "SELECT * FROM partners where email = '$email' and partner_id = '$partner_id' ";
+    $sql = "SELECT * FROM employee where email = '$email' and emp_id = '$emp_id' ";
 
     if($result = mysqli_query($mysqli,$sql)){
       $rows = array();
@@ -66,8 +66,8 @@ if(isset($postdata) && !empty($postdata)){
                                        font-family: inter;">
                                        <h1>Wisteria India</h1>
                              <h3>Name: </h3>
-                             <h3>Partner ID: '. $partner_id .'</h3>
-                             <a href="https://wisteriaindia.com/#/reset-password/'. $partner_id .'" target="_blank">
+                             <h3>Partner ID: '. $emp_id .'</h3>
+                             <a href="http://localhost:4200/#/employee-reset-password/'. $emp_id .'" target="_blank">
                                <h3>Reset Password</h3>
                              </a>
                            </div>' ;

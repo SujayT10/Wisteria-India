@@ -44,6 +44,20 @@ export class EmployeeService {
       return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/activeEmpById.php', { emp_id });
     }
 
+    public forgotPassword(email: string, emp_id: string){
+      return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/forgotPasswordEmp.php',{ email, emp_id })
+        .pipe(map(employee => {
+            return employee;
+         }));
+    }
+
+    public resetPassword(password: string, emp_id: string){
+      return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/resetPasswordEmp.php',{ password, emp_id })
+      .pipe(map(partner => {
+          return partner;
+       }));
+    }
+
   //token
     setToken(token: string) {
     localStorage.setItem('token', token);

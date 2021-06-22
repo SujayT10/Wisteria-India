@@ -1,3 +1,4 @@
+import { EmpForgotPasswordComponent } from './employee-dashboard/emp/emp-forgot-password/emp-forgot-password.component';
 import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-emp.component';
 import { FindEmpComponent } from './employee-dashboard/emp/find-emp/find-emp.component';
 import { PAddComponent } from './partner-dashboard/pPartner/p-add/p-add.component';
@@ -54,6 +55,7 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 import { EmpProfileComponent } from './employee-dashboard/emp-profile/emp-profile.component';
 import { ManageEmpComponent } from './employee-dashboard/emp/manage-emp/manage-emp.component';
 import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-option/emp-paymet-option.component';
+import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-password/emp-reset-password.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -67,9 +69,11 @@ const routes: Routes = [
 { path: 'referral-registration/:id', component: ReferralRegisterComponent },
 { path: 'forgotten-password', component: ForgotPasswordComponent },
 { path: 'reset-password/:id', component: ResetPasswordComponent },
+{ path: 'employee-forgotten-password', component: EmpForgotPasswordComponent },
+{ path: 'employee-reset-password/:id', component: EmpResetPasswordComponent },
+
 { path: 'telent-hunt-registration', component: TalentHuntRegisterComponent },
 { path: 'telent-hunt-registration/successful', component: SuccessfulRegisterComponent },
-
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },
@@ -114,11 +118,11 @@ const routes: Routes = [
 { path: 'employee-dashboard/employee/manage-member/:id', component: ManageEmpComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/find-member/:id', component: FindEmpComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/recent-member/:id', component: RecentEmpComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/topup-member/:id', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
+// { path: 'employee-dashboard/employee/topup-member/:id', component: TopupPpartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/payment-option/:id', component: EmpPaymetOptionComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/add/:id', component: PAddComponent, canActivate: [AuthguardGuard] },
+// { path: 'employee-dashboard/employee/add/:id', component: PAddComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/employee-profile/:id', component: EmpProfileComponent, canActivate: [AuthguardGuard] },
-{ path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
+// { path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
 
 { path: '**', component: PageNotFoundComponent },
 

@@ -110,7 +110,7 @@ if(isset($postdata) && !empty($postdata)){
         // $mail->addReplyTo('talenthunt@wisteriaindia.com');
 
         $mail->addAddress($email);
-        // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
+        // $mail->addAddress('talenthunt@wisteriaindia.com');       // Add a recipient
 
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');

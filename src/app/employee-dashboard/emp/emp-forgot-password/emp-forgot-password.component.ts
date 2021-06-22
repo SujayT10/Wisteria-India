@@ -1,16 +1,16 @@
-import { PartnerService } from './../../services/partner.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.css']
+  selector: 'app-emp-forgot-password',
+  templateUrl: './emp-forgot-password.component.html',
+  styleUrls: ['./emp-forgot-password.component.css']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class EmpForgotPasswordComponent implements OnInit {
   angForm: FormGroup;
   data = "Find Your Account";
   public options:any = {
@@ -20,7 +20,10 @@ export class ForgotPasswordComponent implements OnInit {
     animate: "fade",
   };
 
-  constructor(private fb: FormBuilder,private PartnerService: PartnerService, private router:Router,private _service: NotificationsService) {
+  constructor(private fb: FormBuilder,
+              private employeeService: EmployeeService,
+              private router:Router,
+              private _service: NotificationsService) {
     this.angForm = this.fb.group({
 
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
@@ -33,7 +36,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   postdata(angForm1: any){
     // console.log(angForm1.control);
-      this.PartnerService.forgotPassword( angForm1.value.email, angForm1.value.userId,)
+      this.employeeService.forgotPassword( angForm1.value.email, angForm1.value.userId,)
       .pipe(first())
       .subscribe(
                   data => {
@@ -50,8 +53,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   }
 
-  onSuccess(){ this._service.success('Successfully Registred'); }
-  onCancle(){ this.router.navigate(['/login']); }
+  onSuccess(){ this._service.success('Successfully Send'); }
+  onCancle(){ this.router.navigate(['/employee-login']); }
 
   get email() { return this.angForm.get('email'); }
   get userId() { return this.angForm.get('userId'); }
