@@ -36,6 +36,10 @@ export class EmployeeService {
       return this.httpClient.get<Employee[]>(this._linksService.baseUrl_employee + '/getEmp.php');
     }
 
+    deleteEmployee(id: any){
+      return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/deleteEmp.php?', { id } );
+    }
+
     recentEmployee(){
       return this.httpClient.get<Employee[]>(this._linksService.baseUrl_employee + '/recentEmployee.php');
     }

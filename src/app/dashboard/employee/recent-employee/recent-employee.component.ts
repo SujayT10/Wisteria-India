@@ -15,10 +15,10 @@ export class RecentEmployeeComponent implements OnInit {
   page: number = 1;
   id: string;
 
-  constructor(private _empService: EmployeeService,  private router: Router) { }
+  constructor(private employeeService: EmployeeService,  private router: Router) { }
 
   ngOnInit(): void {
-    this._empService.recentEmployee().subscribe((data: Employee[]) =>{
+    this.employeeService.recentEmployee().subscribe((data: Employee[]) =>{
       this.employee= data;
       // console.log(this.partner);
       this.totalLength= data.length;
@@ -31,15 +31,15 @@ export class RecentEmployeeComponent implements OnInit {
   }
 
   public deleteUser(emp: Employee) {
-    // this.partnerService.deletePartner( emp.emp_id )
-    //  .subscribe(data => {
-    //   console.log("Success");
-    //    this.partner = this.partner.filter(u => u !== partner)
-    //  },
-    //  error => {
-    //   this.partner = this.partner.filter(u => u !== partner)
-    //    console.log("Error from TopUp");
-    //  })
+    this.employeeService.deleteEmployee( emp.emp_id )
+     .subscribe(data => {
+      console.log("Success");
+       this.employee = this.employee.filter(u => u !== emp)
+     },
+     error => {
+      // this.employee = this.partner.filter(u => u !== partner)
+       console.log("Error from TopUp");
+     })
   }
 
 }
