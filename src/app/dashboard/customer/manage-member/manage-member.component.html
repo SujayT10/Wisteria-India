@@ -42,45 +42,53 @@
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>No.</th>
-                        <th>Customer Name</th>
-                        <th>Package</th>
-                        <th>Club</th>
-                        <th>Sponsor</th>
-                        <th>Phone No.</th>
-                        <th>Date of Join</th>
+                        <!-- <th>Customer ID</th> -->
+                        <th>Transaction ID</th>
+                        <th>First Name</th>
+                        <th>Talent</th>
+                        <th>Second Name</th>
+                        <th>Talent</th>
+                        <th>Third Name</th>
+                        <th>Talent</th>
+                        <th>Fourth Name</th>
+                        <th>Talent</th>
+                        <th>Fifth Name</th>
+                        <th>Talent</th>
+
+                        <th>Email</th>
+                        <!-- <th>Balance</th> -->
+                        <!-- <th>TopUp</th>
+                        <th>Delete</th> -->
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                      <tr *ngFor="let part of telentHunt | paginate: { itemsPerPage: 5,
+                                                                    currentPage: page,
+                                                                    totalItems: totalLength }">
+                        <!-- <td> {{part.customer_id}} </td> -->
+                        <td> {{part.transaction_id}} </td>
+                        <td> {{part.name_1}} </td>
+                        <td> {{part.telent_1}} </td>
+                        <td> {{part.name_2}} </td>
+                        <td> {{part.telent_2}} </td>
+                        <td> {{part.name_3}} </td>
+                        <td> {{part.telent_3}} </td>
+                        <td> {{part.name_4}} </td>
+                        <td> {{part.telent_4}} </td>
+                        <td> {{part.name_5}} </td>
+                        <td> {{part.telent_5}} </td>
+
+
+                        <td> {{part.email}} </td>
+                        <!-- <td> {{part.wallet}} </td> -->
+                        <!-- <td> <button class="btn btn-success" (click)="addWallet(part)">TopUp</button> </td>
+                        <td> <button class="btn btn-danger" (click)="deleteUser(part)">Delete</button> </td> -->
                       </tr>
                     </tbody>
                   </table>
+                  <div>
+                    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+                  </div>
                 </div>
               </div>
             </div>

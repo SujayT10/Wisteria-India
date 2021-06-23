@@ -32,19 +32,21 @@ if(isset($postdata) && !empty($postdata)){
     $address = trim($request->address);
     $pinCode = trim($request->pinCode);
     $transaction_id = trim($request->transaction_id);
+    $dt = trim($request->dt);
+
 
     $sql = "INSERT INTO telent_hunt(name_1, dob_1, telent_1,
                                     name_2, dob_2, telent_2,
                                     name_3, dob_3, telent_3,
                                     name_4, dob_4, telent_4,
                                     name_5, dob_5, telent_5,
-                                    email, contactno, address, pinCode, transaction_id)
+                                    email, contactno, address, pinCode, transaction_id, datetime)
                              VALUES ('$name','$dob','$hobbie',
                                      '$name2','$dob2','$hobbie2',
                                      '$name3','$dob3','$hobbie3',
                                      '$name4','$dob4','$hobbie4',
                                      '$name5','$dob5','$hobbie5',
-                                     '$email','$contactno','$address','$pinCode','$transaction_id')";
+                                     '$email','$contactno','$address','$pinCode','$transaction_id','$dt' )";
       $res = mysqli_query($mysqli, $sql);
       $last_id = mysqli_insert_id($mysqli);
 
@@ -79,6 +81,7 @@ if(isset($postdata) && !empty($postdata)){
                        'name5'=> $name5,
                        'pinCode' => $pinCode,
                        'transaction_id' => $transaction_id,
+                       'dateTime' => $dt
                    ];
 
 

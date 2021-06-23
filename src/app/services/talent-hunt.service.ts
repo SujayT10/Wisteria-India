@@ -22,9 +22,9 @@ export class TalentHuntService {
                      name3: string, dob3: string, hobbie3: string,
                      name4: string, dob4: string, hobbie4: string,
                      name5: string, dob5: string, hobbie5: string,
-                     email: any, contactno: any, address: any, pinCode: any, transaction_id: any) {
+                     email: any, contactno: any, address: any, pinCode: any, transaction_id: any, dt: any) {
     return this.httpClient.post<TelentHunt[]>(this._linksService.baseUrl_talentHunt + '/talentHunt_Register.php',
-    { name, dob, hobbie,name2, dob2, hobbie2,name3, dob3, hobbie3,name4, dob4, hobbie4,name5, dob5, hobbie5, email, contactno, address, pinCode, transaction_id })
+    { name, dob, hobbie,name2, dob2, hobbie2,name3, dob3, hobbie3,name4, dob4, hobbie4,name5, dob5, hobbie5, email, contactno, address, pinCode, transaction_id, dt })
     .pipe(map(th => {
     return th;
     }));

@@ -35,7 +35,7 @@ export class TalentHuntRegisterComponent implements OnInit {
   demoDate5 = 'for ex. 15-Aug-1995';
   demoHobbie5 = 'for ex. Dancing';
 
-  dateObjectControl = new Date();
+  dt = new Date();
 
   constructor(private fb: FormBuilder,
               private partnerService: PartnerService,
@@ -72,7 +72,7 @@ export class TalentHuntRegisterComponent implements OnInit {
   ngOnInit(): void {
     this.partnerService.show();
     this.show();
-    console.log(this.dateObjectControl)
+    console.log(this.dt)
   }
 
   postdata(angForm1: any){
@@ -83,7 +83,7 @@ export class TalentHuntRegisterComponent implements OnInit {
                                       angForm1.value.name4, angForm1.value.DOB4,angForm1.value.hobbie4,
                                       angForm1.value.name5, angForm1.value.DOB5,angForm1.value.hobbie5,
                                      angForm1.value.email, angForm1.value.contactno, angForm1.value.address,
-                                     angForm1.value.pinCode, angForm1.value.transaction_id)
+                                     angForm1.value.pinCode, angForm1.value.transaction_id, this.dt)
       .pipe(first())
       .subscribe(
                   data => {

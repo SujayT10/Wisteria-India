@@ -83,11 +83,11 @@ const routes: Routes = [
 
 { path: 'dashboard/:id', component: DashboardComponent,canActivate: [AuthguardGuard] },
 
-{ path: 'dashboard/customer/manage-member', component: ManageMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/customer/find-member', component: FindMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/customer/black-listed', component: BlackListComponent, canActivate: [AuthguardGuard]  },
-{ path: 'dashboard/customer/recent-member', component: RecentMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/customer/topup-member', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/manage-member/:id', component: ManageMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/find-member/:id', component: FindMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
+{ path: 'dashboard/talent-hunt/recent-member/:id', component: RecentMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
 
 { path: 'dashboard/employee/manage-member/:id', component: ManageEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/find-member/:id', component: FindEmployeeComponent, canActivate: [AuthguardGuard] },
