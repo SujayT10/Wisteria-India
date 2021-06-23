@@ -46,7 +46,6 @@ if(isset($postdata) && !empty($postdata)){
         //  $mail->addReplyTo('info@wisteriaindia.com');
 
          $mail->addAddress($email);
-         // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
 
          // $mail->addCC('cc@example.com');
          // $mail->addBCC('bcc@example.com');

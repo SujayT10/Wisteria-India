@@ -52,13 +52,13 @@ if(isset($postdata) && !empty($postdata)){
         // $mail->Host = 'smtp.hostinger.in ';      // on server
         $mail->SMTPAuth = true;
 
-        // On LocalHost
+        // // On LocalHost
         $mail->Username = 'sujaytank16595@gmail.com';
         $mail->Password = 'MH27bh3242@google';
 
         //On serve Data
-        // $mail->Username = 'info@wisteriaindia.com';                // SMTP username
-        // $mail->Password = 'infoWimpl@2017';                // SMTP password
+        // $mail->Username = 'hr@wisteriaindia.com';                // SMTP username
+        // $mail->Password = 'HumanResourceWimpl@2017';                // SMTP password
 
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
@@ -68,11 +68,11 @@ if(isset($postdata) && !empty($postdata)){
         $mail->addReplyTo('sujaytank16595@gmail.com');
 
         //On serve Data
-        // $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
-        // $mail->addReplyTo('info@wisteriaindia.com');
+        // $mail->setFrom('hr@wisteriaindia.com', 'Wisteria India');
+        // $mail->addReplyTo('hr@wisteriaindia.com');
 
         $mail->addAddress($email);
-        // $mail->addAddress('info@wisteriaindia.com');       // Add a recipient
+        // $mail->addAddress('hr@wisteriaindia.com');       // Add a recipient
 
         // $mail->addCC('cc@example.com');
         // $mail->addBCC('bcc@example.com');
@@ -82,19 +82,20 @@ if(isset($postdata) && !empty($postdata)){
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = 'Get started with Wisteria India';
-        $mail->Body    = '<div style="width: 40%;
-                                      border: 1px;
-                                      padding: 20px;
-                                      text-align: center;
-                                      margin-left: 25%;
-                                      border-radius: 10%;
-                                      background-color: gainsboro;
-                                      font-family: inter;">
-                                      <h1>Wisteria India</h1>
-                            <h3>Name: '. $fullName .'</h3>
-                            <h3>Email ID: '. $email .'</h3>
-                            <h3>User ID: '. $emp_Id  .'</h3>
-                          </div>' ;
+        $mail->Body    = '  <h1>Wisteria India</h1>
+                            <h3>Mr./Ms.&nbsp; '. $fullName .'</h3>
+                            <p>With reference to your application and subsequent interview you had with us, we are pleased to inform you that, you have been selected to join us and will be reporting to your senior.</p>
+                            <p>Your place of posting will be as per your Pin code, however if required you will at all times render services to the company at any of its current or future locations.</p>
+                            <p>Offer you the position with us on the terms and conditions as per mentioned in Offer letter.</p>
+                            <p>Your Commencement of employment will be effective, as of or any other date
+                            mutually agreed up on in writing is subject to successful completion of your Verification process,
+                            or any other mutually agreed upon, failing which this offer will stand automatically withdrawn.
+                            </p>
+                            <p>We would like to take this opportunity to welcome you to Wisteria India family and look forward to have a long and mutually beneficial relationship.</p>
+                            <p>With Kind Regards,<br>
+                               Human Resorce<br>
+                               Wisteria India Multitrade Pvt Ltd.
+                            </p>' ;
 
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
