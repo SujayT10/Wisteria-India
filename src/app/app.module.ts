@@ -77,6 +77,9 @@ import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-e
 import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-option/emp-paymet-option.component';
 import { EmpForgotPasswordComponent } from './employee-dashboard/emp/emp-forgot-password/emp-forgot-password.component';
 import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-password/emp-reset-password.component';
+import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
+import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.component';
+import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +147,9 @@ import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-pa
     EmpPaymetOptionComponent,
     EmpForgotPasswordComponent,
     EmpResetPasswordComponent,
+    ManageVendorComponent,
+    FindVendorComponent,
+    RecentVendorComponent,
   
 
   ],

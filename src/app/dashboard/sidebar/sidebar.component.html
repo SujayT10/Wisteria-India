@@ -108,15 +108,84 @@
           </div>
         </li>
 
+        <!-- Vendor -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#vendor">
+            <i class="fas fa-user-tie"></i>
+
+            <p>Manage Vendor</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="vendor">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/dashboard/vendor/manage-member//?{{admin_id}}">
+                  <span class="sub-item">View Member</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/vendor/find-member/?{{admin_id}}">
+                  <span class="sub-item">Find Member</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/dashboard/vendor/recent-member/?{{admin_id}}">
+                  <span class="sub-item">Recent Member</span>
+                </a>
+              </li>
+              <li>
+                <!-- <a routerLink="/dashboard/employee/topup-member">
+                  <span class="sub-item">TopUp Employee</span>
+                </a> -->
+              </li>
+            </ul>
+          </div>
+        </li>
+
         <!-- Customer -->
         <li class="nav-item">
-          <a data-toggle="collapse" href="#transaction_id">
+          <a data-toggle="collapse" href="#vendor">
+            <i class="fas fa-people-carry"></i>
+            <p>Manage Customer</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="vendor">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/dashboard/vendor/manage-member//?{{admin_id}}">
+                  <span class="sub-item">View Member</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/vendor/find-member/?{{admin_id}}">
+                  <span class="sub-item">Find Member</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/dashboard/vendor/recent-member/?{{admin_id}}">
+                  <span class="sub-item">Recent Member</span>
+                </a>
+              </li>
+              <li>
+                <!-- <a routerLink="/dashboard/employee/topup-member">
+                  <span class="sub-item">TopUp Employee</span>
+                </a> -->
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Talent hunt -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#talentHunt">
             <!-- <i class="fas fa-user-friends"></i> -->
             <i class="fas fa-book-reader"></i>
             <p>Talent Hunt</p>
             <span class="caret"></span>
           </a>
-          <div class="collapse" id="transaction_id">
+          <div class="collapse" id="talentHunt">
             <ul class="nav nav-collapse">
               <li>
                 <a routerLink="/dashboard/talent-hunt/manage-member/?{{admin_id}}">
@@ -142,6 +211,8 @@
             </ul>
           </div>
         </li>
+
+
 
         <li class="nav-item">
           <a data-toggle="collapse" class="collapsed" aria-expanded="false">

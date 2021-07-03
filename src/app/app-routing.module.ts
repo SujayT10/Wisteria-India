@@ -1,3 +1,4 @@
+import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
 import { EmpForgotPasswordComponent } from './employee-dashboard/emp/emp-forgot-password/emp-forgot-password.component';
 import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-emp.component';
 import { FindEmpComponent } from './employee-dashboard/emp/find-emp/find-emp.component';
@@ -56,6 +57,8 @@ import { EmpProfileComponent } from './employee-dashboard/emp-profile/emp-profil
 import { ManageEmpComponent } from './employee-dashboard/emp/manage-emp/manage-emp.component';
 import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-option/emp-paymet-option.component';
 import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-password/emp-reset-password.component';
+import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.component';
+import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -83,12 +86,6 @@ const routes: Routes = [
 
 { path: 'dashboard/:id', component: DashboardComponent,canActivate: [AuthguardGuard] },
 
-{ path: 'dashboard/talent-hunt/manage-member/:id', component: ManageMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/talent-hunt/find-member/:id', component: FindMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/talent-hunt/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
-{ path: 'dashboard/talent-hunt/recent-member/:id', component: RecentMemberComponent, canActivate: [AuthguardGuard] },
-{ path: 'dashboard/talent-hunt/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
-
 { path: 'dashboard/employee/manage-member/:id', component: ManageEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/find-member/:id', component: FindEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/black-listed/:id', component: BlackedListedEmployeeComponent, canActivate: [AuthguardGuard] },
@@ -103,6 +100,24 @@ const routes: Routes = [
 { path: 'dashboard/partner/topup-member/:id', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/add/:id', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile/:id', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
+
+{ path: 'dashboard/vendor/manage-member/:id', component: ManageVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/vendor/find-member/:id', component: FindVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/vendor/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
+{ path: 'dashboard/vendor/recent-member/:id', component: RecentVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/vendor/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
+
+{ path: 'dashboard/customer/manage-member/:id', component: ManageVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/find-member/:id', component: FindVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
+{ path: 'dashboard/customer/recent-member/:id', component: RecentVendorComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/customer/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
+
+{ path: 'dashboard/talent-hunt/manage-member/:id', component: ManageMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/find-member/:id', component: FindMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
+{ path: 'dashboard/talent-hunt/recent-member/:id', component: RecentMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/talent-hunt/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
 
 { path: 'partner-dashboard/:id', component: PartnerDashboardComponent,canActivate: [PartnerAuthguardGuard] },
 { path: 'partner-dashboard/partner/manage-member/:id', component: ManagePpartnerComponent, canActivate: [PartnerAuthguardGuard] },
