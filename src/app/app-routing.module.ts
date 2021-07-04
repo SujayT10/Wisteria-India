@@ -59,6 +59,7 @@ import { EmpPaymetOptionComponent } from './employee-dashboard/emp/emp-paymet-op
 import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-password/emp-reset-password.component';
 import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.component';
 import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
+import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -75,8 +76,8 @@ const routes: Routes = [
 { path: 'employee-forgotten-password', component: EmpForgotPasswordComponent },
 { path: 'employee-reset-password/:id', component: EmpResetPasswordComponent },
 
-{ path: 'telent-hunt-registration', component: TalentHuntRegisterComponent },
-{ path: 'telent-hunt-registration/successful', component: SuccessfulRegisterComponent },
+{ path: 'talent-hunt-registration', component: TalentHuntRegisterComponent },
+{ path: 'talent-hunt-registration/successful', component: SuccessfulRegisterComponent },
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },
@@ -106,6 +107,7 @@ const routes: Routes = [
 { path: 'dashboard/vendor/black-listed/:id', component: BlackListComponent, canActivate: [AuthguardGuard]  },
 { path: 'dashboard/vendor/recent-member/:id', component: RecentVendorComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/vendor/topup-member/:id', component: TopupMemberComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/vendor/add/:id', component: AddVendorComponent, canActivate: [AuthguardGuard] },
 
 { path: 'dashboard/customer/manage-member/:id', component: ManageVendorComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/customer/find-member/:id', component: FindVendorComponent, canActivate: [AuthguardGuard] },

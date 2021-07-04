@@ -52,7 +52,7 @@ if(isset($postdata) && !empty($postdata)){
 
       if($last_id){
         // $customer_id = "WIC-".str_replace(' ', '', $name).$last_id;
-        $customer_id = "WIC-".substr($email, 0, strpos($email, '@')).$last_id;
+        $customer_id = "WITH-".substr($email, 0, strpos($email, '@')).$last_id;
         $sql1 = "UPDATE telent_hunt SET customer_id = '$customer_id' WHERE id = '$last_id' ";
         $res1 = mysqli_query($mysqli, $sql1);
       }

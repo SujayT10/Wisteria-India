@@ -89,14 +89,14 @@ export class TalentHuntRegisterComponent implements OnInit {
                   data => {
                   // this.angForm.reset();
                   // this.onSuccess();
-                  this.router.navigate([ '/telent-hunt-registration/successful' ]);
+                  this.router.navigate([ '/talent-hunt-registration/successful' ]);
                   console.log("form Update Profile");
                   },
                   error => {
                     // this.onSuccess();
                     // console.log(angForm1.value)
                     // console.log("Error from Update profile");
-                    this.router.navigate([ '/telent-hunt-registration/successful' ]);
+                    this.router.navigate([ '/talent-hunt-registration/successful' ]);
                   }
                 );
 

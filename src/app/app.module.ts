@@ -80,6 +80,7 @@ import { EmpResetPasswordComponent } from './employee-dashboard/emp/emp-reset-pa
 import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
 import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.component';
 import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
+import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.component';
 
 @NgModule({
   declarations: [
@@ -150,6 +151,7 @@ import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-v
     ManageVendorComponent,
     FindVendorComponent,
     RecentVendorComponent,
+    AddVendorComponent,
   
 
   ],

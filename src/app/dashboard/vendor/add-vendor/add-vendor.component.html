@@ -1,0 +1,192 @@
+<!-- Navbar Header -->
+<app-navbar></app-navbar>
+<!-- End Navbar -->
+ <!-- Sidebar -->
+ <app-sidebar></app-sidebar>
+ <!-- End Sidebar -->
+
+   <!-- Main Container -->
+   <div class="main-panel">
+    <div class="content">
+      <div class="page-inner">
+        <div class="page-header">
+          <h4 class="page-title">Vendors</h4>
+          <ul class="breadcrumbs">
+            <li class="nav-home">
+              <a routerLink="/dashboard">
+                <i class="flaticon-home"></i>
+              </a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>Manage Vendors</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>View Vendors</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>View Vendors</a>
+            </li>
+          </ul>
+        </div>
+
+      <div class="row">
+
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="jumbotron">
+            <!-- <div class="float-right"><h6>Referral ID: <b>{{admin_id}}</b></h6></div> -->
+            <h4 class="text-center">Add Vendor</h4>
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+
+
+              <div class="row">
+              <!-- First Name -->
+              <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="name"
+                       formControlName="name"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       placeholder="Full Name">
+                  <div *ngIf="name.touched && name.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="name.errors.required">Required</small>
+                    <small class="alert alert-danger" *ngIf="name.errors.minlength">Minimum {{name.errors.minlength.requiredLength}} characters</small>
+                  </div>
+              </div>
+
+               <!-- Referal ID -->
+               <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="referalId"
+                       formControlName="referalId"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       [(ngModel)] = "admin_id"
+                       readonly>
+                  <div *ngIf="referalId.touched && referalId.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="referalId.errors.required">Required</small>
+                  </div>
+              </div>
+
+              </div>
+
+              <div class="row">
+                <!-- Email -->
+                <div class="form-group col-6">
+                  <!-- <label for="email">Email</label> -->
+                  <input type="email"
+                        name="email"
+                        formControlName="email"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Email">
+                        <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="email.errors?.required" >Required</small>
+                          <small class="alert alert-danger" *ngIf="email.errors?.pattern" >Provide a valid email</small>
+                        </div>
+                </div>
+
+                <!-- Contact Number -->
+                <div class="form-group col-6">
+                  <!-- <label for="email">Contact Number</label> -->
+                  <input type="text"
+                        name="contactno"
+                        formControlName="contactno"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Contact Number">
+                        <div *ngIf="contactno.touched && contactno.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="contactno.errors.required">Required</small>
+                          <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Enter 10 digit Mobile Number</small>
+                        </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <!-- Address -->
+                <div class="form-group col-6">
+                  <!-- <label for="last name">Last Name</label> -->
+                  <input type="text" name="address"
+                         formControlName="address"
+                         autocomplete="off"
+                         class="form-control input-sm"
+                         placeholder="Address">
+                         <div *ngIf="address.touched && address.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="address.errors.required">Required</small>
+                        </div>
+                </div>
+
+                 <!-- Zip -->
+                 <div class="form-group col-6">
+                  <!-- <label for="last name">Last Name</label> -->
+                  <input type="text" name="zip"
+                        formControlName="zip"
+                        autocomplete="off"
+                        class="form-control input-sm"
+                        placeholder="Zip Code">
+                        <div *ngIf="zip.touched && zip.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="zip.errors.required">Required</small>
+                        </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <!--  Password -->
+              <div class="form-group col-6">
+                <!-- <label for="name">Password</label> -->
+                <input type="password"
+                      name="password"
+                      formControlName="password"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Password">
+                      <div *ngIf="password.touched && password.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="password.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="password.errors.minlength">Minimum {{password.errors.minlength.requiredLength}} characters</small>
+                      </div>
+
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-group col-6">
+              <!-- <label for="name">Confirm Password</label> -->
+                <input type="password"
+                      name="confirmpassword"
+                      formControlName="confirmpassword"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Confirm Password">
+                      <div *ngIf="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.required">Required</small>
+                        <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and Confirm Password not match</small>
+                      </div>
+              </div>
+              </div>
+
+            <button type="submit" [disabled]="!angForm.valid" (click)="loader()" class="btn btn-primary btn-lg btn-block" >Register</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+
+</div>
+    <!-- End Main Container -->
+ <!-- Footer -->
+ <ngx-ui-loader></ngx-ui-loader>
+ <simple-notifications [options]="options"></simple-notifications>
+ <app-footer></app-footer>
+ </div>
+ </div>

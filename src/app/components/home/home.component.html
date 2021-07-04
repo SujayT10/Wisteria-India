@@ -16,12 +16,28 @@
       <div class="container">
         <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
           <li class="nav-item dropdown hidden-caret">
-            <a class="nav-link dropdown-toggle" routerLink="/registration" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span>Make a Partner</span>
-            </a>&nbsp;
-            <a class="nav-link dropdown-toggle" routerLink="/telent-hunt-registration" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span>Telent Hunt</span>
-            </a>
+
+            <button type="button" class="btn btn-light" routerLink="/registration">
+                <span>Make a Partner</span>
+            </button>&nbsp;
+
+            <button type="button" class="btn btn-light" routerLink="/talent-hunt-registration">
+              <span>Talent Hunt</span>
+            </button>&nbsp;
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/login">Partner</a>
+                <a class="dropdown-item" routerLink="/employee-login">Employee</a>
+                <a class="dropdown-item" routerLink="">Vendor</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+
           </li>
         </ul>
       </div>
