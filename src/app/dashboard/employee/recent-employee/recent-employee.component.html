@@ -63,8 +63,17 @@
                         <td> {{part.contactno}} </td>
                         <td> {{part.email}} </td>
                         <td> {{part.wallet}} </td>
-                        <td> <button class="btn btn-success" (click)="addWallet(part)">TopUp</button> </td>
-                        <td> <button class="btn btn-danger" (click)="deleteUser(part)">Delete</button> </td>
+                        <td>
+                            <button class="btn btn-success" (click)="addWallet(part)">
+                              <i class="fas fa-plus"></i>
+                            </button>&nbsp;&nbsp;
+                            <button class="btn btn-danger" (click)="addWallet(part)">
+                              <i class="fas fa-minus"></i>
+                            </button>
+                      </td>
+                        <td> <button class="btn btn-secondary" (click)="deleteUser(part)">
+                          <i class="fas fa-trash"></i>
+                        </button> </td>
                       </tr>
                     </tbody>
                   </table>
