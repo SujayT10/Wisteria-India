@@ -1,3 +1,4 @@
+import { ApiService } from 'src/app/services/api.service';
 
 import { first } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -5,15 +6,13 @@ import { Router, Params, ActivatedRoute} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { PartnerService } from 'src/app/services/partner.service';
-import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-topup-partner',
-  templateUrl: './topup-partner.component.html',
-  styleUrls: ['./topup-partner.component.css']
+  selector: 'app-topup-minus-partner',
+  templateUrl: './topup-minus-partner.component.html',
+  styleUrls: ['./topup-minus-partner.component.css']
 })
-export class TopupPartnerComponent implements OnInit {
-  angForm: FormGroup;
+export class TopupMinusPartnerComponent implements OnInit { angForm: FormGroup;
   partner_id: string;
   admin_id: string;
   public options:any = {
@@ -25,7 +24,7 @@ export class TopupPartnerComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private router:Router,
-              private apiService: ApiService,
+              private dataService: ApiService,
               private partnerService: PartnerService,
               private _service: NotificationsService,
               private routes: ActivatedRoute) {
@@ -38,14 +37,14 @@ export class TopupPartnerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.admin_id = this.apiService.getToken();
+    this.admin_id = this.dataService.getToken();
     const routeParams = this.routes.snapshot.params;
     this.partner_id = routeParams.id;
     console.log("Referral ID: " + this.partner_id);
   }
 
-  topUpPartner(angForm1: any){
-    this.partnerService.addAmount( angForm1.value.partner_id, angForm1.value.amount )
+  minusPartner(angForm1: any){
+    this.partnerService.minusAmount( angForm1.value.partner_id, angForm1.value.amount )
       .pipe(first())
       .subscribe(
                   data => {

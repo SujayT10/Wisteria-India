@@ -67,6 +67,13 @@ export class PartnerService {
     }));
   }
 
+  public minusAmount(partner_id:string, amount:string ){
+    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/partnerMinusAmount.php', { partner_id, amount })
+    .pipe(map(partner => {
+    return partner;
+    }));
+  }
+
   public forgotPassword(email: string, partner_id: string){
     return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/forgotPassword.php',{ email, partner_id })
       .pipe(map(partner => {
@@ -90,7 +97,7 @@ export class PartnerService {
       }));
     }
 
-   
+
 
   public show() {
     $(document).ready(function () {

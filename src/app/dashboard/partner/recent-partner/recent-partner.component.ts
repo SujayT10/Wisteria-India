@@ -31,6 +31,11 @@ export class RecentPartnerComponent implements OnInit {
     this.router.navigate([ '/dashboard/partner/topup-member/' + this.id ]);
   }
 
+  public minusWallet(part: Partner){
+    this.id = part.partner_id;
+    this.router.navigate([ '/dashboard/partner/minus-amount-member/' + this.id ]);
+  }
+
   public deleteUser(partner: Partner) {
     this.partnerService.deletePartner( partner.partner_id )
      .subscribe(data => {

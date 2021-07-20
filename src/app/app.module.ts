@@ -81,6 +81,7 @@ import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-v
 import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.component';
 import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
 import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.component';
+import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-partner/topup-minus-partner.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +153,7 @@ import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.com
     FindVendorComponent,
     RecentVendorComponent,
     AddVendorComponent,
+    TopupMinusPartnerComponent,
   
 
   ],

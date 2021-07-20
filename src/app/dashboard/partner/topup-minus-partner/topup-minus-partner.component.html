@@ -10,7 +10,7 @@
     <div class="content">
       <div class="page-inner">
         <div class="page-header">
-          <h4 class="page-title">TopUp</h4>
+          <h4 class="page-title">Minus TopUp</h4>
           <ul class="breadcrumbs">
             <li class="nav-home">
               <a routerLink="/dashboard">
@@ -33,7 +33,7 @@
               <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-              <a>TopUp Partners</a>
+              <a>Minus TopUp Partners</a>
             </li>
           </ul>
         </div>
@@ -46,7 +46,7 @@
           <div class="form-group">
 
             <!-- <h4 class="text-center">Add Partner</h4> -->
-            <form [formGroup]="angForm" (ngSubmit)="topUpPartner(angForm)" autocomplete="off" >
+            <form [formGroup]="angForm" (ngSubmit)="minusPartner(angForm)" autocomplete="off" >
 
               <div class="card">
                 <div class="card-body">
@@ -78,10 +78,10 @@
 
           </div>
           </div>
-            <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >
-              <i class="fas fa-plus"></i>
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-danger btn-lg btn-block" >
+              <i class="fas fa-minus"></i>
             </button>
-            
+
             </form>
           </div>
         </div>
