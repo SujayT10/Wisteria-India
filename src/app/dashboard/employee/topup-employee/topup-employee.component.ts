@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationsService } from 'angular2-notifications';
 import { PartnerService } from 'src/app/services/partner.service';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-topup-employee',
@@ -14,6 +15,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
 export class TopupEmployeeComponent implements OnInit {
   angForm: FormGroup;
   emp_id: string;
+  admin_id: string;
   public options:any = {
     showProgressBar: false,
     position: ["bottom", "right"],
@@ -23,7 +25,7 @@ export class TopupEmployeeComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private router:Router,
-              private partnerService: PartnerService,
+              private apiService: ApiService,
               private _service: NotificationsService,
               private routes: ActivatedRoute,
               private employeeService: EmployeeService) {
@@ -36,10 +38,10 @@ export class TopupEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.admin_id = this.dataservice.getToken();
+    this.admin_id = this.apiService.getToken();
     const routeParams = this.routes.snapshot.params;
     this.emp_id = routeParams.id;
-    // console.log("Referral ID: " + this.emp_id);
+    console.log("Referral ID: " + this.emp_id);
   }
 
   topUpPartner(angForm1: any){
@@ -47,8 +49,7 @@ export class TopupEmployeeComponent implements OnInit {
       .pipe(first())
       .subscribe(
                   data => {
-                    this.onSuccess()
-                     this.angForm.reset();
+                    this.router.navigate([ '/dashboard/employee/recent-member/' + this.admin_id ]);
                   },
                   error => {
                     console.log("Error from TopUp")

@@ -1,0 +1,98 @@
+<!-- Navbar Header -->
+<app-navbar></app-navbar>
+<!-- End Navbar -->
+ <!-- Sidebar -->
+ <app-sidebar></app-sidebar>
+ <!-- End Sidebar -->
+
+  <!-- Main Container -->
+  <div class="main-panel">
+    <div class="content">
+      <div class="page-inner">
+        <div class="page-header">
+          <h4 class="page-title">Minus TopUp</h4>
+          <ul class="breadcrumbs">
+            <li class="nav-home">
+              <a routerLink="/dashboard">
+                <i class="flaticon-home"></i>
+              </a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>Manage Partners</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>View Partners</a>
+            </li>
+            <li class="separator">
+              <i class="flaticon-right-arrow"></i>
+            </li>
+            <li class="nav-item">
+              <a>Minus TopUp Partners</a>
+            </li>
+          </ul>
+        </div>
+
+      <div class="row">
+
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="form-group">
+
+            <!-- <h4 class="text-center">Add Partner</h4> -->
+            <form [formGroup]="angForm" (ngSubmit)="minusEmployee(angForm)" autocomplete="off" >
+
+              <div class="card">
+                <div class="card-body">
+              <div class="row">
+              <!-- Wallet -->
+              <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="amount"
+                      formControlName="amount"
+                      autocomplete="off"
+                      class="form-control input-sm"
+                      placeholder="Amount" >
+                  <div *ngIf="amount.touched && amount.invalid" class="text-danger" >
+                    <small class="alert alert-danger" *ngIf="amount.errors.required">Required</small>
+                  </div>
+              </div>
+
+               <!-- Referal ID -->
+               <div class="form-group col-6">
+                <!-- <label for="name">First Name</label> -->
+                <input type="text" name="emp_id"
+                       formControlName="emp_id"
+                       autocomplete="off"
+                       class="form-control input-sm"
+                       [(ngModel)] = "emp_id"
+                       readonly>
+                  </div>
+              </div>
+
+          </div>
+          </div>
+            <button type="submit" [disabled]="!angForm.valid" class="btn btn-danger btn-lg btn-block" >
+              <i class="fas fa-minus"></i>
+            </button>
+
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+
+      </div>
+    <!-- End Main Container -->
+ <!-- Footer -->
+ <simple-notifications [options]="options"></simple-notifications>
+ <app-footer></app-footer>
+ </div>
+ </div>

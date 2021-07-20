@@ -30,6 +30,12 @@ export class RecentEmployeeComponent implements OnInit {
     this.router.navigate([ '/dashboard/employee/topup-member/' + this.id ]);
   }
 
+  public minusWallet(emp: Employee){
+    this.id = emp.emp_id;
+    this.router.navigate([ '/dashboard/employee/minus-amount-member/' + this.id ]);
+  }
+
+
   public deleteUser(emp: Employee) {
     this.employeeService.deleteEmployee( emp.emp_id )
      .subscribe(data => {

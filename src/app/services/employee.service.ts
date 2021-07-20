@@ -55,6 +55,13 @@ export class EmployeeService {
       }));
     }
 
+    public minusAmount(emp_id:string, amount:string ){
+      return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/employeeMinusAmount.php', { emp_id, amount })
+      .pipe(map(emp => {
+      return emp;
+      }));
+    }
+
     public forgotPassword(email: string, emp_id: string){
       return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/forgotPasswordEmp.php',{ email, emp_id })
         .pipe(map(employee => {

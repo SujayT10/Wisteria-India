@@ -61,6 +61,7 @@ import { FindVendorComponent } from './dashboard/vendor/find-vendor/find-vendor.
 import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-vendor.component';
 import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.component';
 import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-partner/topup-minus-partner.component';
+import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-employee/topup-minus-employee.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -93,6 +94,7 @@ const routes: Routes = [
 { path: 'dashboard/employee/black-listed/:id', component: BlackedListedEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/recent-member/:id', component: RecentEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/topup-member/:id', component: TopupEmployeeComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/employee/minus-amount-member/:id', component: TopupMinusEmployeeComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/employee/add/:id', component: AddEmployeeComponent, canActivate: [AuthguardGuard] },
 
 { path: 'dashboard/partner/manage-member/:id', component: ManagePartnerComponent, canActivate: [AuthguardGuard] },
@@ -101,7 +103,6 @@ const routes: Routes = [
 { path: 'dashboard/partner/recent-member/:id', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/topup-member/:id', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/minus-amount-member/:id', component: TopupMinusPartnerComponent, canActivate: [AuthguardGuard] },
-
 { path: 'dashboard/partner/add/:id', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile/:id', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
 
