@@ -15,7 +15,7 @@ export class TelentHunt {
   public name_5: string;
   public dob_5: string;
   public telent_5: string;
-
+  
   public email: string;
   public contactno: number;
   public address: string;
