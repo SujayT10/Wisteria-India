@@ -82,19 +82,25 @@ if(isset($postdata) && !empty($postdata)){
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = 'Get started with Wisteria India';
-        $mail->Body    = '<div style="width: 40%;
-                                      border: 1px;
-                                      padding: 20px;
-                                      text-align: center;
-                                      margin-left: 25%;
-                                      border-radius: 10%;
-                                      background-color: gainsboro;
-                                      font-family: inter;">
-                                      <h1>Wisteria India</h1>
-                            <h3>Name: '. $fullName .'</h3>
-                            <h3>Email ID: '. $email .'</h3>
-                            <h3>User ID: '. $partner_id .'</h3>
-                          </div>' ;
+        $mail->Body    = ' Dear '. $fullName .'<br/>
+                          <p><b>Welcome to the world of Wisteria India</b></p>
+
+                          <p><b>Name:'. $fullName .'</b></p>
+                          <p><b>Email ID: '. $email .'</b></p>
+                          <p><b>Your login Wisteria India User ID: '. $partner_id .'</b></p>
+
+                          <p>Wisteria India started its operations in 2017. One of the strengths of Wisteria India Business Opportunity is the unparalleled quality of its system. Wisteria India deals in categories – Herbal, Organic, Traditional Herbs Personal care, Home Care, Cosmetics, Durables, Educational Courses and Great Value Products. All our products come with money back guarantee for 100% satisfaction of use subject to certain conditions.</p>
+                          <p>Wisteria India business is open to everyone. It provides a flexible opportunity to build your business through retailing of products.</p>
+                          <p>Please go through the  Business Details  to get further information.</p>
+                          <p>
+                          To help you get started in the business, we have exciting offers from time to time. Please visit the Wisteria India Partner portal to learn about and avail offers (www.wisteriaindia.com).</p>
+                          <p>To help you learn more about our products and develop your merchandising skills we also have an Offline and Online e-learning platform which can be accessed through our portal. We highly recommend the learning welcome program "Introduction" to help you gain a better understanding about Wisteria India, Top-Selling products and tips on how to get started in your Wisteria India business.</p>
+                          <p>We strongly urge you to visit the website and Partner Portal regularly as the website provides updates, product related news and changes to Rules of Conduct and other important information.</p>
+                          <p>
+                          You can also get in touch with us through our Email us:- info@wisteriaindia.com for further support  and more information.</p>
+                          <p>With Warm Regards,</p>
+                          <p>Wisteria India Multitrade Pvt. Ltd.</p>
+                        ' ;
 
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
