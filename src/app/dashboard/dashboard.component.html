@@ -22,8 +22,8 @@
             <div class="input-group mb-3 col-md-4 ">
               <input type="text" class="form-control" [(ngModel)]="link"  aria-describedby="button-addon2">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-info" cdkCopyToClipboard="{{link}}" data-toggle="modal" data-target="#exampleModalCenter">
-                  Copy
+                <button type="button" class="btn btn-light" cdkCopyToClipboard="{{link}}" data-toggle="modal" data-target="#exampleModalCenter">
+                  <i class="far fa-copy"></i>
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
