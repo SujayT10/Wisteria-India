@@ -6,6 +6,7 @@ import { Wallet } from '../classes/wallet';
 import { UpdatePartnerProfile } from '../classes/update-partner-profile';
 import { CommonLinksService } from './common-links.service';
 import { TelentHunt } from '../classes/telent-hunt';
+import { Profiledata } from '../classes/profiledata';
 
 @Injectable({
   providedIn: 'root'
@@ -97,7 +98,9 @@ export class PartnerService {
       }));
     }
 
-
+    getUpdateData(){
+      return this.httpClient.get<Profiledata[]>(this._linksService.baseUrl_partner + '/getUpdateData.php');
+    }
 
   public show() {
     $(document).ready(function () {

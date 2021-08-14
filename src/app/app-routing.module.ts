@@ -62,6 +62,7 @@ import { RecentVendorComponent } from './dashboard/vendor/recent-vendor/recent-v
 import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.component';
 import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-partner/topup-minus-partner.component';
 import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-employee/topup-minus-employee.component';
+import { ViewDetailsComponent } from './dashboard/partner/view-details/view-details.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -102,6 +103,9 @@ const routes: Routes = [
 { path: 'dashboard/partner/black-listed/:id', component: BlackListedPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/recent-member/:id', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/topup-member/:id', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
+{ path: 'dashboard/partner/view-details/:id', component: ViewDetailsComponent, canActivate: [AuthguardGuard] },
+
+
 { path: 'dashboard/partner/minus-amount-member/:id', component: TopupMinusPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/add/:id', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile/:id', component: AdminProfileComponent, canActivate: [AuthguardGuard] },

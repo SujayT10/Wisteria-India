@@ -27,6 +27,7 @@ export class PartnerDashboardComponent implements OnInit {
     this.link = this._linksService.referal_link + this.partner_id;
     this.postId(this.partner_id);
     this.activeId(this.partner_id);
+    // console.log(this.partner_id)
   }
 
   public postId(partner_id: any){

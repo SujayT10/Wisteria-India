@@ -25,7 +25,7 @@ constructor(private httpClient : HttpClient, private _linksService : CommonLinks
   }
 
   public userregistration(name: string, lastname: string, email: string,contactno: number, pwd: string, ) {
-    return this.httpClient.post<any>(this._linksService.baseUrl_api + '/register.php', { name, lastname, email, pwd, contactno })
+    return this.httpClient.post<Users>(this._linksService.baseUrl_api + '/register.php', { name, lastname, email, pwd, contactno })
     .pipe(map(Users => {
     return Users;
     }));
