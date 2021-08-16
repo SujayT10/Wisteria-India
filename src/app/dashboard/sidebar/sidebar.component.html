@@ -212,7 +212,39 @@
           </div>
         </li>
 
+        <!-- Insurance -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#partner">
+            <i class="fas fa-archive"></i>
+            <p>Insurance</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="partner">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/dashboard/partner/manage-member/?{{admin_id}}">
+                  <span class="sub-item">View Partner</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/partner/find-member/?{{admin_id}}">
+                  <span class="sub-item">Find Partner</span>
+                </a>
+              </li>
 
+              <li>
+                <a routerLink="/dashboard/partner/recent-member/?{{admin_id}}">
+                  <span class="sub-item">Recent Partner</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/dashboard/partner/view-details/?{{admin_id}}">
+                  <span class="sub-item">View Details</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
 
         <li class="nav-item">
           <a data-toggle="collapse" class="collapsed" aria-expanded="false">

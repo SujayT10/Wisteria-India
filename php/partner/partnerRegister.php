@@ -14,7 +14,7 @@ if(isset($postdata) && !empty($postdata)){
     $password = mysqli_real_escape_string($mysqli, trim($request->password));
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = trim($request->contactno);
-    $datetime = trim($request->datetime);
+    $datetime = trim($request->todayDate);
     $referalId = trim($request->referalId);
     $address = trim($request->address);
     $fullName = $firstname." ".$lastname;
