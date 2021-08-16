@@ -14,7 +14,10 @@ import { EmployeeService } from 'src/app/services/employee.service';
 })
 export class EmployeeLoginComponent implements OnInit {
   angForm: FormGroup;
-  title = "Employee Login"
+  title = "Employee Login";
+  button = "Login";
+  button2 = "Partner Login";
+  button3 = "Admin Login";
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],

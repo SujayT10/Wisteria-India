@@ -13,6 +13,12 @@
 })
 
 export class LoginComponent implements OnInit {
+    title = "Partner Login";
+    button = "Login";
+    button2 = "Employee Login";
+    button3 = "Admin Login"
+     fp= "Forgotten password?";
+
     angForm: FormGroup;
     public options:any = {
       showProgressBar: false,

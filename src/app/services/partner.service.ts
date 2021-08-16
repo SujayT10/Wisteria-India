@@ -54,7 +54,7 @@ export class PartnerService {
     return this.httpClient.get<Partner[]>(this._linksService.baseUrl_partner + '/recentPartners.php');
   }
 
-  public partnerRegistration(firstname: string, lastname: string, contactno: number, email: string, password: string, datetime: number, referalId: string,	address: string) {
+  public partnerRegistration(firstname: string, lastname: string, contactno: number, email: string, password: string, datetime: any, referalId: string,	address: string) {
     return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/partnerRegister.php', { firstname, lastname, contactno, email, password, datetime, referalId, address })
     .pipe(map(partner => {
     return partner;

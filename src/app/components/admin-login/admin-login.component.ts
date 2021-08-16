@@ -12,7 +12,9 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class AdminLoginComponent implements OnInit {
   angForm: FormGroup;
-  data="Admin Login";
+  title ="Admin Login";
+  button = "Login";
+  button2 = "Partner Login";
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],

@@ -16,30 +16,29 @@
     <div class="col-md-4 col-md-offset-5">
 
         <div class="jumbotron" style="background-color: #e9eceff2;">
-          <h2 class="text-center">{{data}}</h2>
+          <h2 class="text-center">{{title}}</h2>
           <div class="mb-4">
             <hr class="solid">
           </div>
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
 
-              <!-- userId -->
-              <div class="form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">WIA-</div>
+                <!-- userId -->
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">WIA-</div>
+                    </div>
+                    <input type="text" name="userId"
+                          formControlName="userId"
+                          autocomplete="off"
+                          class="form-control input-sm"
+                          id="inlineFormInputGroupUsername"
+                          placeholder="User ID">
                   </div>
-                  <input type="text" name="userId"
-                         formControlName="userId"
-                         autocomplete="off"
-                         class="form-control input-sm"
-                         id="inlineFormInputGroupUsername"
-                         placeholder="User ID">
+                  <div *ngIf="(userId.invalid && userId.touched) || userId.dirty" class="text-danger">
+                    <small class="alert alert-danger" *ngIf="userId.errors?.required" >Required</small>
+                  </div>
                 </div>
-                <div *ngIf="(userId.invalid && userId.touched) || userId.dirty" class="text-danger">
-                  <small class="alert alert-danger" *ngIf="userId.errors?.required" >Required</small>
-                </div>
-              </div>
-
                 <!-- password  -->
                 <div class="form-group">
                   <input type="password"name="Password"
@@ -52,14 +51,14 @@
                         </div>
                 </div>
 
-                <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Login</button>
+                <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >{{button}}</button>
                 <!-- <div class="text-center" style="padding-top: 10px;">
                   <p><a routerLink="/forgotten-password"> Forgotten password? </a></p>
                 </div> -->
                 <div class="mb-4">
                   <hr class="solid">
                 </div>
-                <button type="button" routerLink="/login" class="btn btn-outline-primary btn-lg btn-block" >Partner Login</button>
+                <button type="button" routerLink="/login" class="btn btn-outline-primary btn-lg btn-block" >{{button2}}</button>
                 <!-- Register buttons -->
             <div class="text-center" style="padding-top: 10px;">
               <p>Don't have an account? <a routerLink="/registration"> Register Here </a></p>
