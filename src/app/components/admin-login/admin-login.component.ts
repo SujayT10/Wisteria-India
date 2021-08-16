@@ -12,9 +12,12 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class AdminLoginComponent implements OnInit {
   angForm: FormGroup;
-  title ="Admin Login";
-  button = "Login";
-  button2 = "Partner Login";
+  admin: {
+    title: String,
+    button1: String,
+    button2:  String,
+  };
+
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],
@@ -30,6 +33,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.admin = this.dataService.getStaticData().admin;
   }
 
   postdata(angForm1: any){

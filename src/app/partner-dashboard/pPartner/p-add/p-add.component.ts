@@ -16,6 +16,7 @@ export class PAddComponent implements OnInit {
 
   angForm: FormGroup;
   partner_id:string;
+  todayDate = new Date();
   public options:any = {
     showProgressBar: false,
     position: ["bottom", "right"],
@@ -34,7 +35,6 @@ export class PAddComponent implements OnInit {
       lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
       referalId: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      datetime: ['', [Validators.required]],
       // wallet: ['', [Validators.required]],
       contactno: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(8)] ],
@@ -55,7 +55,7 @@ export class PAddComponent implements OnInit {
                                             angForm1.value.contactno,
                                             angForm1.value.email,
                                             angForm1.value.password,
-                                            angForm1.value.datetime,
+                                            this.todayDate,
                                             angForm1.value.referalId,
                                             angForm1.value.address)
       .pipe(first())
@@ -90,6 +90,5 @@ export class PAddComponent implements OnInit {
   get contactno() { return this.angForm.get('contactno'); }
   get referalId() { return this.angForm.get('referalId'); }
   get address() { return this.angForm.get('address'); }
-  get datetime() { return this.angForm.get('address'); }
   // get wallet() { return this.angForm.get('wallet'); }
 }

@@ -14,10 +14,12 @@ import { EmployeeService } from 'src/app/services/employee.service';
 })
 export class EmployeeLoginComponent implements OnInit {
   angForm: FormGroup;
-  title = "Employee Login";
-  button = "Login";
-  button2 = "Partner Login";
-  button3 = "Admin Login";
+  employee: {
+    title: String,
+    button1: String,
+    button2:  String,
+    button3: String
+  }
   public options:any = {
     showProgressBar: false,
     position: ["top", "right"],
@@ -25,8 +27,7 @@ export class EmployeeLoginComponent implements OnInit {
     animate: "fade",
 };
 
-  constructor(private fb: FormBuilder,
-              private employeeService: EmployeeService,
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService,
               private router:Router,
               private _service: NotificationsService) {
       this.angForm = this.fb.group({
@@ -36,6 +37,7 @@ export class EmployeeLoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.employee = this.employeeService.getStaticData().employee;
   }
 
   postdata(angForm1: any){

@@ -13,11 +13,14 @@
 })
 
 export class LoginComponent implements OnInit {
-    title = "Partner Login";
-    button = "Login";
-    button2 = "Employee Login";
-    button3 = "Admin Login"
-     fp= "Forgotten password?";
+
+      partner: {
+        title: String,
+        button1: String,
+        button2:  String,
+        button3: String,
+        fp:String
+      }
 
     angForm: FormGroup;
     public options:any = {
@@ -35,6 +38,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
+      this.partner = this.partnerService.getStaticData().partner;
     }
 
     postdata(angForm1: any){

@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from '../classes/users';
 import { CommonLinksService } from './common-links.service';
+import { staticData } from '../components/staticData';
 
 @Injectable({
 providedIn: 'root'
@@ -10,6 +11,7 @@ providedIn: 'root'
 
 export class ApiService {
 redirectUrl: any;
+staticData = staticData;
 
 @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
@@ -37,6 +39,10 @@ constructor(private httpClient : HttpClient, private _linksService : CommonLinks
 
   public activeUser(admin_id: string){
     return this.httpClient.post<Users[]>(this._linksService.baseUrl_api + '/activeUserById.php', { admin_id });
+  }
+
+  getStaticData(){
+    return this.staticData;
   }
 
 //token

@@ -4,12 +4,14 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Users } from '../classes/users';
 import { CommonLinksService } from './common-links.service';
+import { staticData } from '../components/staticData';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
   redirectUrl: any;
+  staticData = staticData;
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
@@ -74,6 +76,10 @@ export class EmployeeService {
       .pipe(map(partner => {
           return partner;
        }));
+    }
+
+    getStaticData(){
+      return this.staticData;
     }
 
   //token

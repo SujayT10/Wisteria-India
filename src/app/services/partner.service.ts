@@ -1,3 +1,4 @@
+import { staticData } from './../components/staticData';
 import { Partner } from '../classes/partner';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -14,6 +15,7 @@ import { Profiledata } from '../classes/profiledata';
 export class PartnerService {
 
   redirectUrl: any;
+  staticData = staticData;
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
@@ -100,6 +102,10 @@ export class PartnerService {
 
     getUpdateData(){
       return this.httpClient.get<Profiledata[]>(this._linksService.baseUrl_partner + '/getUpdateData.php');
+    }
+
+    getStaticData(){
+      return this.staticData;
     }
 
   public show() {
