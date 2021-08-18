@@ -84,6 +84,7 @@ import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.com
 import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-partner/topup-minus-partner.component';
 import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-employee/topup-minus-employee.component';
 import { ViewDetailsComponent } from './dashboard/partner/view-details/view-details.component';
+import { InsuranceComponent } from './components/insurance/insurance.component';
 
 @NgModule({
   declarations: [
@@ -158,6 +159,7 @@ import { ViewDetailsComponent } from './dashboard/partner/view-details/view-deta
     TopupMinusPartnerComponent,
     TopupMinusEmployeeComponent,
     ViewDetailsComponent,
+    InsuranceComponent,
   
 
   ],
