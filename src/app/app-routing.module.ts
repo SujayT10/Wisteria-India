@@ -1,3 +1,4 @@
+import { AddProductsComponent } from './vendor-dashboard/manage-products/add-products/add-products.component';
 import { VendorProfileComponent } from './vendor-dashboard/vendor-profile/vendor-profile.component';
 import { VendorRegisterComponent } from './components/vendor-register/vendor-register.component';
 import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
@@ -67,6 +68,7 @@ import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-em
 import { ViewDetailsComponent } from './dashboard/partner/view-details/view-details.component';
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
+import { ManageProductsComponent } from './vendor-dashboard/manage-products/manage-products.component';
 
 const routes: Routes = [
 { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -156,6 +158,8 @@ const routes: Routes = [
 
 { path:'vendor-dashboard/:id', component: VendorDashboardComponent, canActivate: [AuthguardGuard] },
 { path:'vendor-dashboard/vendor-profile/:id', component: VendorProfileComponent, canActivate: [AuthguardGuard] },
+{ path:'vendor-dashboard/manage-products/:id', component: ManageProductsComponent, canActivate: [AuthguardGuard] },
+{ path:'vendor-dashboard/manage-products/add-products/:id', component: AddProductsComponent, canActivate: [AuthguardGuard] },
 
 
 { path: '**', component: PageNotFoundComponent },

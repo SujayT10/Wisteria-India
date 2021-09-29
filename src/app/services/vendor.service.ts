@@ -1,3 +1,4 @@
+import { VendorProducts } from './../classes/vendor-products';
 
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -62,6 +63,17 @@ export class VendorService {
         return vendor;
       }));
   }
+
+  public addProducts(sku: string, productName: string, description: string, unitPrice: number, imgUrl: string, unitInStocks: number, vendor_id: string, todayDate: any, active: boolean) {
+    return this.httpClient.post<VendorProducts[]>(this._linksService.baseUrl_vendor + '/addProducts.php',
+      { sku, productName, description, unitPrice, imgUrl, unitInStocks, vendor_id, todayDate, active })
+      .pipe(map(vendorProducts => {
+        return vendorProducts;
+      }));
+  }
+
+
+
 
   // public addAmount(partner_id:string, amount:string ){
   //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/partnerAmount.php', { partner_id, amount })
