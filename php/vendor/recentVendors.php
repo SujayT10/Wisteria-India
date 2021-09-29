@@ -8,12 +8,12 @@ if($result = mysqli_query($mysqli, $sql)){
   while($row = mysqli_fetch_assoc($result)){
     $vendor[$cr]['id'] = $row['id'];
     $vendor[$cr]['vendor_id'] = $row['vendor_id'];
-    $vendor[$cr]['name'] = $row['name'];
-    $vendor[$cr]['contactno'] = $row['contactno'];
+    $vendor[$cr]['cName'] = $row['cName'];
+    $vendor[$cr]['fullName'] = $row['fullName'];
     $vendor[$cr]['email'] = $row['email'];
-    $vendor[$cr]['address'] = $row['address'];
-    $vendor[$cr]['datetime'] = $row['datetime'];
+    $vendor[$cr]['contactno'] = $row['contactno'];
     $vendor[$cr]['zip'] = $row['zip'];
+    $vendor[$cr]['address'] = $row['address'];
     $cr++;
   }
   // print_r(($vendor));
