@@ -29,12 +29,12 @@ export class VendorService {
       }));
   }
 
-  // public postDataToDB(partner_id: string){
-  //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getPartnerByID.php',{ partner_id })
-  //     .pipe(map(partner => {
-  //         return partner;
-  //      }));
-  // }
+  public postDataToDB(vendor_id: string){
+    return this.httpClient.post<VendorProducts[]>(this._linksService.baseUrl_vendor + '/getVendorByID.php',{ vendor_id })
+      .pipe(map(vendor => {
+          return vendor;
+       }));
+  }
 
   // recentPartnerBYID(partner_id: string){
   //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getRecentPartnerById.php',{ partner_id });

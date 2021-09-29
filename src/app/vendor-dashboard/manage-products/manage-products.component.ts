@@ -1,7 +1,8 @@
+import { VendorProducts } from './../../classes/vendor-products';
+import { VendorService } from 'src/app/services/vendor.service';
 import { Vendor } from './../../classes/vendor';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
-import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-manage-products',
@@ -10,22 +11,22 @@ import { PartnerService } from 'src/app/services/partner.service';
 })
 export class ManageProductsComponent implements OnInit {
   vendor_id: string;
-  partner: Vendor[];
+  vendorProducts: VendorProducts[];
   totalLength: any;
   page: number = 1;
 
-  constructor(private partnerService: PartnerService) { }
+  constructor(private vendorService: VendorService) { }
 
   ngOnInit(): void {
-    this.vendor_id = this.partnerService.getToken();
-    // this.postId(this.vendor_id);
+    this.vendor_id = this.vendorService.getToken();
+    this.postId(this.vendor_id);
   }
 
-  // public postId(vendor_id: any){
-  //   this.partnerService.postDataToDB(vendor_id)
-  //       .pipe(first())
-  //       .subscribe((data: Vendor[]) =>{
-  //         this.partner= data;
-  //       })
-  // }
+  public postId(vendor_id: any){
+    this.vendorService.postDataToDB(vendor_id)
+        .pipe(first())
+        .subscribe((data: VendorProducts[]) =>{
+          this.vendorProducts= data;
+        })
+  }
 }

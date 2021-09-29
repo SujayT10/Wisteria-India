@@ -40,25 +40,22 @@
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Partner ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Contact Number</th>
-                    <th>Email</th>
-                    <!-- <th>Referral ID </th> -->
-                    <!-- <th>Edit</th> -->
-                    <!-- <th>Delete</th> -->
+                    <th>SKU</th>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                    <th>Image URL</th>
+                    <th>Unit In Stocks</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let part of partner | paginate: { itemsPerPage: 5,
+                  <tr *ngFor="let part of vendorProducts | paginate: { itemsPerPage: 5,
                                                                     currentPage: page,
                                                                     totalItems: totalLength }">
-                    <td> {{part.vendor_id}} </td>
-                    <td> {{part.cName}} </td>
-                    <td> {{part.fullName}} </td>
-                    <td> {{part.contactno}} </td>
-                    <td> {{part.email}} </td>
+                    <td> {{part.sku}}</td>
+                    <td> {{part.productName}}</td>
+                    <td> {{part.unitPrice}} </td>
+                    <td> {{part.imgUrl}} </td>
+                    <td> {{part.unitInStocks}} </td>
                     <!-- <td> {{part.referalId}} </td> -->
                     <!-- <td> <button class="btn btn-success">Edit</button> </td>
                         <td> <button class="btn btn-danger">Delete</button> </td> -->

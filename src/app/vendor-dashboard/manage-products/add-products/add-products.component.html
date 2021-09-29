@@ -40,7 +40,6 @@
           <div class="jumbotron">
             <!-- <div class="float-right"><h6>Referral ID: <b>{{partner_id}}</b></h6></div> -->
             <h4 class="text-center">Add Product</h4>
-            {{vendor_id}}
 
             <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
 
@@ -155,7 +154,7 @@
                 </div>
                 <div class="col-md-8">
                   <!-- <label for="name">First Name</label> -->
-                  <input type="text"
+                  <input type="number"
                          name="unitInStocks"
                          formControlName="unitInStocks"
                          autocomplete="off"

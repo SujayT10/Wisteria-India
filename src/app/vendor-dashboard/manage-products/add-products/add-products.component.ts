@@ -36,7 +36,7 @@ export class AddProductsComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(10),]],
       unitPrice: ['', [Validators.required,]],
       imgUrl: ['', [Validators.required]],
-      unitInStocks: ['', [Validators.required, Validators.pattern("^[0-9]$")]],
+      unitInStocks: ['', [Validators.required ]],
       });
   }
 
