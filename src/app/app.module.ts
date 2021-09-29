@@ -92,6 +92,8 @@ import { NavSideBarComponent } from './vendor-dashboard/nav-side-bar/nav-side-ba
 import { VendorProfileComponent } from './vendor-dashboard/vendor-profile/vendor-profile.component';
 import { ManageProductsComponent } from './vendor-dashboard/manage-products/manage-products.component';
 import { AddProductsComponent } from './vendor-dashboard/manage-products/add-products/add-products.component';
+import { RecentProductsComponent } from './vendor-dashboard/recent-products/recent-products.component';
+import { FindProductsComponent } from './vendor-dashboard/find-products/find-products.component';
 
 @NgModule({
   declarations: [
@@ -174,6 +176,8 @@ import { AddProductsComponent } from './vendor-dashboard/manage-products/add-pro
     VendorProfileComponent,
     ManageProductsComponent,
     AddProductsComponent,
+    RecentProductsComponent,
+    FindProductsComponent,
   
 
   ],

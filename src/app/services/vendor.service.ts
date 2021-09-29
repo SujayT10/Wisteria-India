@@ -36,9 +36,9 @@ export class VendorService {
        }));
   }
 
-  // recentPartnerBYID(partner_id: string){
-  //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getRecentPartnerById.php',{ partner_id });
-  // }
+  recentVendorBYID(vendor_id: string){
+    return this.httpClient.post<VendorProducts[]>(this._linksService.baseUrl_vendor + '/getRecentVendorById.php',{ vendor_id });
+  }
 
   public activeVendor(vendor_id: string){
     return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/activeVendorById.php', { vendor_id });
