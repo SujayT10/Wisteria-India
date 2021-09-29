@@ -1,3 +1,4 @@
+import { VendorRegisterComponent } from './components/vendor-register/vendor-register.component';
 import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
 import { EmpForgotPasswordComponent } from './employee-dashboard/emp/emp-forgot-password/emp-forgot-password.component';
 import { RecentEmpComponent } from './employee-dashboard/emp/recent-emp/recent-emp.component';
@@ -63,13 +64,16 @@ import { AddVendorComponent } from './dashboard/vendor/add-vendor/add-vendor.com
 import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-partner/topup-minus-partner.component';
 import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-employee/topup-minus-employee.component';
 import { ViewDetailsComponent } from './dashboard/partner/view-details/view-details.component';
+import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
+import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
 
 const routes: Routes = [
-{ path: '', component: HomeComponent, pathMatch: 'full' },
+{ path: '', component: LoginComponent, pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 { path: 'admin-login', component: AdminLoginComponent },
 { path: 'employee-login', component: EmployeeLoginComponent },
-{ path: 'home', component: HomeComponent },
+{ path: 'vendor-login', component: VendorLoginComponent },
+
 { path: 'aboutUs', component: HomeComponent },
 { path: 'registration', component: RegisterComponent },
 { path: 'admin-registration', component: AdminRegisterComponent },
@@ -81,6 +85,8 @@ const routes: Routes = [
 
 { path: 'talent-hunt-registration', component: TalentHuntRegisterComponent },
 { path: 'talent-hunt-registration/successful', component: SuccessfulRegisterComponent },
+
+{ path: 'vendor-registration', component: VendorRegisterComponent },
 
 { path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: 'term-condition', component: TermAndConditionComponent },
@@ -104,8 +110,6 @@ const routes: Routes = [
 { path: 'dashboard/partner/recent-member/:id', component: RecentPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/topup-member/:id', component: TopupPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/view-details/:id', component: ViewDetailsComponent, canActivate: [AuthguardGuard] },
-
-
 { path: 'dashboard/partner/minus-amount-member/:id', component: TopupMinusPartnerComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/add/:id', component: AddComponent, canActivate: [AuthguardGuard] },
 { path: 'dashboard/partner/profile/:id', component: AdminProfileComponent, canActivate: [AuthguardGuard] },
@@ -148,6 +152,8 @@ const routes: Routes = [
 // { path: 'employee-dashboard/employee/add/:id', component: PAddComponent, canActivate: [AuthguardGuard] },
 { path: 'employee-dashboard/employee/employee-profile/:id', component: EmpProfileComponent, canActivate: [AuthguardGuard] },
 // { path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
+
+{ path:'vendor-dashboard/:id', component: VendorDashboardComponent, canActivate: [AuthguardGuard] } ,
 
 { path: '**', component: PageNotFoundComponent },
 

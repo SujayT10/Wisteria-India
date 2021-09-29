@@ -1,0 +1,203 @@
+<div class="wrapper" style="background: url(../assets/img/bg-abstract2.png); background-size: cover; height: 100%;">
+  <div class="container-fluid">
+    <div class="row" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
+      <div class="col-md-4 ml-auto mr-auto">
+        <a routerLink="/home" class="logo" style="height: 100px;">
+          <img src="../assets/img/LogoSiteWhite.png" alt="navbar brand" class=""
+            style="max-height: -webkit-fill-available; height: inherit;">
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+          <h4 class="text-center">{{data}}</h4>
+          <div class="mb-4">
+            <hr class="solid">
+          </div>
+          <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+
+            <div class="row">
+              <!-- First Name -->
+              <div class="col-md-3">
+                Company Name
+              </div>
+              <div class="col-md-9">
+                <input type="text" name="cName" formControlName="cName" autocomplete="off" class="form-control input-sm"
+                  placeholder="forEx. abc pvt ltd ">
+                <div *ngIf="cName.touched && cName.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="cName.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="cName.errors.minlength">Minimum
+                    {{cName.errors.minlength.requiredLength}} characters.</small>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <!-- Full Name -->
+              <div class="col-md-3">
+                Full Name
+              </div>
+              <div class="col-md-9">
+                <input type="text" cName="fullName" formControlName="fullName" autocomplete="off"
+                  class="form-control input-sm" placeholder="forEx. John Eone Doe">
+                <div *ngIf="fullName.touched && fullName.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="fullName.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="fullName.errors.minlength">Minimum
+                    {{fullName.errors.minlength.requiredLength}} characters.</small>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row mt-3">
+              <!-- Email -->
+              <div class="col-md-3">
+                Email
+              </div>
+              <div class="col-md-9">
+                <input type="email" cName="email" formControlName="email" autocomplete="off"
+                  class="form-control input-sm" placeholder="forEx. johndoe@abc.com">
+                <div *ngIf="(email.invalid && email.touched) || email.dirty" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="email.errors?.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="email.errors?.pattern">Valid Email</small>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row mt-3">
+              <!-- Email -->
+              <div class="col-md-3">
+                Contact Number
+              </div>
+
+              <!-- Contact Number -->
+              <div class="col-md-9">
+                <input type="text" cName="contactno" formControlName="contactno" autocomplete="off"
+                  class="form-control input-sm" placeholder="for ex. 99XX20XX14">
+                <div *ngIf="contactno.touched && contactno.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="contactno.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="contactno.errors.pattern">Enter 10 digit Mobile
+                    Number</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <!-- Address -->
+              <div class="col-md-3">
+                Address
+              </div>
+              <div class="col-md-9">
+                <textarea type="textarea" cName="address" formControlName="address" autocomplete="off"
+                  class="form-control input-sm" placeholder="forEx. street no, city name" class="form-control" rows="2">
+              </textarea>
+
+                <div *ngIf="address.touched && address.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="address.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="address.errors.minlength">Minimum
+                    {{address.errors.minlength.requiredLength}} characters.</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <!--Zip Code -->
+              <div class="col-md-3">
+                Zip Code
+              </div>
+              <div class="col-md-9">
+                <input type="text"
+                       cName="zipCode"
+                       formControlName="zipCode"
+                       autocomplete="off"
+                  class="form-control input-sm" placeholder="forEx. 44XXX07">
+                <div *ngIf="zipCode.touched && zipCode.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="zipCode.errors.required">Required</small>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <!--  Password -->
+              <div class="col-md-3">
+                Password
+              </div>
+              <div class="col-md-9">
+                <input type="password" cName="password" formControlName="password" autocomplete="off"
+                  class="form-control input-sm" placeholder="Password">
+                <div *ngIf="password.touched && password.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="password.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="password.errors.minlength">Minimum
+                    {{password.errors.minlength.requiredLength}} characters.</small>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row mt-3">
+              <!-- Confirm Password -->
+              <div class="col-md-3">
+                Confirm Password
+              </div>
+              <div class="col-md-9">
+                <input type="password" cName="confirmpassword" formControlName="confirmpassword" autocomplete="off"
+                  class="form-control input-sm" placeholder="Confirm Password">
+                <div *ngIf="confirmpassword.touched && confirmpassword.invalid" class="text-danger">
+                  <small class="alert alert-danger" *ngIf="confirmpassword.errors.required">Required</small>
+                  <small class="alert alert-danger" *ngIf="confirmpassword.errors.confirmedValidator">Password and
+                    Confirm Password must be match</small>
+                </div>
+              </div>
+
+
+            </div>
+
+            <button type="submit" (click)="onSuccess()" [disabled]="!angForm.valid"
+              class="btn btn-primary btn-lg btn-block mt-3">Register</button>
+
+            <!-- Register buttons -->
+            <div class="text-center" style="padding-top: 10px;">
+              <p>Do you have an account? <a routerLink="/vendor-login"> Login Here</a></p>
+              <div class="mb-4">
+                <hr class="solid">
+              </div>
+              <p>For Referal Code contact us <b><a
+                    href="mailto:customer.care@wisteriaindia.com">customer.care@wisteriaindia.com </a></b></p>
+
+              <!--<p>or sign up with:</p>
+     <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-google"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-twitter"></i>
+    </button>
+
+    <button type="button" class="btn btn-primary btn-floating mx-1">
+      <i class="fab fa-github"></i>
+    </button> -->
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="col-md-3">
+  </div> -->
+    </div>
+  </div>
+
+  <simple-notifications [options]="options"></simple-notifications>
+  <app-home-footer></app-home-footer>
+
+</div>

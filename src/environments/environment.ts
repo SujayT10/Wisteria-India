@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://wisteriaindia.com/"
+  baseUrl: "http://localhost/wisteria-india",
+  baseUrl2: "http://localhost:4200"
 };
 
 /*

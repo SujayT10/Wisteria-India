@@ -85,6 +85,9 @@ import { TopupMinusPartnerComponent } from './dashboard/partner/topup-minus-part
 import { TopupMinusEmployeeComponent } from './dashboard/employee/topup-minus-employee/topup-minus-employee.component';
 import { ViewDetailsComponent } from './dashboard/partner/view-details/view-details.component';
 import { InsuranceComponent } from './components/insurance/insurance.component';
+import { VendorRegisterComponent } from './components/vendor-register/vendor-register.component';
+import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
+import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -160,6 +163,9 @@ import { InsuranceComponent } from './components/insurance/insurance.component';
     TopupMinusEmployeeComponent,
     ViewDetailsComponent,
     InsuranceComponent,
+    VendorRegisterComponent,
+    VendorLoginComponent,
+    VendorDashboardComponent,
   
 
   ],

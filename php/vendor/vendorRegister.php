@@ -9,35 +9,35 @@ if(isset($postdata) && !empty($postdata)){
 
     // name, email, contactno, password, referalId, address,zip,dt
 
-    $name = trim($request->name);
-    $password = mysqli_real_escape_string($mysqli, trim($request->password));
+    $cName = trim($request->cName);
+    $fullName = trim($request->fullName);
     $email = mysqli_real_escape_string($mysqli, trim($request->email));
     $contactno = trim($request->contactno);
-    $referalId = trim($request->referalId);
+    $password = mysqli_real_escape_string($mysqli, trim($request->password));
     $address = trim($request->address);
-    $zip = trim($request->zip);
-    $datetime = trim($request->dt);
+    $zip = trim($request->zipCode);
+    $datetime = trim($request->date);
 
-    $sql = "INSERT INTO vendor(name,email,contactno,password,referalId,address,zip,datetime)
-                             VALUES ('$name','$email','$contactno','$password', '$referalId', '$address','$zip','$datetime')";
+    $sql = "INSERT INTO vendor(cName, fullName, email, contactno, password, address, zip, datetime)
+                             VALUES ('$cName','$fullName', '$email','$contactno','$password', '$address','$zip','$datetime')";
 
       $res = mysqli_query($mysqli, $sql);
       $last_id = mysqli_insert_id($mysqli);
 
       if($last_id){
-        $vendor_id = "WIV-".substr($name, 0, strpos($name, ' ')).$last_id;
+        $vendor_id = "WIV-".substr($fullName, 0, strpos($fullName, ' ')).$last_id;
         $sql1 = "UPDATE vendor SET vendor_id = '$vendor_id' WHERE id = '$last_id' ";
         $res1 = mysqli_query($mysqli, $sql1);
       }
 
     if ($mysqli->query($sql1) === TRUE) {
         $authdata = [
-                    'name' => $name,
+                    'cName' => $cName,
+                    'fullName' =>  $fullName,
                     'email' => $email,
                     'contactno' => $contactno,
                     'Id' => mysqli_insert_id($mysqli),
                     'datetime' => $datetime,
-                    'referalId' => $referalId,
                     'address'=> $address,
                     'zip' => $zip,
                     'vendor_id' => $vendor_id,
@@ -47,28 +47,28 @@ if(isset($postdata) && !empty($postdata)){
         $mail = new PHPMailer;
         $mail->SMTPDebug = 4;                     // Enable verbose debug output
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';       // on Localhost
-        // $mail->Host = 'smtp.hostinger.in ';      // on server
+        // $mail->Host = 'smtp.gmail.com';       // on Localhost
+        $mail->Host = 'smtp.hostinger.in ';      // on server
         $mail->SMTPAuth = true;
 
         // On LocalHost
-        $mail->Username = 'sujaytank16595@gmail.com';
-        $mail->password = 'MH27bh3242@google';
+        // $mail->Username = 'sujaytank16595@gmail.com';
+        // $mail->password = 'MH27bh3242@google';
 
         //On serve Data
-        // $mail->Username = 'info@wisteriaindia.com';                // SMTP username
-        // $mail->password = 'infoWimpl@2017';                // SMTP password
+        $mail->Username = 'info@wisteriaindia.com';                // SMTP username
+        $mail->password = 'infoWimpl@2017';                // SMTP password
 
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
         // On LocalHost
-        $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
-        $mail->addReplyTo('sujaytank16595@gmail.com');
+        // $mail->setFrom('sujaytank16595@gmail.com', 'Wisteria India');
+        // $mail->addReplyTo('sujaytank16595@gmail.com');
 
         //On serve Data
-        // $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
-        // $mail->addReplyTo('info@wisteriaindia.com');
+        $mail->setFrom('info@wisteriaindia.com', 'Wisteria India');
+        $mail->addReplyTo('info@wisteriaindia.com');
 
         $mail->addAddress($email);
         $mail->addAddress('info@wisteriaindia.com');       // Add a recipient

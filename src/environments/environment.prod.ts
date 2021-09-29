@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "https://wisteriaindia.com/"
+  baseUrl: "https://family.wisteriaindia.com"
 };

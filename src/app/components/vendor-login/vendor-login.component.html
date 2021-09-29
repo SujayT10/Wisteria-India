@@ -1,0 +1,94 @@
+
+<div class="wrapper" style="background: url(../assets/img/bg-abstract2.png); background-size: cover; height: 100%;">
+  <div class="container-fluid">
+  <div class="row" style="text-align: center; padding-top: 50px; padding-bottom: 50px;">
+    <div class="col-md-4 ml-auto mr-auto">
+      <a routerLink="/home" class="logo" style="height: 100px;">
+        <img src="../assets/img/LogoSiteWhite.png" alt="navbar brand" class="" style="max-height: -webkit-fill-available; height: inherit;">
+      </a>
+    </div>
+  </div>
+
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 col-md-offset-5">
+
+        <div class="jumbotron" style="background-color: #e9eceff2;">
+          <h2 class="text-center">Vendor Login</h2>
+          <div class="mb-4">
+            <hr class="solid">
+          </div>
+            <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+
+                <!-- userId -->
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">WIV-</div>
+                    </div>
+                    <input type="text" name="userId"
+                          formControlName="userId"
+                          autocomplete="off"
+                          class="form-control input-sm"
+                          id="inlineFormInputGroupUsername"
+                          placeholder="User ID">
+                  </div>
+                  <div *ngIf="(userId.invalid && userId.touched) || userId.dirty" class="text-danger">
+                    <small class="alert alert-danger" *ngIf="userId.errors?.required" >Required</small>
+                  </div>
+                </div>
+                <!-- password  -->
+                <div class="form-group">
+                  <input type="password"name="Password"
+                         formControlName="password"
+                         autocomplete="off"
+                         class="form-control input-sm"
+                         placeholder="Password">
+                         <div *ngIf="password.touched && password.invalid" class="text-danger">
+                          <small class="alert alert-danger" *ngIf="password.errors.required">Required</small>
+                        </div>
+                </div>
+
+                <button type="submit" [disabled]="!angForm.valid" class="btn btn-primary btn-lg btn-block" >Login</button>
+                <div class="text-center" style="padding-top: 10px;">
+                  <p><a routerLink="/forgotten-password"> Forgotten password? </a></p>
+                </div>
+                <div class="mb-4">
+                  <hr class="solid">
+                </div>
+                <!-- <button type="button" routerLink="/login" class="btn btn-outline-primary btn-lg btn-block" >{{admin.button2}}</button> -->
+                <!-- Register buttons -->
+            <div class="text-center" style="padding-top: 10px;">
+              <p>Don't have an account? <a routerLink="/vendor-registration"> Register Here </a></p>
+              <!--<p>or sign up with:</p>
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button> -->
+            </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5">
+    </div>
+</div>
+</div>
+<simple-notifications [options]="options"></simple-notifications>
+<app-home-footer></app-home-footer>
+
+</div>
+

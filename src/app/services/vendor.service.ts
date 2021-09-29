@@ -19,14 +19,14 @@ export class VendorService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
 
-  // public partnerlogin( userId: string, password: string ) {
-  //   return this.httpClient.post<any>(this._linksService.baseUrl_partner + '/partnerLogin.php', { userId, password })
-  //   .pipe(map(Users => {
-  //       this.setToken(Users[0].partner_id);
-  //       this.getLoggedInName.emit(true);
-  //       return Users;
-  //   }));
-  // }
+  public vendorLogin( userId: string, password: string ) {
+    return this.httpClient.post<Vendor[]>(`${this._linksService.baseUrl_vendor}/vendorLogin.php`, { userId, password })
+    .pipe(map(Users => {
+        this.setToken(Users[0].vendor_id);
+        this.getLoggedInName.emit(true);
+        return Users;
+    }));
+  }
 
   // public postDataToDB(partner_id: string){
   //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getPartnerByID.php',{ partner_id })
@@ -55,10 +55,11 @@ export class VendorService {
     return this.httpClient.get<Vendor[]>(this._linksService.baseUrl_vendor + '/recentVendors.php');
   }
 
-  public vendorRegistration(name: string, email: string, contactno: number, password: string, referalId: string,	address: string, zip: number, dt: any) {
-    return this.httpClient.post<Partner[]>(this._linksService.baseUrl_vendor + '/vendorRegister.php', { name, email, contactno, password, referalId, address,zip,dt})
-    .pipe(map(partner => {
-    return partner;
+  public vendorRegistration(cName: string, fullName: string, email: string, contactno: number, password: string,	address: string, zipCode: number, date: any) {
+    return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/vendorRegister.php',
+                                          { cName,fullName, email, contactno, password, address,zipCode,date})
+    .pipe(map(vendor => {
+    return vendor;
     }));
   }
 
