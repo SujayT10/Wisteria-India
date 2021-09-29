@@ -42,7 +42,7 @@ export class NavSideBarComponent implements OnInit {
 
   logout() {
     this.vendorService.deleteToken();
-    window.location.replace(origin + '#/login');
+    window.location.replace(origin + '#/vendor-login');
     // console.log("loggedOff");
   }
 

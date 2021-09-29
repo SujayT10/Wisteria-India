@@ -1,3 +1,4 @@
+import { VendorProfileComponent } from './vendor-dashboard/vendor-profile/vendor-profile.component';
 import { VendorRegisterComponent } from './components/vendor-register/vendor-register.component';
 import { ManageVendorComponent } from './dashboard/vendor/manage-vendor/manage-vendor.component';
 import { EmpForgotPasswordComponent } from './employee-dashboard/emp/emp-forgot-password/emp-forgot-password.component';
@@ -153,7 +154,9 @@ const routes: Routes = [
 { path: 'employee-dashboard/employee/employee-profile/:id', component: EmpProfileComponent, canActivate: [AuthguardGuard] },
 // { path: 'employee-dashboard/employee/employee-update-profile/:id', component: UpdateProfileComponent, canActivate: [AuthguardGuard] },
 
-{ path:'vendor-dashboard/:id', component: VendorDashboardComponent, canActivate: [AuthguardGuard] } ,
+{ path:'vendor-dashboard/:id', component: VendorDashboardComponent, canActivate: [AuthguardGuard] },
+{ path:'vendor-dashboard/vendor-profile/:id', component: VendorProfileComponent, canActivate: [AuthguardGuard] },
+
 
 { path: '**', component: PageNotFoundComponent },
 

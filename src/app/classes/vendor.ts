@@ -6,12 +6,12 @@ export class Vendor {
   public contactno: number;
   public pwd:string;
   public address:string;
-  public zip:string;
+  public zip:number;
   public vendor_id: string;
 
   constructor(id:number,cName: string, fullName:string, email:string,
               contactno: number,pwd:string, address:string,
-              zip:string,vendor_id: string) {
+              zip:number ,vendor_id: string) {
       this.id = id;
       this.cName = cName;
       this.fullName = fullName;

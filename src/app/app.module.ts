@@ -89,6 +89,7 @@ import { VendorRegisterComponent } from './components/vendor-register/vendor-reg
 import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import { NavSideBarComponent } from './vendor-dashboard/nav-side-bar/nav-side-bar.component';
+import { VendorProfileComponent } from './vendor-dashboard/vendor-profile/vendor-profile.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +169,7 @@ import { NavSideBarComponent } from './vendor-dashboard/nav-side-bar/nav-side-ba
     VendorLoginComponent,
     VendorDashboardComponent,
     NavSideBarComponent,
+    VendorProfileComponent,
   
 
   ],
