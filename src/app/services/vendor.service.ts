@@ -17,15 +17,15 @@ export class VendorService {
   redirectUrl: any;
 
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
-  constructor(private httpClient : HttpClient, private _linksService : CommonLinksService) { }
+  constructor(private httpClient: HttpClient, private _linksService: CommonLinksService) { }
 
-  public vendorLogin( userId: string, password: string ) {
+  public vendorLogin(userId: string, password: string) {
     return this.httpClient.post<Vendor[]>(`${this._linksService.baseUrl_vendor}/vendorLogin.php`, { userId, password })
-    .pipe(map(Users => {
+      .pipe(map(Users => {
         this.setToken(Users[0].vendor_id);
         this.getLoggedInName.emit(true);
         return Users;
-    }));
+      }));
   }
 
   // public postDataToDB(partner_id: string){
@@ -39,28 +39,28 @@ export class VendorService {
   //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/getRecentPartnerById.php',{ partner_id });
   // }
 
-  // public activePartner(partner_id: string){
-  //   return this.httpClient.post<Partner[]>(this._linksService.baseUrl_partner + '/activePartnerById.php', { partner_id });
-  // }
+  public activeVendor(vendor_id: string){
+    return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/activeVendorById.php', { vendor_id });
+  }
 
-  getVendor(){
+  getVendor() {
     return this.httpClient.get<Vendor[]>(this._linksService.baseUrl_vendor + '/vendor.php');
   }
 
-  deleteVendor(id: any){
-    return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/deleteVendor.php?', { id } );
+  deleteVendor(id: any) {
+    return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/deleteVendor.php?', { id });
   }
 
-  recentVendor(){
+  recentVendor() {
     return this.httpClient.get<Vendor[]>(this._linksService.baseUrl_vendor + '/recentVendors.php');
   }
 
-  public vendorRegistration(cName: string, fullName: string, email: string, contactno: number, password: string,	address: string, zipCode: number, date: any) {
+  public vendorRegistration(cName: string, fullName: string, email: string, contactno: number, password: string, address: string, zipCode: number, date: any) {
     return this.httpClient.post<Vendor[]>(this._linksService.baseUrl_vendor + '/vendorRegister.php',
-                                          { cName,fullName, email, contactno, password, address,zipCode,date})
-    .pipe(map(vendor => {
-    return vendor;
-    }));
+      { cName, fullName, email, contactno, password, address, zipCode, date })
+      .pipe(map(vendor => {
+        return vendor;
+      }));
   }
 
   // public addAmount(partner_id:string, amount:string ){
@@ -152,18 +152,18 @@ export class VendorService {
   //token
   setToken(token: string) {
     localStorage.setItem('token', token);
-    }
-    getToken() {
+  }
+  getToken() {
     return localStorage.getItem('token');
-    }
-    deleteToken() {
+  }
+  deleteToken() {
     localStorage.removeItem('token');
-    }
-    isLoggedIn() {
+  }
+  isLoggedIn() {
     const usertoken = this.getToken();
     if (usertoken != null) {
-    return true
+      return true
     }
     return false;
-    }
+  }
 }

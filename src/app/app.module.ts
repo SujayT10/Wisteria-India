@@ -88,6 +88,7 @@ import { InsuranceComponent } from './components/insurance/insurance.component';
 import { VendorRegisterComponent } from './components/vendor-register/vendor-register.component';
 import { VendorLoginComponent } from './components/vendor-login/vendor-login.component';
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
+import { NavSideBarComponent } from './vendor-dashboard/nav-side-bar/nav-side-bar.component';
 
 @NgModule({
   declarations: [
@@ -166,6 +167,7 @@ import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.co
     VendorRegisterComponent,
     VendorLoginComponent,
     VendorDashboardComponent,
+    NavSideBarComponent,
   
 
   ],

@@ -1,0 +1,180 @@
+<!-- Navbar -->
+<div class="main-header">
+  <!-- Logo Header -->
+  <div class="logo-header" data-background-color="blue">
+
+    <a routerLink="/partner-dashboard/{{vendor_id}}" class="logo">
+      <img src="../assets/img/LogoSiteWhite.png" alt="Wisteria India" class="navbar-brand"
+        style="max-height: -webkit-fill-available;">
+    </a>
+    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="icon-menu"></i>
+      </span>
+    </button>
+    <!-- <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button> -->
+    <div class="nav-toggle">
+
+    </div>
+  </div>
+  <!-- End Logo Header -->
+  <nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+
+  </nav>
+</div>
+<!--  End Navbar -->
+
+<!-- Sidebar -->
+
+<div class="sidebar sidebar-style-2">
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+
+      <div class="user">
+        <div class="avatar-sm float-left mr-2">
+          <img src="../assets/img/profile.png" alt="..." class="avatar-img rounded-circle">
+        </div>
+        <div class="info" *ngFor="let part of activeVendor">
+          <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+            <span>
+              {{ part.fullName }}
+              <span class="user-level">Vendor</span>
+              <span class="caret"></span>
+            </span>
+          </a>
+          <div class="clearfix"></div>
+
+          <div class="collapse in" id="collapseExample">
+            <ul class="nav">
+              <li>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/partner-dashboard/partner/partner-profile/{{vendor_id}}" >My Profile</a>
+                <a class="dropdown-item" routerLink="/partner-dashboard/partner/partner-update-profile/{{vendor_id}}" >Update Profile</a>
+                <a class="dropdown-item" *ngIf="logoutbtn" (click)="logout()" routerLink="/login" >logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav nav-primary">
+        <li class="nav-item active">
+          <a routerLink="/partner-dashboard/{{vendor_id}}" data-toggle="collapse"  class="collapsed" aria-expanded="false" >
+            <i class="fas fa-home"></i>
+            <p>Dashboard</p>
+          </a>
+
+        </li>
+
+
+        <!-- Partner -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#partner">
+            <i class="fas fa-handshake"></i>
+            <p>Manage Member</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="partner">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/partner-dashboard/partner/manage-member/{{vendor_id}}">
+                  <span class="sub-item">View Member</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/find-member/{{vendor_id}}">
+                  <span class="sub-item">Find Member</span>
+                </a>
+              </li>
+
+              <li>
+                <a routerLink="/partner-dashboard/partner/recent-member/{{vendor_id}}">
+                  <span class="sub-item">Recent Member</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/topup-member/{{vendor_id}}">
+                  <span class="sub-item">TopUp Member</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Insurance -->
+        <li class="nav-item">
+          <app-insurance></app-insurance>
+        </li>
+
+        <li class="nav-item">
+          <a data-toggle="collapse" class="collapsed" aria-expanded="false">
+            <i class="fas fa-tree"></i>
+            <p>Member Tree View</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+            <i class="fas fa-credit-card"></i>
+            <p>Payment  Option</p>
+          </a>
+        </li>
+
+         <!-- Employee -->
+        <li class="nav-item">
+          <a data-toggle="collapse" href="#purchase ">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Purchase </p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="purchase ">
+            <ul class="nav nav-collapse">
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Share Market Course </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Fashion Design </span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Domo 4G Calling Tab</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Home Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Health Care Pack</span>
+                </a>
+              </li>
+              <li>
+                <a routerLink="/partner-dashboard/partner/payment-option/{{vendor_id}}">
+                  <span class="sub-item">Personal Care Pack</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="nav-item">
+          <a data-toggle="collapse" *ngIf="logoutbtn" (click)="logout()"
+                      routerLink="/login" class="collapsed" aria-expanded="false">
+            <i class="fas fa-sign-out-alt"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
