@@ -121,12 +121,36 @@
                   <!-- <div class="avatar">
                     <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
                   </div> -->
-                  <div class="info-user ml-3" *ngFor="let part1 of activePartner">
+                  <div class="info-user ml-3" >
                     <div class="username" >
-                      <h6>Wallet Balance : <b>₹{{ part1.wallet }}.00</b></h6>
+                      <h6>Wallet Balance : <b>{{ part1.wallet| currency: 'INR' }}</b></h6>
                     </div>
-                    <!-- <div class="status">Graphic Designer</div> -->
                   </div>
+
+                </div>
+
+                <div class="item-list" *ngFor="let part1 of activePartner">
+                  <!-- <div class="avatar">
+                    <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div> -->
+                  <div class="info-user ml-3" >
+                    <div class="username" >
+                      <h6>Redeem Points: <b> </b></h6>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="item-list" *ngFor="let part1 of activePartner">
+                  <!-- <div class="avatar">
+                    <img src="../assets/img/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+                  </div> -->
+                  <div class="info-user ml-3" >
+                    <div class="username" >
+                      <h6>Income: <b> </b></h6>
+                    </div>
+                  </div>
+
                 </div>
 
               </div>

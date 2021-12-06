@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import { Partner } from '../classes/partner';
 import { CommonLinksService } from '../services/common-links.service';
 import { EmployeeService } from '../services/employee.service';
+import { Employee } from '../classes/employee';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -14,7 +15,7 @@ import { EmployeeService } from '../services/employee.service';
 export class EmployeeDashboardComponent implements OnInit {
 
   emp_id : string;
-  activePartner:Partner[];
+  activeEmp:Employee[];
   partner: Partner[];
   totalLength: any;
   page: number = 1;
@@ -41,10 +42,10 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   public activeId(emp_id: any){
-    this.partnerService.activePartner(emp_id)
+    this.employeeService.activeEmployee(emp_id)
     .pipe(first())
-    .subscribe((data:Partner[]) =>{
-      this.activePartner= data;
+    .subscribe((data:Employee[]) =>{
+      this.activeEmp= data;
       // console.log(this.activePartner);
     })
   }
