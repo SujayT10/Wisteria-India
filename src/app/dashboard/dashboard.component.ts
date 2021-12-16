@@ -49,6 +49,7 @@ export class DashboardComponent implements OnInit {
 
      this.customerService.recentCustomer().subscribe((telentHunt: TelentHunt[]) =>{
       this.telentHunt= telentHunt;
+      console.log(this.telentHunt)
       this.totalEmpLength= telentHunt.length;
     });
 

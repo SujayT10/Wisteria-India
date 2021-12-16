@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Users } from '../classes/users';
 import { CommonLinksService } from './common-links.service';
 import { TelentHunt } from '../classes/telent-hunt';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,18 +34,16 @@ export class CustomerService {
       }));
      }
 
-
-
     deleteEmployee(id: any){
       return this.httpClient.post<Employee[]>(this._linksService.baseUrl_employee + '/deleteEmp.php?', { id } );
     }
 
-    recentCustomer(){
-      return this.httpClient.get<TelentHunt[]>(this._linksService.baseUrl_talentHunt + '/recentCustomer.php');
+    recentCustomer(): Observable<TelentHunt[]>{
+      return this.httpClient.get<TelentHunt[]>(this._linksService.baseUrl_talentHuntCustomer + '/recentCustomer.php');
     }
 
     public getCustomer(){
-      return this.httpClient.get<TelentHunt[]>(this._linksService.baseUrl_talentHunt + '/getCustomer.php');
+      return this.httpClient.get<TelentHunt[]>(this._linksService.baseUrl_talentHuntCustomer + '/getCustomer.php');
     }
 
     public activeEmployee(emp_id: string){
